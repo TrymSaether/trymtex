@@ -1,10 +1,5 @@
 \documentclass{article}
-
-\usepackage[
-  pagella,
-  mainlanguage=english,
-  languages={norsk,english}
-]{trymtex}
+\usepackage[pagella,mainlanguage=english,languages={norsk,english},minted=false]{trymtex}
 
 \title{trymtex Example}
 \author{Trym S\ae ther}
@@ -14,36 +9,28 @@
 \maketitle
 \tableofcontents
 
-\section{A theorem}
+\section{Math}
+Let $f(x)=x^2$. Then
+\[
+  \dd[f(x)]{x} = 2x,
+  \qquad
+  \norm{(1,2,3)} = \sqrt{14}.
+\]
 
-\begin{definition*}[Norm]{def:norm}
-  Let $V$ be a vector space. A function $\norm{\cdot}\colon V\to \R$ is a norm if it
-  satisfies positivity, homogeneity, and the triangle inequality.
-\end{definition*}
+\begin{definition}{Normed space}{normed-space}
+  A normed space is a vector space equipped with a norm.
+\end{definition}
 
-\begin{theorem*}[Cauchy--Schwarz]{thm:cs}
-  For $x,y\in\R^n$,
-  \[
-    \abs{\inner{x,y}} \le \norm{x}\norm{y}.
-  \]
-\end{theorem*}
+\begin{theorem}{Toy result}{toy}
+  For $x \in \R$, we have $x^2 \ge 0$.
+\end{theorem}
 
 \begin{proof}
-  This follows from the non-negativity of $\norm{x-\lambda y}^2$ with a suitable choice
-  of $\lambda$.
+  Immediate.
 \end{proof}
 
-\begin{example*}[Derivative]{ex:dd}
-  We write
-  \[
-    \dd{t} t^2 = 2t,
-    \qquad
-    \ddn{2}{t} t^3 = 6t.
-  \]
-\end{example*}
-
-\begin{flagbox}{Observation}
-  The package ships theorem boxes, color definitions, and a few utility commands.
+\begin{flagbox}{Remark box}
+  This is a custom box environment.
 \end{flagbox}
 
 \end{document}

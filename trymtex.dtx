@@ -2,6 +2,7 @@
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{hypdoc}
 \EnableCrossrefs
 \CodelineIndex
@@ -12,40 +13,25 @@
 %</driver>
 % \fi
 %
-% \GetFileInfo{trymtex.dtx}
+% \CheckSum{0}
+%
+% \changes{v0.2}{2026/04/08}{Engine-agnostic package with smoke tests.}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \GetFileInfo{trymtex.sty}
 %
 % \title{The \textsf{trymtex} package}
 % \author{Trym S\ae ther}
-% \date{2026/04/08}
+% \date{\filedate}
 %
 % \maketitle
 %
 % \section{Overview}
 %
-% \textsf{trymtex} collects a Lua\LaTeX{}-oriented document setup for mathematical
-% writing: font configuration, theorem boxes, table and plotting support, algorithms,
-% and a set of convenience macros. The package is intentionally opinionated, but it
-% keeps document metadata outside the package layer and offers feature toggles through
-% package options.
-%
-% \section{Usage}
-%
-% Load the package in a Lua\LaTeX{} document:
-% \begin{verbatim}
-% \usepackage{trymtex}
-% \end{verbatim}
-%
-% Supported options:
-% \begin{description}
-%   \item[\texttt{pagella}] default font set.
-%   \item[\texttt{ibmplex}] IBM Plex text fonts with STIX Two Math.
-%   \item[\texttt{fira}] Fira text fonts with Fira Math.
-%   \item[\texttt{theorems}, \texttt{algorithms}, \texttt{minted}, \texttt{glossaries},
-%     \texttt{plots}, \texttt{layout}, \texttt{headers}, \texttt{hyperrefsetup}]
-%     boolean feature toggles.
-%   \item[\texttt{mainlanguage=<lang>}] main \textsf{babel} language.
-%   \item[\texttt{languages=\{...\}}] language list passed to \textsf{babel}.
-% \end{description}
+% This package bundles a general-purpose document setup with typography,
+% theorem boxes, math helpers, floats, algorithms, and plotting support.
+% It is designed to work with pdf\LaTeX{}, Xe\LaTeX{}, and Lua\LaTeX{}.
 %
 % \StopEventually{}
 %
@@ -53,210 +39,7 @@
 %
 % \begin{macrocode}
 %<*package>
-\NeedsTeXFormat{LaTeX2e}[2020-10-01]
-\ProvidesPackage{trymtex}[2026/04/08 v0.1 Modern LuaLaTeX setup package]
-
-\RequirePackage{iftex}
-\ifLuaTeX\else
-  \PackageError{trymtex}
-    {This package requires LuaLaTeX}
-    {Compile your document with lualatex.}
-\fi
-
-\RequirePackage{kvoptions}
-\SetupKeyvalOptions{family=trymtex,prefix=trymtex@}
-\DeclareBoolOption[true]{pagella}
-\DeclareBoolOption[false]{ibmplex}
-\DeclareBoolOption[false]{fira}
-\DeclareBoolOption[true]{theorems}
-\DeclareBoolOption[true]{algorithms}
-\DeclareBoolOption[true]{minted}
-\DeclareBoolOption[true]{glossaries}
-\DeclareBoolOption[true]{plots}
-\DeclareBoolOption[true]{layout}
-\DeclareBoolOption[true]{headers}
-\DeclareBoolOption[true]{hyperrefsetup}
-\DeclareStringOption[english]{mainlanguage}
-\DeclareStringOption[norsk,english]{languages}
-\ProcessKeyvalOptions*
-
-\newcount\trymtex@fontcount
-\trymtex@fontcount=0\relax
-\iftrymtex@pagella \advance\trymtex@fontcount by 1\relax\fi
-\iftrymtex@ibmplex \advance\trymtex@fontcount by 1\relax\fi
-\iftrymtex@fira \advance\trymtex@fontcount by 1\relax\fi
-\ifnum\trymtex@fontcount>1\relax
-  \PackageError{trymtex}
-    {Choose only one font option among pagella, ibmplex, and fira}
-    {Pass exactly one of these options, or accept the default pagella option.}
-\fi
-\ifnum\trymtex@fontcount=0\relax
-  \trymtex@pagellatrue
-\fi
-
-\RequirePackage{fontspec}
-\RequirePackage[final]{microtype}
-\RequirePackage[\trymtex@languages,main=\trymtex@mainlanguage]{babel}
-\RequirePackage{xcolor}
-\RequirePackage{ragged2e}
-\RequirePackage{enumitem}
-\RequirePackage{suffix}
-\RequirePackage[autostyle, english=american]{csquotes}
-\RequirePackage[backend=biber]{biblatex}
-\RequirePackage{booktabs}
-\RequirePackage{tabularx}
-\RequirePackage{array}
-\RequirePackage{colortbl}
-\RequirePackage{multirow}
-\RequirePackage{siunitx}
-\RequirePackage{float}
-\RequirePackage{subcaption}
-\iftrymtex@minted\RequirePackage{minted}\fi
-\RequirePackage{amsmath}
-\RequirePackage{mathtools}
-\RequirePackage[math-style=ISO,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-\RequirePackage{amsfonts}
-\RequirePackage{amsthm}
-\RequirePackage[most]{tcolorbox}
-\iftrymtex@layout
-  \RequirePackage[headheight=15pt,margin=2.5cm,includeheadfoot]{geometry}
-  \AtBeginDocument{\setlength{\parindent}{0pt}\setlength{\parskip}{0.5em}}
-\fi
-\iftrymtex@headers\RequirePackage{fancyhdr}\fi
-\RequirePackage{tocloft}
-\RequirePackage[colorlinks]{hyperref}
-\RequirePackage{bookmark}
-\iftrymtex@glossaries
-  \RequirePackage[acronym,symbols,nogroupskip,hyperfirst=true]{glossaries-extra}
-\fi
-\RequirePackage{etoolbox}
-\RequirePackage{xparse}
-\iftrymtex@plots
-  \RequirePackage{pgfplots}
-  \pgfplotsset{compat=1.18}
-  \RequirePackage{forest}
-\fi
-\RequirePackage{optidef}
-\usetikzlibrary{arrows.meta,backgrounds,positioning,calc,decorations.pathreplacing,3d}
-\iftrymtex@algorithms
-  \RequirePackage[lined,boxed,commentsnumbered,linesnumbered]{algorithm2e}
-\fi
-
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\iftrymtex@pagella
-  \setmainfont{TeX Gyre Pagella}
-  \setsansfont{TeX Gyre Heros}
-  \setmonofont{Inconsolata}
-  \setmathfont{TeX Gyre Pagella Math}
-\fi
-\iftrymtex@ibmplex
-  \setmainfont{IBM Plex Serif}
-  \setsansfont{IBM Plex Sans}
-  \setmonofont{IBM Plex Mono}
-  \setmathfont{STIX Two Math}
-\fi
-\iftrymtex@fira
-  \setmainfont{Fira Sans Extra Condensed}
-  \setsansfont{Fira Sans}
-  \setmonofont{Fira Code}
-  \setmathfont{Fira Math}[Scale=MatchLowercase]
-\fi
-
-\iftrymtex@hyperrefsetup
-  \hypersetup{colorlinks=true,linkcolor=blue,filecolor=magenta,urlcolor=cyan}
-\fi
-\iftrymtex@glossaries\setglossarystyle{listhypergroup}\fi
-\iftrymtex@headers
-  \pagestyle{fancy}\fancyhf{}
-  \fancyhead[L]{\leftmark}\fancyhead[R]{\thepage}\fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \renewcommand{\footrulewidth}{0.4pt}
-\fi
-\renewcommand{\cftsubsubsecfont}{\normalfont}
-\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsubsubsecafterpnum}{\hspace*{2em}}
-
-\newcommand{\ep}{\varepsilon}
-\newcommand{\vp}{\varphi}
-\newcommand{\cond}{\operatorname{cond}}
-\newcommand{\bm}[1]{\symbf{#1}}
-\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand{\R}{\mathbb{R}}\newcommand{\N}{\mathbb{N}}\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\C}{\mathbb{C}}\newcommand{\E}{\mathbb{E}}\newcommand{\Ccal}{\mathcal{C}}
-\newcommand{\Hcal}{\mathcal{H}}\newcommand{\Lcal}{\mathcal{L}}\newcommand{\Lrm}{\mathrm{L}}
-\newcommand{\Mcal}{\mathcal{M}}\newcommand{\Pcal}{\mathcal{P}}\newcommand{\F}{\mathcal{F}}
-\newcommand{\I}{\mathcal{I}}\newcommand{\D}{\mathcal{D}}\newcommand{\spann}{\operatorname{span}}
-\NewDocumentCommand{\dd}{ O{} m }{\frac{d#1}{d{#2}}}
-\NewDocumentCommand{\ddn}{ O{} m m }{\frac{d^{#2}#1}{d{#3}^{#2}}}
-\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
-\newcommand{\problem}[2]{\par\noindent\large\textbf{Problem #1}\hfill\normalsize\textit{#2}\par}
-\newcommand{\subproblem}[1]{\textbf{(#1)}}
-
-\definecolor{def-color}{HTML}{E40125}
-\definecolor{thm-color}{HTML}{1346E4}
-\definecolor{lem-color}{HTML}{05C4D9}
-\definecolor{exm-color}{HTML}{21340A}
-\definecolor{rem-color}{HTML}{18B640}
-\definecolor{prop-color}{HTML}{9C27B0}
-\definecolor{pitfall-color}{HTML}{FFEB3B}
-\definecolor{cor-color}{HTML}{FF5722}
-\definecolor{alg-color}{HTML}{FF8F00}
-\definecolor{filing-color}{HTML}{607D8B}
-\definecolor{railing-color}{HTML}{795548}
-\definecolor{flag-color}{HTML}{009688}
-\definecolor{yescolor}{RGB}{200,255,200}
-\definecolor{nocolor}{RGB}{255,200,200}
-\definecolor{headerblue}{RGB}{225,238,255}
-\definecolor{ntnu-blue}{HTML}{00509e}
-\definecolor{ntnu-green}{HTML}{BCD025}
-\definecolor{ntnu-lightblue}{HTML}{6096D0}
-\definecolor{ntnu-orange}{HTML}{EF8114}
-\definecolor{ntnu-sand}{HTML}{CFB887}
-\definecolor{ntnu-magenta}{HTML}{B01B81}
-\definecolor{ntnu-yellow}{HTML}{F7D019}
-\definecolor{ntnu-purple}{HTML}{482776}
-\definecolor{ntnu-turquoise}{HTML}{3CBFBE}
-
-\newcommand{\yes}{\cellcolor{yescolor} Yes}
-\newcommand{\no}{\cellcolor{nocolor} No}
-\newcommand{\algo}[1]{\parbox[t]{3cm}{\footnotesize\RaggedRight #1}}
-\newcolumntype{Y}{>{\footnotesize}c}
-\newcolumntype{Z}{>{\footnotesize\RaggedRight\arraybackslash}X}
-
-\iftrymtex@algorithms
-  \SetAlgorithmName{Algorithm}{Algorithm}{List of Algorithms}
-  \SetAlCapFnt{\color{alg-color}\bfseries}
-  \SetAlCapNameSty{TitleBox}
-  \DontPrintSemicolon
-  \SetKwProg{Fn}{Function}{:}{}
-  \SetKwFunction{Error}{error}
-  \SetKwInput{KwInput}{Input}
-  \SetKwInput{KwOutput}{Output}
-\fi
-
-\iftrymtex@theorems
-  \tcbset{trymtex/base theorem style/.style={enhanced,fonttitle=\bfseries,breakable,before skip=10pt,after skip=10pt,separator sign={.},sharp corners}}
-  \newtcbtheorem[number within=section]{definition}{Definition}{enhanced jigsaw,colback=def-color!10,colframe=def-color!80!black,fonttitle=\bfseries,separator sign=.,label separator={},sharp corners,top=2pt,bottom=2pt,left=2pt,right=2pt,before skip=10pt,after skip=10pt,breakable}{def}
-  \newtcbtheorem[number within=section]{theorem}{Theorem}{enhanced jigsaw,colback=thm-color!10,colframe=thm-color!80!black,fonttitle=\bfseries,coltitle=black,attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},boxed title style={colback=thm-color!10,colframe=thm-color!80!black,height=16pt,bean arc},separator sign=.,label separator={},sharp corners,top=6pt,bottom=2pt,left=2pt,right=2pt,before skip=10pt,after skip=10pt,breakable}{thm}
-  \newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{enhanced jigsaw,colback=lem-color!10,colframe=lem-color!80!black,boxrule=0pt,fonttitle=\bfseries,attach boxed title to top left={yshift=-\tcboxedtitleheight},boxed title style={boxrule=0pt,boxsep=2pt,colback=lem-color!80!black,colframe=lem-color!80!black,interior code={\fill[lem-color!80!black](interior.north west)--(interior.south west)--([xshift=-2mm]interior.south east)--([xshift=2mm]interior.north east)--cycle;}},separator sign=.,label separator={},frame hidden,borderline north={1pt}{0pt}{lem-color!80!black},before upper={\hspace{\tcboxedtitlewidth}},sharp corners,top=2pt,bottom=2pt,left=5pt,right=5pt,before skip=10pt,after skip=10pt,breakable}{lem}
-  \newtcbtheorem[use counter from=theorem]{example}{Example}{trymtex/base theorem style,colback=white,colframe=white,borderline west={2pt}{0pt}{exm-color},left=8pt,before skip=10pt,after skip=10pt,coltitle=exm-color}{exm}
-  \newtcbtheorem[use counter from=theorem]{remark}{Remark}{trymtex/base theorem style,colback=white,colframe=white,borderline west={2pt}{0pt}{rem-color},left=8pt,before skip=10pt,after skip=10pt,coltitle=black}{rem}
-  \newtcbtheorem[use counter from=theorem]{proposition}{Proposition}{enhanced jigsaw,colback=prop-color!10,colframe=prop-color!80!black,fonttitle=\bfseries,attach boxed title to top left={yshift=-\tcboxedtitleheight},boxed title style={boxrule=0pt,boxsep=2.5pt,colback=prop-color!80!black,colframe=prop-color!80!black,sharp corners=uphill},separator sign=.,label separator={},top=\tcboxedtitleheight,bottom=2pt,left=2pt,right=2pt,before skip=10pt,after skip=10pt,breakable}{prop}
-  \newtcbtheorem[use counter from=theorem]{corollary}{Corollary}{enhanced jigsaw,colback=cor-color!10,colframe=cor-color!80!black,boxrule=0pt,fonttitle=\bfseries,coltitle=black,separator sign={},label separator={},description font=\normalfont,description delimiters={(}{)},attach title to upper,after title={.\ },frame hidden,borderline west={2pt}{0pt}{cor-color},sharp corners,top=2pt,bottom=2pt,left=5pt,right=5pt,before skip=10pt,after skip=10pt,breakable}{cor}
-  \newtcbtheorem[use counter from=theorem]{pitfall}{Pitfall}{enhanced jigsaw,colback=pitfall-color!10,colframe=pitfall-color!80!black,boxrule=0pt,fonttitle=\bfseries,coltitle=black,separator sign={},label separator={},description font=\normalfont,description delimiters={(}{)},attach title to upper,after title={.\ },frame hidden,borderline west={2pt}{0pt}{pitfall-color},sharp corners,top=2pt,bottom=2pt,left=5pt,right=5pt,before skip=10pt,after skip=10pt,breakable}{pit}
-  \renewenvironment{proof}[1][\proofname]{\begin{tcolorbox}[blanker,borderline west={2pt}{0pt}{thm-color},before skip=10pt,after skip=10pt,left=8pt,breakable]\textbf{#1}.}{\end{tcolorbox}}
-  \newtcolorbox{filingbox}[2][]{enhanced jigsaw,breakable,colback=filing-color!10,colframe=filing-color!80!black,fonttitle=\bfseries,coltitle=black,attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},boxed title style={colback=filing-color!10,colframe=filing-color!80!black,height=16pt,bean arc},title={#2},before skip=10pt,after skip=10pt,top=6pt,bottom=2pt,left=2pt,right=2pt,#1}
-  \newtcolorbox{railingbox}[2][]{enhanced jigsaw,breakable,colback=railing-color!10,colframe=railing-color!80!black,fonttitle=\bfseries,title={#2},attach boxed title to top left={yshift=-\tcboxedtitleheight},boxed title style={boxrule=0pt,boxsep=2.5pt,colback=railing-color!80!black,colframe=railing-color!80!black,sharp corners=uphill},top=\tcboxedtitleheight,bottom=2pt,left=2pt,right=2pt,before skip=10pt,after skip=10pt,#1}
-  \newtcolorbox{flagbox}[2][]{enhanced jigsaw,breakable,colback=flag-color!10,colframe=flag-color!80!black,boxrule=0pt,fonttitle=\bfseries,coltitle=black,title={#2},attach title to upper,frame hidden,borderline west={2pt}{0pt}{flag-color},sharp corners,top=2pt,bottom=2pt,left=5pt,right=5pt,before skip=10pt,after skip=10pt,#1}
-  \makeatletter
-  \newcommand{\trymtex@createalt}[1]{\@ifundefined{#1*}{\expandafter\NewDocumentEnvironment\csname #1*\endcsname{ O{} m }{\begin{#1}{##1}{##2}}{\end{#1}}}{}}
-  \trymtex@createalt{definition}\trymtex@createalt{theorem}\trymtex@createalt{lemma}\trymtex@createalt{example}\trymtex@createalt{remark}\trymtex@createalt{proposition}\trymtex@createalt{corollary}\trymtex@createalt{pitfall}
-  \makeatother
-\fi
-
-\endinput
+\input{trymtex.sty}
 %</package>
 % \end{macrocode}
 %
