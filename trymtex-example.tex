@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[minted=false,glossaries=false,pagella]{trymtex}
+\usepackage[pagella,mainlanguage=english,languages={norsk,english},minted=false]{trymtex}
 
 \title{trymtex Example}
 \author{Trym S\ae ther}
@@ -7,32 +7,30 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
 
-Here is some mathematics:
+\section{Math}
+Let $f(x)=x^2$. Then
 \[
-  \R \subseteq \C,\qquad \norm{x} = \sqrt{\inner{x,x}}.
+  \dd[f(x)]{x} = 2x,
+  \qquad
+  \norm{(1,2,3)} = \sqrt{14}.
 \]
 
-\begin{definition}{Metric space}{metric-space}
-  A metric space is a pair $(X,d)$ where $d$ is a distance function on $X$.
+\begin{definition}{Normed space}{normed-space}
+A normed space is a vector space equipped with a norm.
 \end{definition}
 
-\begin{theorem}{Triangle inequality}{triangle}
-  For all $x,y \in \R^n$,
-  \[
-    \norm{x+y} \le \norm{x} + \norm{y}.
-  \]
+\begin{theorem}{Toy result}{toy}
+For $x \in \R$, we have $x^2 \ge 0$.
 \end{theorem}
 
 \begin{proof}
-  Standard.
+Immediate.
 \end{proof}
 
-\begin{algorithm}[H]
-  \KwInput{A vector $x \in \R^n$}
-  \KwOutput{$\norm{x}$}
-  \Return{$\sqrt{\inner{x,x}}$}
-  \caption{Euclidean norm}
-\end{algorithm}
+\begin{flagbox}{Remark box}
+This is a custom box environment.
+\end{flagbox}
 
 \end{document}

@@ -3,7 +3,7 @@
 \usepackage[minted=false,glossaries=false,pagella]{trymtex}
 \begin{document}
 \START
-$\R \subseteq \C$, $\norm{v}$, $\dd{t}$.
+$\R \subseteq \C$, $\norm{v}$.
 \begin{definition}{A}{a}Test\end{definition}
 \begin{proof}Done.\end{proof}
 \typeout{TRYMTEX-PDFTEX-OK}

@@ -1,30 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{trymtex}[2026/04/08 v0.4 General-purpose document setup package]
-
-% trymtex --- general-purpose document setup
-% Copyright (C) 2026 Trym S\ae ther
-%
-% This work may be distributed and/or modified under the conditions of the
-% LaTeX Project Public License, either version 1.3c of this license or
-% (at your option) any later version. The latest version of this license is
-%   https://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX
-% version 2008 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-%
-% The Current Maintainer of this work is Trym S\ae ther.
+\ProvidesPackage{trymtex}[2026/04/08 v0.2 General-purpose document setup package]
 
 \RequirePackage{iftex}
 \RequirePackage{xcolor}
 \RequirePackage{kvoptions}
-
-\makeatletter
-
 \SetupKeyvalOptions{family=trymtex,prefix=trymtex@}
 
 % --------------------------------------------------------------------------
-% Package options
+% Options
 % --------------------------------------------------------------------------
 \DeclareStringOption[english]{mainlanguage}
 \DeclareStringOption[english]{languages}
@@ -38,12 +21,10 @@
 \DeclareBoolOption[true]{fancyhdr}
 \DeclareBoolOption[true]{toc}
 \DeclareStringOption[pagella]{fontset}
-
 \DeclareVoidOption{pagella}{\renewcommand\trymtex@fontset{pagella}}
 \DeclareVoidOption{ibmplex}{\renewcommand\trymtex@fontset{ibmplex}}
 \DeclareVoidOption{fira}{\renewcommand\trymtex@fontset{fira}}
 \DeclareVoidOption{none}{\renewcommand\trymtex@fontset{none}}
-
 \ProcessKeyvalOptions*
 
 % --------------------------------------------------------------------------
@@ -58,9 +39,8 @@
   \RequirePackage[utf8]{inputenc}
 \fi
 
-\edef\trymtex@babeloptions{main=\trymtex@mainlanguage,\trymtex@languages}
-\expandafter\RequirePackage\expandafter[\trymtex@babeloptions]{babel}
-
+\RequirePackage[main=\trymtex@mainlanguage]{babel}
+\babelprovide[import]{\trymtex@languages}
 \RequirePackage{ragged2e}
 \RequirePackage{enumitem}
 \RequirePackage{suffix}
@@ -72,72 +52,53 @@
 % --------------------------------------------------------------------------
 \RequirePackage{amsmath}
 \RequirePackage{mathtools}
-\RequirePackage{amsfonts}
 \RequirePackage{amsthm}
-
-\newcommand*\trymtex@warnunknownfontset[1]{%
-  \PackageWarningNoLine{trymtex}{Unknown fontset `#1'; using `pagella' instead}%
-}
-
-\providecommand{\trymtex@setup@pdftex@pagella}{%
-  \RequirePackage{newpxtext}%
-  \RequirePackage{newpxmath}%
-}
-\providecommand{\trymtex@setup@pdftex@ibmplex}{%
-  \RequirePackage{newpxtext}%
-  \RequirePackage{newpxmath}%
-  \PackageWarningNoLine{trymtex}{IBM Plex is not supported under pdfTeX; using newpxtext/newpxmath instead}%
-}
-\providecommand{\trymtex@setup@pdftex@fira}{%
-  \RequirePackage{newpxtext}%
-  \RequirePackage{newpxmath}%
-  \PackageWarningNoLine{trymtex}{Fira OpenType setup is not supported under pdfTeX; using newpxtext/newpxmath instead}%
-}
-\providecommand{\trymtex@setup@pdftex@none}{}
-
-\providecommand{\trymtex@setup@unicode@pagella}{%
-  \setmainfont{TeX Gyre Pagella}%
-  \setsansfont{TeX Gyre Heros}%
-  \setmonofont{Inconsolata}%
-  \setmathfont{TeX Gyre Pagella Math}%
-}
-\providecommand{\trymtex@setup@unicode@ibmplex}{%
-  \setmainfont{IBM Plex Serif}%
-  \setsansfont{IBM Plex Sans}%
-  \setmonofont{IBM Plex Mono}%
-  \setmathfont{STIX Two Math}%
-}
-\providecommand{\trymtex@setup@unicode@fira}{%
-  \setmainfont{Fira Sans Extra Condensed}%
-  \setsansfont{Fira Sans}%
-  \setmonofont{Fira Code}%
-  \setmathfont{Fira Math}[Scale=MatchLowercase]%
-}
-\providecommand{\trymtex@setup@unicode@none}{}
 
 \ifPDFTeX
   \RequirePackage{amssymb}
   \RequirePackage{bm}
-  \@ifundefined{trymtex@setup@pdftex@\trymtex@fontset}{%
-    \trymtex@warnunknownfontset{\trymtex@fontset}%
-    \trymtex@setup@pdftex@pagella
-  }{%
-    \csname trymtex@setup@pdftex@\trymtex@fontset\endcsname
-  }%
+  \edef\trymtex@fontset@tmp{\trymtex@fontset}
+  \ifx\trymtex@fontset@tmp\@empty\else\fi
+  \csname trymtex@setup@pdftex@\trymtex@fontset\endcsname
 \else
   \RequirePackage{fontspec}
   \RequirePackage[
     math-style=ISO,
     warnings-off={mathtools-colon,mathtools-overbracket}
   ]{unicode-math}
-  \@ifundefined{trymtex@setup@unicode@\trymtex@fontset}{%
-    \trymtex@warnunknownfontset{\trymtex@fontset}%
-    \trymtex@setup@unicode@pagella
-  }{%
-    \csname trymtex@setup@unicode@\trymtex@fontset\endcsname
-  }%
+  \csname trymtex@setup@unicode@\trymtex@fontset\endcsname
   \providecommand{\bm}[1]{\symbf{#1}}
 \fi
+
+\providecommand{\trymtex@setup@pdftex@pagella}{%
+  \RequirePackage{newpxtext}
+  \RequirePackage{newpxmath}}
+\providecommand{\trymtex@setup@pdftex@ibmplex}{%
+  \RequirePackage{newpxtext}
+  \RequirePackage{newpxmath}%
+  \PackageWarningNoLine{trymtex}{IBM Plex is not supported under pdfTeX; using newpxtext/newpxmath instead}}
+\providecommand{\trymtex@setup@pdftex@fira}{%
+  \RequirePackage{newpxtext}
+  \RequirePackage{newpxmath}%
+  \PackageWarningNoLine{trymtex}{Fira OpenType setup is not supported under pdfTeX; using newpxtext/newpxmath instead}}
+\providecommand{\trymtex@setup@pdftex@none}{}
+
+\providecommand{\trymtex@setup@unicode@pagella}{%
+  \setmainfont{TeX Gyre Pagella}
+  \setsansfont{TeX Gyre Heros}
+  \setmonofont{Inconsolata}
+  \setmathfont{TeX Gyre Pagella Math}}
+\providecommand{\trymtex@setup@unicode@ibmplex}{%
+  \setmainfont{IBM Plex Serif}
+  \setsansfont{IBM Plex Sans}
+  \setmonofont{IBM Plex Mono}
+  \setmathfont{STIX Two Math}}
+\providecommand{\trymtex@setup@unicode@fira}{%
+  \setmainfont{Fira Sans Extra Condensed}
+  \setsansfont{Fira Sans}
+  \setmonofont{Fira Code}
+  \setmathfont{Fira Math}[Scale=MatchLowercase]}
+\providecommand{\trymtex@setup@unicode@none}{}
 
 % --------------------------------------------------------------------------
 % Tables, figures, floats, code
@@ -208,16 +169,12 @@
 \definecolor{pitfall-color}{HTML}{FFEB3B}
 \definecolor{cor-color}{HTML}{FF5722}
 \definecolor{alg-color}{HTML}{FF8F00}
-
 \definecolor{filing-color}{HTML}{607D8B}
 \definecolor{railing-color}{HTML}{795548}
 \definecolor{flag-color}{HTML}{009688}
 \definecolor{yescolor}{RGB}{200,255,200}
 \definecolor{nocolor}{RGB}{255,200,200}
 \definecolor{headerblue}{RGB}{225,238,255}
-\definecolor{state-gray}{HTML}{6B7280}
-\colorlet{lem-tint}{lem-color!10}
-
 \definecolor{ntnu-blue}{HTML}{00509e}
 \definecolor{ntnu-green}{HTML}{BCD025}
 \definecolor{ntnu-lightblue}{HTML}{6096D0}
@@ -229,295 +186,232 @@
 \definecolor{ntnu-turquoise}{HTML}{3CBFBE}
 
 % --------------------------------------------------------------------------
-enhanced,
-breakable,
-sharp corners,
-fonttitle=\bfseries,
-before skip=10pt,
-after skip=10pt,
-separator sign=.
+% Math helpers
+% --------------------------------------------------------------------------
+\newcommand{\ep}{\varepsilon}
+\newcommand{\vp}{\varphi}
+\newcommand{\cond}{\operatorname{cond}}
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
-\newtcbtheorem[number within=chapter]{definition}{Definition}{%
-  \newcommand{\C}{\mathbb{C}}
-  colback=def-color!10, colframe=def-color!80!black, coltitle=black,
-  \newcommand{\Hcal}{\mathcal{H}}
-  attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},
-  boxed title style={colback=def-color!10,colframe=def-color!80!black,height=16pt,valign=center,bean arc},
-  label separator={}, top=8pt,bottom=2pt,left=4pt,right=4pt,boxrule=1pt
-}{def}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Ccal}{\mathcal{C}}
+\newcommand{\Hcal}{\mathcal{H}}
+\newcommand{\Lcal}{\mathcal{L}}
+\newcommand{\Lrm}{\mathrm{L}}
+\newcommand{\Mcal}{\mathcal{M}}
+\newcommand{\Pcal}{\mathcal{P}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\D}{\mathcal{D}}
 \newcommand{\dd}[2][]{\frac{d#1}{d{#2}}}
-\newtcbtheorem[use counter from=definition]{theorem}{Theorem}{%
+\newcommand{\ddn}[3][]{\frac{d^{#2}#1}{d{#3}^{#2}}}
+\newcommand{\spann}{\operatorname{span}}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
-  colback=thm-color!10, colframe=thm-color!80!black, coltitle=black,
-  \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
-  % --------------------------------------------------------------------------
-  boxed title style={colback=thm-color!10,colframe=thm-color!80!black,height=16pt,valign=center,bean arc},
-  label separator={}, top=8pt,bottom=2pt,left=4pt,right=4pt,boxrule=1pt
-}{thm}
+% --------------------------------------------------------------------------
+% Utility commands
+% --------------------------------------------------------------------------
+\newcommand{\problem}[2]{\large{\textbf{Problem #1} \hfill \normalfont\normalsize\textit{#2}}}
+\newcommand{\subproblem}[1]{\normalsize{\textbf{(#1)}}}
+\newcommand{\yes}{\cellcolor{yescolor} Yes}
 \newcommand{\no}{\cellcolor{nocolor} No}
-\newtcbtheorem[use counter from=definition]{lemma}{Lemma}{%
-  \newcolumntype{Y}{>{\footnotesize}c}
-  frame hidden, boxrule=0pt,
-  colback=lem-color!10, colframe=lem-color!10,
-  fonttitle=\sffamily\bfseries,
-  attach boxed title to top left={yshift=-\tcboxedtitleheight},
-  boxed title style={boxrule=0pt,boxsep=2pt,interior code={\fill[lem-color, smooth]
-          (interior.north west)--(interior.south west)--([xshift=-2mm]interior.south east)--
-            ([xshift=2mm]interior.north east)--cycle;}},
-  label separator={}, borderline north={1pt}{0pt}{lem-color},
-  before upper={\hspace{\tcboxedtitlewidth}},
-  sharp corners, top=2pt,bottom=2pt,left=4pt,right=4pt
-}{lem}
+\newcommand{\algo}[1]{\parbox[t]{3cm}{\footnotesize\RaggedRight #1}}
+\newcolumntype{Y}{>{\footnotesize}c}
+\newcolumntype{Z}{>{\footnotesize\RaggedRight\arraybackslash}X}
 
-\newtcbtheorem[use counter from=definition]{proposition}{Proposition}{%
-  enhanced jigsaw,
-  colback=prop-color!10, colframe=prop-color!80!black,
-  % --------------------------------------------------------------------------
-  % Algorithms
-  % --------------------------------------------------------------------------
-  \iftrymtex@algorithms
-  boxsep=2.5pt,
-  colback=prop-color!80!black,
-  colframe=prop-color!80!black,
-  sharp corners=uphill
+% --------------------------------------------------------------------------
+% Algorithms
+% --------------------------------------------------------------------------
+\iftrymtex@algorithms
+  \RequirePackage[lined,boxed,commentsnumbered,linesnumbered]{algorithm2e}
+  \SetAlgorithmName{Algorithm}{Algorithm}{List of Algorithms}
+  \SetAlCapFnt{\color{alg-color}\bfseries}
+  \SetAlCapNameSty{TitleBox}
+  \DontPrintSemicolon
+  \SetKwProg{Fn}{Function}{:}{}
+  \SetKwFunction{Error}{error}
   \SetKwInput{KwInput}{Input}
-  label separator={}, top=\tcboxedtitleheight,bottom=2pt,left=2pt,right=2pt,
-  before skip=10pt,after skip=10pt,
-  \expandafter\NewDocumentEnvironment\expandafter{#1*}\expandafter{O{} m}{%
-  }{prop}
-}{%
-  \newtcbtheorem[use counter from=definition]{corollary}{Corollary}{%
+  \SetKwInput{KwOutput}{Output}
+\fi
+
+% --------------------------------------------------------------------------
+% Theorem environments
+% --------------------------------------------------------------------------
+\iftrymtex@theorems
+  \tcbset{
+    base theorem style/.style={
+      enhanced,
+      fonttitle=\bfseries,
+      breakable,
+      before skip=10pt,
+      after skip=10pt,
+      separator sign={.},
+      sharp corners
+    }
+  }
+
+  \newtcbtheorem{definition}{Definition}{%
     enhanced jigsaw,
-    colback=cor-color!10, colframe=cor-color!80!black, boxrule=0pt,
-    fonttitle=\sffamily\bfseries, coltitle=black,
+    colback=def-color!10,
+    colframe=def-color!80!black,
+    fonttitle=\bfseries,
+    separator sign=.,
+    label separator={},
+    sharp corners,
+    top=2pt,bottom=2pt,left=2pt,right=2pt,
+    before skip=10pt,after skip=10pt,
+    breakable
+  }{def:}
+
+  \newtcbtheorem{theorem}{Theorem}{%
+    enhanced jigsaw,
+    colback=thm-color!10,
+    colframe=thm-color!80!black,
+    fonttitle=\bfseries,
+    coltitle=black,
+    attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},
+    boxed title style={colback=thm-color!10,colframe=thm-color!80!black,height=16pt,bean arc},
+    separator sign=.,label separator={},sharp corners,
+    top=6pt,bottom=2pt,left=2pt,right=2pt,
+    before skip=10pt,after skip=10pt,
+    breakable
   }{thm:}
 
-  description font=\normalfont\sffamily,
-  enhanced jigsaw,
-  colback=lem-color!10,
-  colframe=lem-color!80!black,
-  boxrule=0pt,
-  fonttitle=\bfseries,
-  attach boxed title to top left={yshift=-\tcboxedtitleheight},
-  boxed title style={
-      boxrule=0pt,
-      boxsep=2pt,
-      colback=lem-color!80!black,
-      colframe=lem-color!80!black,
+  \newtcbtheorem{lemma}{Lemma}{%
+    enhanced jigsaw,
+    colback=lem-color!10,
+    colframe=lem-color!80!black,
+    boxrule=0pt,
+    fonttitle=\bfseries,
+    attach boxed title to top left={yshift=-\tcboxedtitleheight},
+    boxed title style={
+      boxrule=0pt,boxsep=2pt,
+      colback=lem-color!80!black,colframe=lem-color!80!black,
       interior code={\fill[lem-color!80!black]
-          (interior.north west)--(interior.south west)--
-          ([xshift=-2mm]interior.south east)--
-            ([xshift=2mm]interior.north east)--cycle;}
+        (interior.north west)--(interior.south west)--([xshift=-2mm]interior.south east)--([xshift=2mm]interior.north east)--cycle;}
     },
-  separator sign=.,
-  label separator={},
-  frame hidden,
-  borderline north={1pt}{0pt}{lem-color!80!black},
-  before upper={\hspace{\tcboxedtitlewidth}},
-  sharp corners,
-  top=2pt,bottom=2pt,left=5pt,right=5pt,
-  before skip=10pt,after skip=10pt,
-  breakable
-}{lem:}
-
-\newtcbtheorem{example}{Example}{%
-  base theorem style,
-  colback=white,
-  colframe=white,
-  borderline west={2pt}{0pt}{exm-color},
-  left=8pt,
-  coltitle=exm-color
-}{exm:}
-
-\newtcbtheorem{remark}{Remark}{%
-  base theorem style,
-  colback=white,
-  colframe=white,
-  borderline west={2pt}{0pt}{rem-color},
-  left=8pt,
-  coltitle=black
-}{rem:}
-
-\newtcbtheorem{proposition}{Proposition}{%
-  enhanced jigsaw,
-  colback=prop-color!10,
-  colframe=prop-color!80!black,
-  fonttitle=\bfseries,
-  attach boxed title to top left={yshift=-\tcboxedtitleheight},
-  boxed title style={
-      boxrule=0pt,
-      boxsep=2.5pt,
-      colback=prop-color!80!black,
-      colframe=prop-color!80!black,
-      sharp corners=uphill
-    },
-  separator sign=.,
-  label separator={},
-  top=\tcboxedtitleheight,bottom=2pt,left=2pt,right=2pt,
-  before skip=10pt,after skip=10pt,
-  breakable
-}{prop:}
-
-\newtcbtheorem{corollary}{Corollary}{%
-  enhanced jigsaw,
-  colback=cor-color!10,
-  colframe=cor-color!80!black,
-  boxrule=0pt,
-  fonttitle=\bfseries,
-  coltitle=black,
-  separator sign={},
-  label separator={},
-  description font=\normalfont,
-  description delimiters={(}{)},
-  attach title to upper,
-  after title={.\ },
-  frame hidden,
-  borderline west={2pt}{0pt}{cor-color},
-  sharp corners,
-  top=2pt,bottom=2pt,left=5pt,right=5pt,
-  before skip=10pt,after skip=10pt,
-  breakable
-}{cor}
-
-\newtcbtheorem{example}{Example}{%
-  base theorem style,
-  colback=white, colframe=white,
-  borderline west={1.5pt}{0pt}{exm-color},
-  left=8pt, coltitle=exm-color, boxsep=2pt, top=0pt, bottom=0pt
-}{ex}
-
-\newtcbtheorem{remark}{Remark}{%
-  base theorem style, colback=white, colframe=white,
-  borderline west={1.5pt}{0pt}{rem-color},
-  left=8pt, top=0pt, bottom=0pt, boxsep=2pt, coltitle=black
-}{rem}
-
-\NewTColorBox{solution}{ O{} }{%
-  enhanced, colback=white, colframe=white,
-  borderline east={1.5pt}{0pt}{rem-color},
-  left=8pt,right=4pt,top=4pt,bottom=4pt,
-  before skip=10pt,after skip=10pt,breakable,sharp corners,boxrule=0pt,frame hidden,parbox=false,
-  overlay={\node[rotate=-90, anchor=south west,font=\tiny\bfseries]
-      at ([yshift=3pt, xshift=-2pt]frame.north east) {\MakeUppercase{Solution}};}
-}
-
-\newtcbtheorem{summary}{Summary}{%
-  enhanced jigsaw,
-  colback=ntnu-yellow!10, colframe=ntnu-yellow!80!black,
-  coltitle=black, fonttitle=\bfseries,
-  attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},
-  boxed title style={colback=ntnu-yellow!10,colframe=ntnu-yellow!80!black,height=16pt,bean arc},
-  label separator={}, sharp corners, top=6pt,bottom=2pt,left=2pt,right=2pt,
-  before skip=10pt,after skip=10pt,breakable
-}{sum}
-
-\newtcbtheorem[use counter from=definition]{assumption}{Assumption}{%
-  enhanced jigsaw,
-  colback=state-gray!10, colframe=state-gray!80!black,
-  fonttitle=\bfseries, coltitle=black,
-  label separator={}, top=2pt,bottom=2pt,left=4pt,right=4pt,
-  borderline west={2pt}{0pt}{state-gray},
-  sharp corners, before skip=10pt,after skip=10pt,breakable
-}{assum}
-
-\NewTColorBox{notation}{ O{} }{%
-  enhanced, colback=lem-tint, colframe=lem-color!50,
-  boxrule=0.5pt, sharp corners,
-  left=4pt,right=4pt,top=4pt,bottom=4pt,
-  before skip=10pt,after skip=10pt,breakable,
-  title={\textbf{Notation}},
-  fonttitle=\bfseries
-}
-
-\newtcbtheorem{notationbox}{Notation}{%
-  enhanced jigsaw,
-  colback=lem-color, colframe=lem-color!50!black,
-  fonttitle=\bfseries\sffamily, coltitle=black,
-  label separator={}, top=4pt,bottom=2pt,left=4pt,right=4pt,
-  borderline west={2pt}{0pt}{lem-color},
-  sharp corners, before skip=10pt,after skip=10pt,breakable
-}{not}
-
-\trymtex@declaretheoremstar{definition}
-\trymtex@declaretheoremstar{theorem}
-\trymtex@declaretheoremstar{lemma}
-\trymtex@declaretheoremstar{example}
-\trymtex@declaretheoremstar{remark}
-\trymtex@declaretheoremstar{proposition}
-\trymtex@declaretheoremstar{corollary}
-\trymtex@declaretheoremstar{summary}
-\trymtex@declaretheoremstar{assumption}
-\trymtex@declaretheoremstar{notationbox}
-
-\RenewDocumentEnvironment{proof}{O{\proofname}}{%
-  \begin{tcolorbox}[
-    blanker,
-    borderline west={2pt}{0pt}{thm-color},
-    before skip=10pt,
-    after skip=10pt,
-    left=8pt,
+    separator sign=.,label separator={},frame hidden,
+    borderline north={1pt}{0pt}{lem-color!80!black},
+    before upper={\hspace{\tcboxedtitlewidth}},
+    sharp corners,
+    top=2pt,bottom=2pt,left=5pt,right=5pt,
+    before skip=10pt,after skip=10pt,
     breakable
-  ]%
-  \textbf{#1}.\enspace
-}{%
-  \,\hfill\qedsymbol\end{tcolorbox}%
-}
+  }{lem:}
+
+  \newtcbtheorem{example}{Example}{%
+    base theorem style,
+    colback=white,colframe=white,
+    borderline west={2pt}{0pt}{exm-color},
+    left=8pt,coltitle=exm-color
+  }{exm:}
+
+  \newtcbtheorem{remark}{Remark}{%
+    base theorem style,
+    colback=white,colframe=white,
+    borderline west={2pt}{0pt}{rem-color},
+    left=8pt,coltitle=black
+  }{rem:}
+
+  \newtcbtheorem{proposition}{Proposition}{%
+    enhanced jigsaw,
+    colback=prop-color!10,
+    colframe=prop-color!80!black,
+    fonttitle=\bfseries,
+    attach boxed title to top left={yshift=-\tcboxedtitleheight},
+    boxed title style={boxrule=0pt,boxsep=2.5pt,colback=prop-color!80!black,colframe=prop-color!80!black,sharp corners=uphill},
+    separator sign=.,label separator={},
+    top=\tcboxedtitleheight,bottom=2pt,left=2pt,right=2pt,
+    before skip=10pt,after skip=10pt,
+    breakable
+  }{prop:}
+
+  \newtcbtheorem{corollary}{Corollary}{%
+    enhanced jigsaw,
+    colback=cor-color!10,
+    colframe=cor-color!80!black,
+    boxrule=0pt,
+    fonttitle=\bfseries,
+    coltitle=black,
+    separator sign={},label separator={},
+    description font=\normalfont,
+    description delimiters={(}{)},
+    attach title to upper,
+    after title={.\ },
+    frame hidden,
+    borderline west={2pt}{0pt}{cor-color},
+    sharp corners,
+    top=2pt,bottom=2pt,left=5pt,right=5pt,
+    before skip=10pt,after skip=10pt,
+    breakable
+  }{cor:}
+
+  \newtcbtheorem{pitfall}{Pitfall}{%
+    enhanced jigsaw,
+    colback=pitfall-color!10,
+    colframe=pitfall-color!80!black,
+    boxrule=0pt,
+    fonttitle=\bfseries,
+    coltitle=black,
+    separator sign={},label separator={},
+    description font=\normalfont,
+    description delimiters={(}{)},
+    attach title to upper,
+    after title={.\ },
+    frame hidden,
+    borderline west={2pt}{0pt}{pitfall-color},
+    sharp corners,
+    top=2pt,bottom=2pt,left=5pt,right=5pt,
+    before skip=10pt,after skip=10pt,
+    breakable
+  }{pit:}
+
+  \RenewDocumentEnvironment{proof}{O{\proofname}}{%
+    \begin{tcolorbox}[
+      blanker,
+      borderline west={2pt}{0pt}{thm-color},
+      before skip=10pt,
+      after skip=10pt,
+      left=8pt,
+      breakable
+    ]
+    \textbf{#1}.\enspace
+  }{%
+    \end{tcolorbox}
+  }
 \fi
 
 % --------------------------------------------------------------------------
 % Box environments
 % --------------------------------------------------------------------------
-\newtcolorbox{filingbox}[2][]{%
-  enhanced jigsaw,
-  breakable,
-  colback=filing-color!10,
-  colframe=filing-color!80!black,
-  fonttitle=\bfseries,
-  coltitle=black,
+\newtcolorbox{filingbox}[2][]{enhanced jigsaw,breakable,
+  colback=filing-color!10,colframe=filing-color!80!black,
+  fonttitle=\bfseries,coltitle=black,
   attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},
   boxed title style={colback=filing-color!10,colframe=filing-color!80!black,height=16pt,bean arc},
-  title={#2},
-  before skip=10pt,
-  after skip=10pt,
-  top=6pt,bottom=2pt,left=2pt,right=2pt,
-  #1
-}
+  title={#2},before skip=10pt,after skip=10pt,
+  top=6pt,bottom=2pt,left=2pt,right=2pt,#1}
 
-\newtcolorbox{railingbox}[2][]{%
-  enhanced jigsaw,
-  breakable,
-  colback=railing-color!10,
-  colframe=railing-color!80!black,
-  fonttitle=\bfseries,
-  title={#2},
+\newtcolorbox{railingbox}[2][]{enhanced jigsaw,breakable,
+  colback=railing-color!10,colframe=railing-color!80!black,
+  fonttitle=\bfseries,title={#2},
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
   boxed title style={boxrule=0pt,boxsep=2.5pt,colback=railing-color!80!black,colframe=railing-color!80!black,sharp corners=uphill},
   top=\tcboxedtitleheight,bottom=2pt,left=2pt,right=2pt,
-  before skip=10pt,
-  after skip=10pt,
-  #1
-}
+  before skip=10pt,after skip=10pt,#1}
 
-\newtcolorbox{flagbox}[2][]{%
-  enhanced jigsaw,
-  breakable,
-  colback=flag-color!10,
-  colframe=flag-color!80!black,
-  boxrule=0pt,
-  fonttitle=\bfseries,
-  coltitle=black,
-  title={#2},
-  attach title to upper,
-  frame hidden,
-  borderline west={2pt}{0pt}{flag-color},
-  sharp corners,
+\newtcolorbox{flagbox}[2][]{enhanced jigsaw,breakable,
+  colback=flag-color!10,colframe=flag-color!80!black,
+  boxrule=0pt,fonttitle=\bfseries,coltitle=black,
+  title={#2},attach title to upper,frame hidden,
+  borderline west={2pt}{0pt}{flag-color},sharp corners,
   top=2pt,bottom=2pt,left=5pt,right=5pt,
-  before skip=10pt,
-  after skip=10pt,
-  #1
-}
+  before skip=10pt,after skip=10pt,#1}
 
 % --------------------------------------------------------------------------
 % Graphics and diagrams
@@ -531,5 +425,4 @@ separator sign=.
 \RequirePackage{tikz}
 \usetikzlibrary{arrows.meta,backgrounds,positioning,calc,decorations.pathreplacing,3d}
 
-\makeatother
 \endinput

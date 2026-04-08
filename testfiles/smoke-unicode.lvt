@@ -1,9 +1,9 @@
 \input{regression-test}
 \documentclass{article}
-\usepackage[minted=false,glossaries=false,none]{trymtex}
+\usepackage[minted=false,glossaries=false,pagella]{trymtex}
 \begin{document}
 \START
-$\R \subseteq \C$, $\inner{x,y}$, $\bm{A}$.
+$\R \subseteq \C$, $\inner{x,y}$.
 \begin{theorem}{B}{b}Test\end{theorem}
 \typeout{TRYMTEX-UNICODE-OK}
 \END
