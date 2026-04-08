@@ -1,8 +1,12 @@
 \documentclass{article}
-\usepackage[pagella,mainlanguage=english,languages={norsk,english},minted=false]{trymtex}
+\usepackage[
+  babel,
+  mainlanguage=english,
+  languages={norsk,english}
+]{trymtex}
 
 \title{trymtex Example}
-\author{Trym S\ae ther}
+\author{Trym Sæther}
 \date{\today}
 
 \begin{document}
@@ -18,19 +22,19 @@ Let $f(x)=x^2$. Then
 \]
 
 \begin{definition}{Normed space}{normed-space}
-A normed space is a vector space equipped with a norm.
+  A normed space is a vector space equipped with a norm.
 \end{definition}
 
 \begin{theorem}{Toy result}{toy}
-For $x \in \R$, we have $x^2 \ge 0$.
+  For $x \in \R$, we have $x^2 \ge 0$.
 \end{theorem}
 
 \begin{proof}
-Immediate.
+  Immediate.
 \end{proof}
 
 \begin{flagbox}{Remark box}
-This is a custom box environment.
+  This is a custom box environment.
 \end{flagbox}
 
 \end{document}

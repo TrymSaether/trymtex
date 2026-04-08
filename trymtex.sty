@@ -1,16 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{trymtex}[2026/04/08 v0.2 General-purpose document setup package]
-
 \RequirePackage{iftex}
 \RequirePackage{xcolor}
 \RequirePackage{kvoptions}
+\RequirePackage{etoolbox}
+
 \SetupKeyvalOptions{family=trymtex,prefix=trymtex@}
 
 % --------------------------------------------------------------------------
 % Options
 % --------------------------------------------------------------------------
-\DeclareStringOption[english]{mainlanguage}
-\DeclareStringOption[english]{languages}
+\DeclareStringOption[]{mainlanguage}
+\DeclareStringOption[]{languages}
+\DeclareBoolOption[false]{babel}
 \DeclareBoolOption[true]{microtype}
 \DeclareBoolOption[true]{minted}
 \DeclareBoolOption[true]{glossaries}
@@ -39,12 +41,23 @@
   \RequirePackage[utf8]{inputenc}
 \fi
 
-\RequirePackage[main=\trymtex@mainlanguage]{babel}
-\babelprovide[import]{\trymtex@languages}
+\iftrymtex@babel
+  \edef\trymtex@babelopts{}
+  \ifdefempty{\trymtex@mainlanguage}{}{%
+    \edef\trymtex@babelopts{main=\trymtex@mainlanguage}%
+  }
+  \ifdefempty{\trymtex@languages}{}{%
+    \ifdefempty{\trymtex@babelopts}
+    {\edef\trymtex@babelopts{\trymtex@languages}}
+    {\edef\trymtex@babelopts{\trymtex@babelopts,\trymtex@languages}}%
+  }
+  \expandafter\RequirePackage\expandafter[\trymtex@babelopts]{babel}
+\fi
+
 \RequirePackage{ragged2e}
 \RequirePackage{enumitem}
 \RequirePackage{suffix}
-\RequirePackage[autostyle,english=american]{csquotes}
+\RequirePackage[autostyle]{csquotes}
 \RequirePackage[backend=biber]{biblatex}
 
 % --------------------------------------------------------------------------
@@ -245,14 +258,14 @@
 \iftrymtex@theorems
   \tcbset{
     base theorem style/.style={
-      enhanced,
-      fonttitle=\bfseries,
-      breakable,
-      before skip=10pt,
-      after skip=10pt,
-      separator sign={.},
-      sharp corners
-    }
+        enhanced,
+        fonttitle=\bfseries,
+        breakable,
+        before skip=10pt,
+        after skip=10pt,
+        separator sign={.},
+        sharp corners
+      }
   }
 
   \newtcbtheorem{definition}{Definition}{%
@@ -290,11 +303,11 @@
     fonttitle=\bfseries,
     attach boxed title to top left={yshift=-\tcboxedtitleheight},
     boxed title style={
-      boxrule=0pt,boxsep=2pt,
-      colback=lem-color!80!black,colframe=lem-color!80!black,
-      interior code={\fill[lem-color!80!black]
-        (interior.north west)--(interior.south west)--([xshift=-2mm]interior.south east)--([xshift=2mm]interior.north east)--cycle;}
-    },
+        boxrule=0pt,boxsep=2pt,
+        colback=lem-color!80!black,colframe=lem-color!80!black,
+        interior code={\fill[lem-color!80!black]
+            (interior.north west)--(interior.south west)--([xshift=-2mm]interior.south east)--([xshift=2mm]interior.north east)--cycle;}
+      },
     separator sign=.,label separator={},frame hidden,
     borderline north={1pt}{0pt}{lem-color!80!black},
     before upper={\hspace{\tcboxedtitlewidth}},
