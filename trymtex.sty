@@ -59,29 +59,12 @@
 \RequirePackage{suffix}
 \RequirePackage[autostyle]{csquotes}
 \RequirePackage[backend=biber]{biblatex}
-
 % --------------------------------------------------------------------------
 % Fonts and math (engine-dependent)
 % --------------------------------------------------------------------------
 \RequirePackage{amsmath}
 \RequirePackage{mathtools}
 \RequirePackage{amsthm}
-
-\ifPDFTeX
-  \RequirePackage{amssymb}
-  \RequirePackage{bm}
-  \edef\trymtex@fontset@tmp{\trymtex@fontset}
-  \ifx\trymtex@fontset@tmp\@empty\else\fi
-  \csname trymtex@setup@pdftex@\trymtex@fontset\endcsname
-\else
-  \RequirePackage{fontspec}
-  \RequirePackage[
-    math-style=ISO,
-    warnings-off={mathtools-colon,mathtools-overbracket}
-  ]{unicode-math}
-  \csname trymtex@setup@unicode@\trymtex@fontset\endcsname
-  \providecommand{\bm}[1]{\symbf{#1}}
-\fi
 
 \providecommand{\trymtex@setup@pdftex@pagella}{%
   \RequirePackage{newpxtext}
@@ -107,11 +90,39 @@
   \setmonofont{IBM Plex Mono}
   \setmathfont{STIX Two Math}}
 \providecommand{\trymtex@setup@unicode@fira}{%
-  \setmainfont{Fira Sans Extra Condensed}
-  \setsansfont{Fira Sans}
-  \setmonofont{Fira Code}
-  \setmathfont{Fira Math}[Scale=MatchLowercase]}
-\providecommand{\trymtex@setup@unicode@none}{}
+  \setmainfont{Fira Sans}[
+    Scale=1.0,
+    BoldFont={Fira Sans Bold},
+    ItalicFont={Fira Sans Italic}
+  ]
+  \setsansfont{IBM Plex Sans Condensed}[Scale=0.95]
+  \setmonofont{Fira Code}[
+    Scale=0.9,
+    Contextuals=Alternate
+  ]
+  \setmathfont{Fira Math}
+  \setmathfont{STIX Two Math}[
+    range={
+        \mathscr,\mathbb,\mathfrak,\mathcal,
+        \setminus,\Re,\Im,\triangleright,\top,
+        \ddots,\vdots,\star,\bigcup
+      },
+    Scale=MatchUppercase
+  ]}
+
+\ifPDFTeX
+  \RequirePackage{amssymb}
+  \RequirePackage{bm}
+  \csname trymtex@setup@pdftex@\trymtex@fontset\endcsname
+\else
+  \RequirePackage{fontspec}
+  \RequirePackage[
+    math-style=ISO,
+    warnings-off={mathtools-colon,mathtools-overbracket}
+  ]{unicode-math}
+  \csname trymtex@setup@unicode@\trymtex@fontset\endcsname
+  \providecommand{\bm}[1]{\symbf{#1}}
+\fi
 
 % --------------------------------------------------------------------------
 % Tables, figures, floats, code
@@ -328,7 +339,11 @@
     base theorem style,
     colback=white,colframe=white,
     borderline west={2pt}{0pt}{rem-color},
-    left=8pt,coltitle=black
+    left=8pt,coltitle=black,
+    attach title to upper,frame hidden,
+    after title={.\ },
+    description font=\normalfont,
+    description delimiters={(}{)}
   }{rem:}
 
   \newtcbtheorem{proposition}{Proposition}{%

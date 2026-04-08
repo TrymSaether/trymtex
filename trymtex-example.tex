@@ -1,8 +1,9 @@
 \documentclass{article}
 \usepackage[
+  fontset=fira,
   babel,
   mainlanguage=english,
-  languages={norsk,english}
+  languages={norsk,english},
 ]{trymtex}
 
 \title{trymtex Example}
@@ -14,6 +15,7 @@
 \tableofcontents
 
 \section{Math}
+
 Let $f(x)=x^2$. Then
 \[
   \dd[f(x)]{x} = 2x,
@@ -33,8 +35,12 @@ Let $f(x)=x^2$. Then
   Immediate.
 \end{proof}
 
-\begin{flagbox}{Remark box}
+\begin{flagbox}{Flagbox.}{}
   This is a custom box environment.
 \end{flagbox}
+
+\begin{remark}{Remark note}{}
+  This is a remark.
+\end{remark}
 
 \end{document}
