@@ -1,0 +1,21 @@
+*** ./build/test/smoke-unicode.tlg	Wed Apr  8 16:47:12 2026
+--- ./build/test/smoke-unicode.pdftex.log	Wed Apr  8 16:47:20 2026
+***************
+*** 1 ****
+! TRYMTEX-UNICODE-OK
+--- 1,15 ----
+! This is a generated file for the l3build validation system.
+! Don't change this file in any respect.
+! LaTeX Font Info:    Trying to load font information for U+msa on input line ....
+! File: mt-msa.cfg ....-..-.. v... microtype config. file: AMS symbols (a) (RS)
+! )
+! LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+! File: mt-msb.cfg ....-..-.. v... microtype config. file: AMS symbols (b) (RS)
+! )
+! ! TeX capacity exceeded, sorry [input stack size=10000].
+! \bm@command ->
+!               \mathchar 30529 \begingroup \long \def \begingroup \long \def ...
+! l. ...$\R \subseteq \C$, $\inner{x,y}$, $\bm{A}
+!                                              $.
+! If you really absolutely need more capacity,
+! you can ask a wizard to enlarge me.

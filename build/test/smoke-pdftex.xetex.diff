@@ -1,0 +1,450 @@
+*** ./build/test/smoke-pdftex.tlg	Wed Apr  8 16:47:07 2026
+--- ./build/test/smoke-pdftex.xetex.log	Wed Apr  8 16:47:09 2026
+***************
+*** 1 ****
+--- 1,445 ----
++ This is a generated file for the l3build validation system.
++ Don't change this file in any respect.
++ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
++ (Font)              scaled to size 10.00107pt on input line ....
++ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
++ (Font)              scaled to size 7.00075pt on input line ....
++ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
++ (Font)              scaled to size 5.00053pt on input line ....
++ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
++ (Font)              scaled to size 9.99893pt on input line ....
++ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
++ (Font)              scaled to size 6.99925pt on input line ....
++ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
++ (Font)              scaled to size 4.99947pt on input line ....
++ LaTeX Font Info:    Trying to load font information for U+msa on input line ....
++ File: mt-msa.cfg ....-..-.. v... microtype config. file: AMS symbols (a) (RS)
++ )
++ LaTeX Font Info:    Trying to load font information for U+msb on input line ....
++ File: mt-msb.cfg ....-..-.. v... microtype config. file: AMS symbols (b) (RS)
++ )
++ Missing character: There is no , ("2C) in font nullfont!
++ Missing character: There is no , ("2C) in font nullfont!
++ Missing character: There is no . ("2E) in font nullfont!
++ LaTeX Font Warning: Font shape `TU/TeXGyrePagella(0)/b/n' undefined
++ (Font)              using `TU/TeXGyrePagella(0)/m/n' instead on input line ....
++ Missing character: There is no D ("44) in font nullfont!
++ Missing character: There is no e ("65) in font nullfont!
++ Missing character: There is no f ("66) in font nullfont!
++ Missing character: There is no i ("69) in font nullfont!
++ Missing character: There is no n ("6E) in font nullfont!
++ Missing character: There is no i ("69) in font nullfont!
++ Missing character: There is no t ("74) in font nullfont!
++ Missing character: There is no i ("69) in font nullfont!
++ Missing character: There is no o ("6F) in font nullfont!
++ Missing character: There is no n ("6E) in font nullfont!
++ Missing character: There is no 1 ("31) in font nullfont!
++ Missing character: There is no . ("2E) in font nullfont!
++ Missing character: There is no A ("41) in font nullfont!
++ Missing character: There is no T ("54) in font nullfont!
++ Missing character: There is no e ("65) in font nullfont!
++ Missing character: There is no s ("73) in font nullfont!
++ Missing character: There is no t ("74) in font nullfont!
++ ! Font TU/TeXGyrePagella(0)/b/n/10="TeX Gyre Pagella" at 10.0pt not loadable: Metric (TFM) file or installed font not found.
++ <to be read again> 
++                    relax 
++ l. ...\begin{proof}D
++                   one.\end{proof}
++ I wasn't able to read the size data for this font,
++ so I will ignore the font specification.
++ [Wizards can fix TFM files using TFtoPL/PLtoTF.]
++ You might try inserting a different font spec;
++ e.g., type `I\font<same font id>=<substitute font name>'.
++ Package microtype Info: Character `A' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `D' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `J' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `K' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `L' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `O' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `T' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `V' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `W' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `X' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `Y' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `b' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `d' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `f' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `g' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `k' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `p' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `q' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `r' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `t' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `ﬆ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `ﬅ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `v' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `w' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `x' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `y' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `1' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `2' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `4' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `6' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `9' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^c6' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `Œ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `.' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‥' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `…' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `,' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `:' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `;' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `!' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‼' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `?' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‽' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `@' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `~ (= ~)' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `&' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `%' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `*' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `+' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `(' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `)' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `/' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `-' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textendash ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textemdash ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textquoteleft ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textquoteright ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textquotedblleft ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textquotedblright ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textbackslash ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `quotesinglbase ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `quotedblbase ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `guilsinglleft ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `guilsinglright ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `guillemotleft ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `guillemotright ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textexclamdown ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textquestiondown ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textbraceleft ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textbraceright ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textless ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textgreater ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `≤' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `≥' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textminus ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `texttrademark ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textcopyright ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textregistered ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textdegree ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^a6' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^ac' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⌐' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^b7' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^b6' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^d7' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^aa' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^ba' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁰' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^b9' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^b2' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^b3' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁴' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁵' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁶' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁷' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁸' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁹' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₀' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₁' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₂' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₃' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₄' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₅' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₆' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₇' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₈' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₉' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^b1' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^f7' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `^^fe' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₊' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `₋' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁺' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `⁻' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `†' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‡' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `π' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `ſ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `№' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `textservicemark ' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‐' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‑' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `‒' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `–' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `—' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `―' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Package microtype Info: Character `•' is missing
++ (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10'.
++ (microtype)             Ignoring protrusion settings for this character.
++ Missing character: There is no P ("50) in font nullfont!
++ Missing character: There is no r ("72) in font nullfont!
++ Missing character: There is no o ("6F) in font nullfont!
++ Missing character: There is no o ("6F) in font nullfont!
++ Missing character: There is no f ("66) in font nullfont!
++ Missing character: There is no . ("2E) in font nullfont!
++ Missing character: There is no D ("44) in font nullfont!
++ Missing character: There is no o ("6F) in font nullfont!
++ Missing character: There is no n ("6E) in font nullfont!
++ Missing character: There is no e ("65) in font nullfont!
++ Missing character: There is no . ("2E) in font nullfont!
+  TRYMTEX-PDFTEX-OK

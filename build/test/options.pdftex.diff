@@ -1,0 +1,14 @@
+*** ./build/test/options.tlg	Wed Apr  8 16:47:00 2026
+--- ./build/test/options.pdftex.log	Wed Apr  8 16:47:01 2026
+***************
+*** 1 ****
+--- 1,9 ----
++ This is a generated file for the l3build validation system.
++ Don't change this file in any respect.
++ LaTeX Font Info:    Trying to load font information for U+msa on input line ....
++ File: mt-msa.cfg ....-..-.. v... microtype config. file: AMS symbols (a) (RS)
++ )
++ LaTeX Font Info:    Trying to load font information for U+msb on input line ....
++ File: mt-msb.cfg ....-..-.. v... microtype config. file: AMS symbols (b) (RS)
++ )
+  TRYMTEX-OPTIONS-OK
