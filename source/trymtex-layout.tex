@@ -1,0 +1,27 @@
+\ProvidesFile{trymtex-layout.tex}[2026/04/09 Layout module]
+
+\iftrymtex@pagegeometry
+  \RequirePackage[
+    margin=2.5cm,
+    headheight=15pt,
+    includeheadfoot
+  ]{geometry}
+\fi
+
+\iftrymtex@fancyhdr
+  \RequirePackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[L]{\leftmark}
+  \fancyhead[R]{\thepage}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+\fi
+
+\iftrymtex@toc
+  \RequirePackage{tocloft}
+  \renewcommand{\cftsubsubsecfont}{\normalfont}
+  \renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+  \renewcommand{\cftsubsubsecafterpnum}{\hspace*{2em}}
+\fi

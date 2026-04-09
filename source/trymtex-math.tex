@@ -1,0 +1,66 @@
+\ProvidesFile{trymtex-math.tex}[2026/04/09 Math helpers module]
+
+\newcommand{\trymtexeps}{\varepsilon}
+\newcommand{\trymtexphi}{\varphi}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+
+\newcommand{\trymtexSetC}{\mathcal{C}}
+\newcommand{\trymtexSetD}{\mathcal{D}}
+\newcommand{\trymtexSetF}{\mathcal{F}}
+\newcommand{\trymtexSetH}{\mathcal{H}}
+\newcommand{\trymtexSetI}{\mathcal{I}}
+\newcommand{\trymtexSetL}{\mathcal{L}}
+\newcommand{\trymtexSetM}{\mathcal{M}}
+\newcommand{\trymtexSetP}{\mathcal{P}}
+
+\newcommand{\trymtexCond}{\operatorname{cond}}
+\newcommand{\trymtexSpan}{\operatorname{span}}
+\newcommand{\trymtexbmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+\newcommand{\diff}[2][]{\frac{d#1}{d#2}}
+\newcommand{\diffn}[3][]{\frac{d^{#2}#1}{d#3^{#2}}}
+
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\providecommand{\ep}{\trymtexeps}
+\providecommand{\vp}{\trymtexphi}
+\providecommand{\R}{\RR}
+\providecommand{\N}{\NN}
+\providecommand{\Z}{\ZZ}
+\providecommand{\C}{\CC}
+\providecommand{\E}{\EE}
+\providecommand{\Ccal}{\trymtexSetC}
+\providecommand{\D}{\trymtexSetD}
+\providecommand{\F}{\trymtexSetF}
+\providecommand{\Hcal}{\trymtexSetH}
+\providecommand{\I}{\trymtexSetI}
+\providecommand{\Lcal}{\trymtexSetL}
+\providecommand{\Mcal}{\trymtexSetM}
+\providecommand{\Pcal}{\trymtexSetP}
+\providecommand{\cond}{\trymtexCond}
+\providecommand{\spann}{\trymtexSpan}
+\providecommand{\bmat}{\trymtexbmat}
+\providecommand{\dd}{\diff}
+\providecommand{\ddn}{\diffn}
+
+\newcommand{\problem}[2]{%
+  \large\textbf{Problem #1}\hfill\normalsize\textit{#2}%
+}
+
+\newcommand{\subproblem}[1]{%
+  \normalsize\textbf{(#1)}%
+}
+
+\newcommand{\yes}{\cellcolor{yescolor} Yes}
+\newcommand{\no}{\cellcolor{nocolor} No}
+\newcommand{\algo}[1]{\parbox[t]{3cm}{\footnotesize\RaggedRight #1}}
+
+\newcolumntype{Y}{>{\footnotesize}c}
+\newcolumntype{Z}{>{\footnotesize\RaggedRight\arraybackslash}X}

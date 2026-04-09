@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[
+  theorems,
+  algorithms,
+  plots,
+  minted,
+  glossaries,
+  fontset=libertinus
+]{trymtex}
+
+\title{trymtex Manual}
+\author{Trym S\ae ther}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+This document demonstrates the \texttt{trymtex} package.
+
+\section{Math}
+Let \( x \in \RR \). Then
+\[
+  \norm{x} = \abs{x}.
+\]
+
+\begin{definition}{Metric Space}{metric-space}
+A metric space is a pair \( (X,d) \) where \( d \) satisfies the metric axioms.
+\end{definition}
+
+\begin{theorem}{Tiny theorem}{tiny-thm}
+For all \( x \in \RR \), one has \( x^2 \ge 0 \).
+\end{theorem}
+
+\begin{proof}
+This is immediate.
+\end{proof}
+
+\section{Boxes}
+\begin{filingbox}{Filing}
+This is a filing box.
+\end{filingbox}
+
+\begin{railingbox}{Railing}
+This is a railing box.
+\end{railingbox}
+
+\begin{flagbox}{Flag}
+This is a flag box.
+\end{flagbox}
+
+\end{document}

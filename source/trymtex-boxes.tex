@@ -1,0 +1,71 @@
+\ProvidesFile{trymtex-boxes.tex}[2026/04/09 Utility box module]
+
+\newtcolorbox{filingbox}[2][]{
+  enhanced jigsaw,
+  breakable,
+  colback=filing-color!10,
+  colframe=filing-color!80!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},
+  boxed title style={
+    colback=filing-color!10,
+    colframe=filing-color!80!black,
+    height=16pt,
+    bean arc
+  },
+  title={#2},
+  before skip=10pt,
+  after skip=10pt,
+  top=6pt,
+  bottom=2pt,
+  left=2pt,
+  right=2pt,
+  #1
+}
+
+\newtcolorbox{railingbox}[2][]{
+  enhanced jigsaw,
+  breakable,
+  colback=railing-color!10,
+  colframe=railing-color!80!black,
+  fonttitle=\bfseries,
+  title={#2},
+  attach boxed title to top left={yshift=-\tcboxedtitleheight},
+  boxed title style={
+    boxrule=0pt,
+    boxsep=2.5pt,
+    colback=railing-color!80!black,
+    colframe=railing-color!80!black,
+    sharp corners=uphill
+  },
+  top=\tcboxedtitleheight,
+  bottom=2pt,
+  left=2pt,
+  right=2pt,
+  before skip=10pt,
+  after skip=10pt,
+  #1
+}
+
+\newtcolorbox{flagbox}[2][]{
+  enhanced jigsaw,
+  breakable,
+  colback=flag-color!10,
+  colframe=flag-color!80!black,
+  boxrule=0pt,
+  fonttitle=\bfseries,
+  coltitle=black,
+  title={#2},
+  attach title to upper,
+  frame hidden,
+  borderline west={2pt}{0pt}{flag-color},
+  sharp corners,
+  top=2pt,
+  bottom=2pt,
+  left=5pt,
+  right=5pt,
+  before skip=10pt,
+  after skip=10pt,
+  #1
+}

@@ -1,0 +1,182 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{trymtex}[2026/04/09 v0.5 General-purpose document setup package]
+
+% =============================================================================
+% Dependencies
+% =============================================================================
+\RequirePackage{iftex}
+\RequirePackage{xcolor}
+\RequirePackage{kvoptions}
+\RequirePackage{etoolbox}
+
+% =============================================================================
+% Options
+% =============================================================================
+\SetupKeyvalOptions{family=trymtex,prefix=trymtex@}
+
+% --- language ----------------------------------------------------------------
+\DeclareStringOption[]{mainlanguage}
+\DeclareStringOption[]{languages}
+\DeclareBoolOption[false]{babel}
+
+% --- typography ---------------------------------------------------------------
+\DeclareStringOption[libertinus]{fontset}
+\DeclareBoolOption[true]{microtype}
+
+% --- feature modules ----------------------------------------------------------
+\DeclareBoolOption[false]{biblatex}
+\DeclareStringOption[biber]{bibbackend}
+\DeclareBoolOption[true]{minted}
+\DeclareBoolOption[true]{glossaries}
+\DeclareBoolOption[true]{theorems}
+\DeclareBoolOption[true]{algorithms}
+\DeclareBoolOption[true]{plots}
+\DeclareBoolOption[true]{pagegeometry}
+\DeclareBoolOption[true]{fancyhdr}
+\DeclareBoolOption[true]{toc}
+
+% --- fontset aliases ----------------------------------------------------------
+\DeclareVoidOption{libertinus}{\renewcommand\trymtex@fontset{libertinus}}
+\DeclareVoidOption{pagella}{\renewcommand\trymtex@fontset{pagella}}
+\DeclareVoidOption{ibmplex}{\renewcommand\trymtex@fontset{ibmplex}}
+\DeclareVoidOption{fira}{\renewcommand\trymtex@fontset{fira}}
+\DeclareVoidOption{none}{\renewcommand\trymtex@fontset{none}}
+
+\ProcessKeyvalOptions*
+
+% =============================================================================
+% Internal helpers
+% =============================================================================
+\newcommand{\trymtex@warning}[1]{%
+  \PackageWarningNoLine{trymtex}{#1}%
+}
+
+\newcommand{\trymtex@loadmodule}[1]{%
+  \InputIfFileExists{#1}
+    {}
+    {\PackageError{trymtex}{Missing module '#1'}{Check your package installation.}}%
+}
+
+\newcommand{\trymtex@use@setup}[2]{%
+  \ifcsdef{trymtex@setup@#1@#2}
+    {\csname trymtex@setup@#1@#2\endcsname}
+    {%
+      \trymtex@warning{Unknown #1 setup '#2'. Falling back to 'libertinus'}%
+      \csname trymtex@setup@#1@libertinus\endcsname
+    }%
+}
+
+\newcommand{\trymtex@load@babel}{%
+  \edef\trymtex@babelopts{}%
+  \ifdefempty{\trymtex@mainlanguage}
+    {}
+    {\edef\trymtex@babelopts{main=\trymtex@mainlanguage}}%
+  \ifdefempty{\trymtex@languages}
+    {}
+    {%
+      \ifdefempty{\trymtex@babelopts}
+        {\edef\trymtex@babelopts{\trymtex@languages}}
+        {\edef\trymtex@babelopts{\trymtex@babelopts,\trymtex@languages}}%
+    }%
+  \ifdefempty{\trymtex@babelopts}
+    {\RequirePackage{babel}}
+    {\expandafter\RequirePackage\expandafter[\trymtex@babelopts]{babel}}%
+}
+
+% =============================================================================
+% Core loader
+% =============================================================================
+\newcommand{\trymtex@load@core}{%
+  \iftrymtex@microtype
+    \RequirePackage[final]{microtype}%
+  \fi
+
+  \ifPDFTeX
+    \RequirePackage[T1]{fontenc}%
+    \RequirePackage[utf8]{inputenc}%
+  \fi
+
+  \RequirePackage{anyfontsize}
+
+  \iftrymtex@babel
+    \trymtex@load@babel
+  \fi
+
+  \RequirePackage{ragged2e}
+  \RequirePackage{enumitem}
+  \RequirePackage{suffix}
+  \iftrymtex@minted
+    \RequirePackage{fvextra}
+  \fi
+  \RequirePackage[autostyle]{csquotes}
+
+  \RequirePackage{amsmath}
+  \RequirePackage{mathtools}
+  \RequirePackage{amsthm}
+
+  \trymtex@loadmodule{trymtex-fonts.tex}
+  \trymtex@setupfonts
+
+  \RequirePackage{booktabs}
+  \RequirePackage{tabularx}
+  \RequirePackage{array}
+  \RequirePackage{colortbl}
+  \RequirePackage{multirow}
+  \RequirePackage{siunitx}
+  \RequirePackage{float}
+  \RequirePackage{subcaption}
+  \RequirePackage[most]{tcolorbox}
+  \RequirePackage[colorlinks]{hyperref}
+  \RequirePackage{bookmark}
+
+  \hypersetup{
+    colorlinks = true,
+    linkcolor  = blue,
+    filecolor  = magenta,
+    urlcolor   = cyan
+  }
+
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{0.5em}
+}
+
+\newcommand{\trymtex@load@biblatex}{%
+  \RequirePackage[backend=\trymtex@bibbackend]{biblatex}%
+}
+
+% =============================================================================
+% Load selected modules
+% =============================================================================
+\trymtex@load@core
+
+\iftrymtex@biblatex
+  \trymtex@load@biblatex
+\fi
+
+\trymtex@loadmodule{trymtex-colors.tex}
+\trymtex@loadmodule{trymtex-math.tex}
+\trymtex@loadmodule{trymtex-layout.tex}
+\trymtex@loadmodule{trymtex-boxes.tex}
+\trymtex@loadmodule{trymtex-graphics.tex}
+
+\iftrymtex@glossaries
+  \trymtex@loadmodule{trymtex-glossaries.tex}
+\fi
+
+\iftrymtex@minted
+  \trymtex@loadmodule{trymtex-code.tex}
+\fi
+
+\iftrymtex@algorithms
+  \trymtex@loadmodule{trymtex-algorithms.tex}
+\fi
+
+\iftrymtex@plots
+  \trymtex@loadmodule{trymtex-plots.tex}
+\fi
+
+\iftrymtex@theorems
+  \trymtex@loadmodule{trymtex-theorems.tex}
+\fi
+
+\endinput
