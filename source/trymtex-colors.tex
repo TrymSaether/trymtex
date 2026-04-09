@@ -1,5 +1,6 @@
 \ProvidesFile{trymtex-colors.tex}[2026/04/09 Color module]
 
+% Math environment colors
 \definecolor{def-color}{HTML}{E40125}
 \definecolor{thm-color}{HTML}{1346E4}
 \definecolor{lem-color}{HTML}{05C4D9}
@@ -8,15 +9,29 @@
 \definecolor{prop-color}{HTML}{9C27B0}
 \definecolor{pitfall-color}{HTML}{FFEB3B}
 \definecolor{cor-color}{HTML}{FF5722}
-\definecolor{alg-color}{HTML}{FF8F00}
 
+% Algorithm environment colors
+\definecolor{alg-color}{HTML}{3E5F8A}
+\colorlet{alg-line-color}{alg-color!55!black}
+\colorlet{alg-comment-color}{black!50}
+
+% Apple steel and slate colors, for inspiration (https://developer.apple.com/design/resources/)
+\definecolor{steel-light}{HTML}{D1D5DB}
+\definecolor{steel-dark}{HTML}{4B5563}
+\definecolor{slate-light}{HTML}{E2E8F0}
+\definecolor{slate-dark}{HTML}{1E293B}
+
+
+% Box environment colors
 \definecolor{filing-color}{HTML}{607D8B}
 \definecolor{railing-color}{HTML}{795548}
 \definecolor{flag-color}{HTML}{009688}
 
+% table cell colors
 \definecolor{yescolor}{RGB}{200,255,200}
 \definecolor{nocolor}{RGB}{255,200,200}
 
+% NTNU colors
 \definecolor{ntnu-blue}{HTML}{00509E}
 \definecolor{ntnu-green}{HTML}{BCD025}
 \definecolor{ntnu-lightblue}{HTML}{6096D0}
