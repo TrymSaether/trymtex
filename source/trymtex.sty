@@ -20,7 +20,7 @@
 \DeclareBoolOption[false]{babel}
 
 % --- typography ---------------------------------------------------------------
-\DeclareStringOption[libertinus]{fontset}
+\DeclareStringOption[lmodern]{fontset}
 \DeclareBoolOption[true]{microtype}
 
 % --- feature modules ----------------------------------------------------------
@@ -36,7 +36,7 @@
 \DeclareBoolOption[true]{toc}
 
 % --- fontset aliases ----------------------------------------------------------
-\DeclareVoidOption{libertinus}{\renewcommand\trymtex@fontset{libertinus}}
+\DeclareVoidOption{lmodern}{\renewcommand\trymtex@fontset{lmodern}}
 \DeclareVoidOption{pagella}{\renewcommand\trymtex@fontset{pagella}}
 \DeclareVoidOption{ibmplex}{\renewcommand\trymtex@fontset{ibmplex}}
 \DeclareVoidOption{fira}{\renewcommand\trymtex@fontset{fira}}
@@ -53,34 +53,34 @@
 
 \newcommand{\trymtex@loadmodule}[1]{%
   \InputIfFileExists{#1}
-    {}
-    {\PackageError{trymtex}{Missing module '#1'}{Check your package installation.}}%
+  {}
+  {\PackageError{trymtex}{Missing module '#1'}{Check your package installation.}}%
 }
 
 \newcommand{\trymtex@use@setup}[2]{%
   \ifcsdef{trymtex@setup@#1@#2}
-    {\csname trymtex@setup@#1@#2\endcsname}
-    {%
-      \trymtex@warning{Unknown #1 setup '#2'. Falling back to 'libertinus'}%
-      \csname trymtex@setup@#1@libertinus\endcsname
-    }%
+  {\csname trymtex@setup@#1@#2\endcsname}
+  {%
+    \trymtex@warning{Unknown #1 setup '#2'. Falling back to 'lmodern'}%
+    \csname trymtex@setup@#1@lmodern\endcsname
+  }%
 }
 
 \newcommand{\trymtex@load@babel}{%
   \edef\trymtex@babelopts{}%
   \ifdefempty{\trymtex@mainlanguage}
-    {}
-    {\edef\trymtex@babelopts{main=\trymtex@mainlanguage}}%
+  {}
+  {\edef\trymtex@babelopts{main=\trymtex@mainlanguage}}%
   \ifdefempty{\trymtex@languages}
-    {}
-    {%
-      \ifdefempty{\trymtex@babelopts}
-        {\edef\trymtex@babelopts{\trymtex@languages}}
-        {\edef\trymtex@babelopts{\trymtex@babelopts,\trymtex@languages}}%
-    }%
+  {}
+  {%
+    \ifdefempty{\trymtex@babelopts}
+    {\edef\trymtex@babelopts{\trymtex@languages}}
+    {\edef\trymtex@babelopts{\trymtex@babelopts,\trymtex@languages}}%
+  }%
   \ifdefempty{\trymtex@babelopts}
-    {\RequirePackage{babel}}
-    {\expandafter\RequirePackage\expandafter[\trymtex@babelopts]{babel}}%
+  {\RequirePackage{babel}}
+  {\expandafter\RequirePackage\expandafter[\trymtex@babelopts]{babel}}%
 }
 
 % =============================================================================
@@ -108,7 +108,11 @@
   \iftrymtex@minted
     \RequirePackage{fvextra}
   \fi
-  \RequirePackage[autostyle]{csquotes}
+  \iftrymtex@babel
+    \RequirePackage[autostyle]{csquotes}
+  \else
+    \RequirePackage{csquotes}
+  \fi
 
   \RequirePackage{amsmath}
   \RequirePackage{mathtools}

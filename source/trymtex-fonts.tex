@@ -1,7 +1,7 @@
 \ProvidesFile{trymtex-fonts.tex}[2026/04/09 Font setup module]
 
-\newcommand{\trymtex@setup@pdftex@libertinus}{%
-  \RequirePackage{libertinus}
+\newcommand{\trymtex@setup@pdftex@lmodern}{%
+  \RequirePackage{lmodern}
 }
 
 \newcommand{\trymtex@setup@pdftex@pagella}{%
@@ -10,27 +10,27 @@
 }
 
 \newcommand{\trymtex@setup@pdftex@ibmplex}{%
-  \RequirePackage{libertinus}
-  \trymtex@warning{IBM Plex is not supported under pdfTeX; using libertinus instead}%
+  \RequirePackage{lmodern}
+  \trymtex@warning{IBM Plex is not supported under pdfTeX; using lmodern instead}%
 }
 
 \newcommand{\trymtex@setup@pdftex@fira}{%
-  \RequirePackage{libertinus}
-  \trymtex@warning{Fira is not supported under pdfTeX; using libertinus instead}%
+  \RequirePackage{lmodern}
+  \trymtex@warning{Fira is not supported under pdfTeX; using lmodern instead}%
 }
 
 \newcommand{\trymtex@setup@pdftex@none}{}
 
-\newcommand{\trymtex@setup@unicode@libertinus}{%
+\newcommand{\trymtex@setup@unicode@lmodern}{%
   \RequirePackage{fontspec}
   \RequirePackage[
     math-style=ISO,
     warnings-off={mathtools-colon,mathtools-overbracket}
   ]{unicode-math}
-  \setmainfont{Libertinus Serif}
-  \setsansfont{Libertinus Sans}
-  \setmonofont{Libertinus Mono}
-  \setmathfont{Libertinus Math}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
   \providecommand{\bm}[1]{\symbf{##1}}%
 }
 
@@ -78,10 +78,10 @@
   \setmathfont{Fira Math}
   \setmathfont{STIX Two Math}[
     range={
-      \mathscr,\mathbb,\mathfrak,\mathcal,
-      \setminus,\Re,\Im,\triangleright,\top,
-      \ddots,\vdots,\star,\bigcup
-    },
+        \mathscr,\mathbb,\mathfrak,\mathcal,
+        \setminus,\Re,\Im,\triangleright,\top,
+        \ddots,\vdots,\star,\bigcup
+      },
     Scale=MatchUppercase
   ]
   \providecommand{\bm}[1]{\symbf{##1}}%
