@@ -1,8 +1,9 @@
+\input{regression-test.tex}
 \documentclass{article}
-\usepackage[theorems,fontset=libertinus]{trymtex}
+\usepackage[theorems]{trymtex}
 
 \begin{document}
-
+\START
 \section{Smoke test}
 
 \( \RR \), \( \NN \), \( \diff{x}{t} \)
@@ -14,5 +15,5 @@ A test definition.
 \begin{proof}
 A test proof.
 \end{proof}
-
+\END
 \end{document}

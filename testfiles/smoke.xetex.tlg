@@ -1,0 +1,756 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+! Font TU/LatinModernRoman(0)/m/n/14.4="Latin Modern Roman" at 14.4pt not loadable: Metric (TFM) file or installed font not found.
+<to be read again> 
+                   relax 
+l. ...\(
+       \RR \), \( \NN \), \( \diff{x}{t} \)
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+Package microtype Info: Character `A' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^c6' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `F' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `J' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `K' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `L' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `T' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `V' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `W' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `X' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Y' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `k' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `r' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `t' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `v' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `w' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `x' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `y' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `0' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `1' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `2' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `3' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `4' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `5' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `6' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `8' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `9' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `.' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `,' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `:' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `;' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `!' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `?' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `@' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `~ (= ~)' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `%' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `*' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `+' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `-' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `–' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `—' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `_' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `/' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/backslash'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Info: Character `'' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‘' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `’' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `“' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `”' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‚' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `„' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‹' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `›' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ab' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^bb' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^a1' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^bf' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `(' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `)' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `<' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `>' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/braceleft'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/braceright'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/angleleft'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/angleright'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Info: Character `†' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‡' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `•' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `℃' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₡' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b0' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `™' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^a9' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ae' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^aa' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ba' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b9' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b2' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b3' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ac' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `−' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b1' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^d7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^f7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `€' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/one.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/two.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/three.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/four.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/seven.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Info: Character `Γ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Δ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Θ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Λ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Σ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Υ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Φ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Ψ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/m/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Warning: Font shape `TU/LatinModernRoman(0)/b/n' undefined
+(Font)              using `TU/LatinModernRoman(0)/m/n' instead on input line ....
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line ....
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line ....
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line ....
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line ....
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line ....
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line ....
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+! Font TU/LatinModernRoman(0)/b/n/10="Latin Modern Roman" at 10.0pt not loadable: Metric (TFM) file or installed font not found.
+<to be read again> 
+                   relax 
+l. ...\begin{definition}{Test}{test}
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+Package microtype Info: Character `A' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^c6' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `F' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `J' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `K' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `L' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `T' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `V' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `W' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `X' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Y' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `k' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `r' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `t' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `v' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `w' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `x' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `y' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `0' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `1' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `2' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `3' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `4' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `5' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `6' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `8' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `9' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `.' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `,' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `:' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `;' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `!' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `?' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `@' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `~ (= ~)' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `%' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `*' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `+' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `-' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `–' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `—' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `_' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `/' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/backslash'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Info: Character `'' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‘' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `’' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `“' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `”' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‚' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `„' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‹' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `›' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ab' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^bb' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^a1' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^bf' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `(' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `)' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `<' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `>' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/braceleft'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/braceright'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/angleleft'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/angleright'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Info: Character `†' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‡' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `•' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `℃' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₡' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b0' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `™' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^a9' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ae' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^aa' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ba' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b9' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b2' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b3' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^ac' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `−' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^b1' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^d7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `^^f7' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `€' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/one.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/two.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/three.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/four.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Warning: Unknown slot number of character
+(microtype)                `/seven.oldstyle'
+(microtype)                in font encoding `TU'.
+(microtype)                Make sure it's a single character
+(microtype)                (or a number) in protrusion list
+(microtype)                `LMR-default'.
+Package microtype Info: Character `Γ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Δ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Θ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Λ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Σ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Υ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Φ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `Ψ' is missing
+(microtype)             in font `TU/LatinModernRoman(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Missing character: There is no D ("44) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no P ("50) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
