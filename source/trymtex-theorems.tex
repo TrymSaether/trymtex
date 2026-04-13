@@ -7,11 +7,11 @@
       before skip=10pt,
       after skip=10pt,
       separator sign=.,
-      label separator={},
-      top=4pt,
-      bottom=4pt,
-      left=6pt,
-      right=6pt
+      label separator={:},
+      top=2mm,
+      bottom=2mm,
+      left=4mm,
+      right=4mm,
     },
   trymtex/theorem/framed/.style={
       trymtex/theorem/common,
@@ -28,10 +28,10 @@
       frame hidden,
       boxrule=0pt,
       borderline west={2pt}{0pt}{#1},
-      left=8pt,
-      right=4pt,
-      top=2pt,
-      bottom=2pt,
+      top=2mm,
+      bottom=2mm,
+      left=4mm,
+      right=4mm,
       fonttitle=\bfseries,
       coltitle=black,
       attach title to upper,
@@ -43,10 +43,6 @@
 
 \newtcbtheorem{definition}{Definition}{
   trymtex/theorem/framed=def-color,
-  top=3pt,
-  bottom=3pt,
-  left=3pt,
-  right=3pt
 }{def}
 
 \newtcbtheorem{theorem}{Theorem}{
@@ -59,10 +55,6 @@
       height=16pt,
       bean arc
     },
-  top=6pt,
-  bottom=3pt,
-  left=3pt,
-  right=3pt
 }{thm}
 
 \newtcbtheorem{lemma}{Lemma}{
@@ -89,10 +81,6 @@
   frame hidden,
   borderline north={1pt}{0pt}{lem-color!80!black},
   before upper={\hspace{\tcboxedtitlewidth}},
-  top=4pt,
-  bottom=3pt,
-  left=5pt,
-  right=5pt
 }{lem}
 
 \newtcbtheorem{example}{Example}{
@@ -105,19 +93,16 @@
 }{rem}
 
 \newtcbtheorem{proposition}{Proposition}{
-  trymtex/theorem/framed=property-color,
+  trymtex/theorem/framed=prop-color,
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
   boxed title style={
       boxrule=0pt,
       boxsep=2.5pt,
-      colback=property-color!80!black,
-      colframe=property-color!80!black,
+      colback=prop-color!80!black,
+      colframe=prop-color!80!black,
       sharp corners=uphill
     },
   top=\tcboxedtitleheight,
-  bottom=3pt,
-  left=3pt,
-  right=3pt
 }{prop}
 
 \newtcbtheorem{corollary}{Corollary}{
@@ -135,10 +120,10 @@
     borderline west={2pt}{0pt}{thm-color},
     before skip=10pt,
     after skip=10pt,
-    left=8pt,
-    right=0pt,
-    top=2pt,
-    bottom=2pt
+    top=2mm,
+    bottom=2mm,
+    left=4mm,
+    right=4mm,
   ]
   \textbf{#1}.\enspace
 }{%
@@ -146,33 +131,23 @@
 }
 
 
-\newtcbtheorem[number within=section]{property}{Property}{
-  trymtex/theorem/common,
-  enhanced jigsaw,
-  colback=ivory,
-  colframe=royalgold!85!black,
-  coltitle=royalgold!95!white,
+\newtcbtheorem[number within=section]{property}{Property}%
+{
+  enhanced,
+  breakable,
+  colback=royalivory,
+  colframe=royalgold!70!black,
+  coltitle=royalnavy,
   fonttitle=\bfseries\scshape,
-  colbacktitle=royalnavy,
-  boxrule=0.8pt,
-  arc=1.5mm,
-  attach boxed title to top center={yshift=-2mm},
-  boxed title style={
-      enhanced,
-      boxrule=0pt,
-      colback=royalnavy,
-      colframe=royalnavy,
-      arc=1mm,
-      left=7pt,
-      right=7pt,
-      top=1.5pt,
-      bottom=1.5pt
-    },
-  borderline={0.8pt}{0pt}{deepgold},
-  borderline west={2.5pt}{0pt}{royalgold},
-  drop fuzzy shadow=black!18,
-  top=6pt,
-  bottom=4pt,
-  left=5pt,
-  right=5pt
+  colbacktitle=royalgold!18,
+  arc=2mm,
+  boxrule=0.6pt,
+  top=2mm,
+  bottom=2mm,
+  left=4mm,
+  right=4mm,
+  title filled=true,
+  borderline={0.6pt}{0pt}{deepgold},
+  before skip=10pt,
+  after skip=10pt
 }{property}
