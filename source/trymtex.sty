@@ -29,7 +29,6 @@
 \DeclareBoolOption[true]{minted}
 \DeclareBoolOption[true]{glossaries}
 \DeclareBoolOption[true]{theorems}
-\DeclareBoolOption[true]{algorithms}
 \DeclareBoolOption[true]{plots}
 \DeclareBoolOption[true]{pagegeometry}
 \DeclareBoolOption[true]{fancyhdr}
@@ -169,10 +168,6 @@
 
 \iftrymtex@minted
   \trymtex@loadmodule{trymtex-code.tex}
-\fi
-
-\iftrymtex@algorithms
-  \trymtex@loadmodule{trymtex-algorithms.tex}
 \fi
 
 \iftrymtex@plots

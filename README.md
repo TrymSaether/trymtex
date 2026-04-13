@@ -20,7 +20,7 @@ Simply load the package in your preamble:
 ### Key Options
 
 - **`fontset`**: Choose between `lmodern` (default), `pagella`, `ibmplex`, `fira`, or `none`.
-- **Feature toggles**: `minted`, `glossaries`, `theorems`, `algorithms`, `plots`, `biblatex` (disabled by default).
+- **Feature toggles**: `minted`, `glossaries`, `theorems`, `plots`, `biblatex` (disabled by default).
 - **Language support**: Pass `babel=true` along with `mainlanguage` and `languages`.
 
 See the provided manual for extensive examples of the environments and features available.

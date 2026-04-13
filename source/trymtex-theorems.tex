@@ -105,13 +105,13 @@
 }{rem}
 
 \newtcbtheorem{proposition}{Proposition}{
-  trymtex/theorem/framed=prop-color,
+  trymtex/theorem/framed=property-color,
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
   boxed title style={
       boxrule=0pt,
       boxsep=2.5pt,
-      colback=prop-color!80!black,
-      colframe=prop-color!80!black,
+      colback=property-color!80!black,
+      colframe=property-color!80!black,
       sharp corners=uphill
     },
   top=\tcboxedtitleheight,
@@ -144,3 +144,35 @@
 }{%
   \end{tcolorbox}
 }
+
+
+\newtcbtheorem[number within=section]{property}{Property}{
+  trymtex/theorem/common,
+  enhanced jigsaw,
+  colback=ivory,
+  colframe=royalgold!85!black,
+  coltitle=royalgold!95!white,
+  fonttitle=\bfseries\scshape,
+  colbacktitle=royalnavy,
+  boxrule=0.8pt,
+  arc=1.5mm,
+  attach boxed title to top center={yshift=-2mm},
+  boxed title style={
+      enhanced,
+      boxrule=0pt,
+      colback=royalnavy,
+      colframe=royalnavy,
+      arc=1mm,
+      left=7pt,
+      right=7pt,
+      top=1.5pt,
+      bottom=1.5pt
+    },
+  borderline={0.8pt}{0pt}{deepgold},
+  borderline west={2.5pt}{0pt}{royalgold},
+  drop fuzzy shadow=black!18,
+  top=6pt,
+  bottom=4pt,
+  left=5pt,
+  right=5pt
+}{property}
