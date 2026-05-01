@@ -9,11 +9,11 @@ doc:
 	l3build doc
 
 examples:
-	TEXINPUTS=source: latexmk -lualatex -outdir=build examples/minimal.tex
+	latexmk -lualatex -outdir=build examples/minimal.tex
 	TEXINPUTS=source: latexmk -lualatex -shell-escape -outdir=build examples/showcase.tex
 
 test:
-	TEXINPUTS=source: latexmk -lualatex -outdir=build testfiles/smoke.tex
+	l3build check
 
 install:
 	l3build install

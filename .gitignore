@@ -43,10 +43,13 @@
 *.pdfsync
 *.rubbercache
 rubber.cache
+.oc
 
 ## Build tool directories for auxiliary files
 # latexrun
 latex.out/
+build/
+*.zip
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
@@ -191,6 +194,7 @@ acs-*.bib
 
 # minted
 _minted*
+**/_minted*/
 *.data.minted
 *.pyg
 
