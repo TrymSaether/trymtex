@@ -33,6 +33,7 @@
 \DeclareBoolOption[true]{pagegeometry}
 \DeclareBoolOption[true]{fancyhdr}
 \DeclareBoolOption[true]{toc}
+\DeclareBoolOption[false]{subfiles}
 
 % --- fontset aliases ----------------------------------------------------------
 \DeclareVoidOption{lmodern}{\renewcommand\trymtex@fontset{lmodern}}
@@ -112,6 +113,9 @@
   \else
     \RequirePackage{csquotes}
   \fi
+  \iftrymtex@subfiles
+    \RequirePackage{subfiles}
+  \fi
 
   \RequirePackage{amsmath}
   \RequirePackage{mathtools}
@@ -128,7 +132,8 @@
   \RequirePackage{siunitx}
   \RequirePackage{float}
   \RequirePackage{subcaption}
-  \RequirePackage[most]{tcolorbox}
+  \RequirePackage{tcolorbox}
+  \tcbuselibrary{skins,breakable,theorems}
   \RequirePackage[colorlinks]{hyperref}
   \RequirePackage{bookmark}
 

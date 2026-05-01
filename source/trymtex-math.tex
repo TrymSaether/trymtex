@@ -21,6 +21,7 @@
 \newcommand{\trymtexCond}{\operatorname{cond}}
 \newcommand{\trymtexSpan}{\operatorname{span}}
 \newcommand{\trymtexbmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\DeclareMathOperator*{\esssup}{ess\,sup}
 
 \newcommand{\diff}[2][]{\frac{d#1}{d#2}}
 \newcommand{\diffn}[3][]{\frac{d^{#2}#1}{d#3^{#2}}}
@@ -58,8 +59,8 @@
   \normalsize\textbf{(#1)}%
 }
 
-\newcommand{\yes}{\cellcolor{yescolor} Yes}
-\newcommand{\no}{\cellcolor{nocolor} No}
+\newcommand{\yes}{\cellcolor{semantic-success-bg} Yes}
+\newcommand{\no}{\cellcolor{semantic-error-bg} No}
 \newcommand{\algo}[1]{\parbox[t]{3cm}{\footnotesize\RaggedRight #1}}
 
 \newcolumntype{Y}{>{\footnotesize}c}

@@ -20,7 +20,7 @@ Simply load the package in your preamble:
 ### Key Options
 
 - **`fontset`**: Choose between `lmodern` (default), `pagella`, `ibmplex`, `fira`, or `none`.
-- **Feature toggles**: `minted`, `glossaries`, `theorems`, `plots`, `pagegeometry`, `fancyhdr`, and `toc` are enabled by default; `biblatex` and `babel` are disabled by default.
+- **Feature toggles**: `minted`, `glossaries`, `theorems`, `plots`, `pagegeometry`, `fancyhdr`, and `toc` are enabled by default; `biblatex`, `babel`, and `subfiles` are disabled by default.
 - **Language support**: Pass `babel=true` along with `mainlanguage` and `languages`.
 - **Bibliographies**: Pass `biblatex=true` to load `biblatex`; the default backend is `biber`.
 

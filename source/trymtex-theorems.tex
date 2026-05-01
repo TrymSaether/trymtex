@@ -17,14 +17,14 @@
       trymtex/theorem/common,
       enhanced jigsaw,
       colback=#1!10,
-      colframe=#1!80!black,
+      colframe=#1!80!base-black,
       fonttitle=\bfseries
     },
   trymtex/theorem/ruled/.style={
       trymtex/theorem/common,
       enhanced jigsaw,
-      colback=white,
-      colframe=white,
+      colback=base-gray,
+      colframe=base-gray,
       frame hidden,
       boxrule=0pt,
       borderline west={2pt}{0pt}{#1},
@@ -33,7 +33,7 @@
       left=4mm,
       right=4mm,
       fonttitle=\bfseries,
-      coltitle=black,
+      coltitle=base-black,
       attach title to upper,
       after title={.\ },
       description font=\normalfont,
@@ -42,16 +42,16 @@
 }
 
 \newtcbtheorem{definition}{Definition}{
-  trymtex/theorem/framed=def-color,
+  trymtex/theorem/framed=math-definition,
 }{def}
 
 \newtcbtheorem{theorem}{Theorem}{
-  trymtex/theorem/framed=thm-color,
-  coltitle=black,
+  trymtex/theorem/framed=math-theorem,
+  coltitle=base-black,
   attach boxed title to top left={xshift=10pt,yshift=-\tcboxedtitleheight/2},
   boxed title style={
-      colback=thm-color!10,
-      colframe=thm-color!80!black,
+      colback=math-theorem!10,
+      colframe=math-theorem!80!base-black,
       height=16pt,
       bean arc
     },
@@ -60,18 +60,18 @@
 \newtcbtheorem{lemma}{Lemma}{
   trymtex/theorem/common,
   enhanced jigsaw,
-  colback=lem-color!10,
-  colframe=lem-color!80!black,
+  colback=math-lemma!10,
+  colframe=math-lemma!80!base-black,
   boxrule=0pt,
   fonttitle=\bfseries,
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
   boxed title style={
       boxrule=0pt,
       boxsep=2pt,
-      colback=lem-color!80!black,
-      colframe=lem-color!80!black,
+      colback=math-lemma!80!base-black,
+      colframe=math-lemma!80!base-black,
       interior code={
-          \fill[lem-color!80!black]
+          \fill[math-lemma!80!base-black]
           (interior.north west) --
           (interior.south west) --
           ([xshift=-2mm]interior.south east) --
@@ -79,45 +79,60 @@
         }
     },
   frame hidden,
-  borderline north={1pt}{0pt}{lem-color!80!black},
+  borderline north={1pt}{0pt}{math-lemma!80!base-black},
   before upper={\hspace{\tcboxedtitlewidth}},
 }{lem}
 
 \newtcbtheorem{example}{Example}{
-  trymtex/theorem/ruled=exm-color,
-  coltitle=exm-color
+  trymtex/theorem/ruled=math-example,
+  coltitle=math-example
 }{exm}
 
 \newtcbtheorem{remark}{Remark}{
-  trymtex/theorem/ruled=rem-color
+  trymtex/theorem/ruled=math-remark
 }{rem}
 
+\newtcolorbox{checkpoint}{
+  trymtex/theorem/ruled=math-remark,
+  left=7mm,
+  overlay={
+    \node[
+      circle,
+      draw=math-remark,
+      fill=white,
+      text=math-remark,
+      font=\ttfamily\bfseries\scriptsize,
+      inner sep=1pt
+    ] at (frame.west) {!};
+  }
+}
+
 \newtcbtheorem{proposition}{Proposition}{
-  trymtex/theorem/framed=prop-color,
+  trymtex/theorem/framed=math-proposition,
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
   boxed title style={
       boxrule=0pt,
       boxsep=2.5pt,
-      colback=prop-color!80!black,
-      colframe=prop-color!80!black,
+      colback=math-proposition!80!base-black,
+      colframe=math-proposition!80!base-black,
       sharp corners=uphill
     },
   top=\tcboxedtitleheight,
 }{prop}
 
 \newtcbtheorem{corollary}{Corollary}{
-  trymtex/theorem/ruled=cor-color
+  trymtex/theorem/ruled=math-corollary
 }{cor}
 
 \newtcbtheorem{pitfall}{Pitfall}{
-  trymtex/theorem/ruled=pitfall-color
+  trymtex/theorem/ruled=math-pitfall
 }{pit}
 
 \RenewDocumentEnvironment{proof}{O{\proofname}}{%
   \begin{tcolorbox}[
     blanker,
     breakable,
-    borderline west={2pt}{0pt}{thm-color},
+    borderline west={2pt}{0pt}{math-theorem},
     before skip=10pt,
     after skip=10pt,
     top=2mm,
@@ -135,11 +150,11 @@
 {
   enhanced,
   breakable,
-  colback=royalivory,
-  colframe=royalgold!70!black,
-  coltitle=royalnavy,
+  colback=base-ivory,
+  colframe=base-gold!70!base-black,
+  coltitle=base-black,
   fonttitle=\bfseries\scshape,
-  colbacktitle=royalgold!18,
+  colbacktitle=base-gold!18,
   arc=2mm,
   boxrule=0.6pt,
   top=2mm,
@@ -147,7 +162,7 @@
   left=4mm,
   right=4mm,
   title filled=true,
-  borderline={0.6pt}{0pt}{deepgold},
+  borderline={0.6pt}{0pt}{base-gold-dark},
   before skip=10pt,
   after skip=10pt
 }{property}
