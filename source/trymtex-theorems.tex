@@ -38,6 +38,21 @@
       after title={.\ },
       description font=\normalfont,
       description delimiters={(}{)}
+    },
+  trymtex/theorem/study/.style={
+      trymtex/theorem/common,
+      enhanced jigsaw,
+      colback=#1!4,
+      colframe=base-gray,
+      frame hidden,
+      boxrule=0pt,
+      borderline west={1.6pt}{0pt}{#1!70!base-black},
+      fonttitle=\bfseries,
+      coltitle=#1!75!base-black,
+      attach title to upper,
+      after title={.\ },
+      description font=\normalfont,
+      description delimiters={(}{)}
     }
 }
 
@@ -87,6 +102,18 @@
   trymtex/theorem/ruled=math-example,
   coltitle=math-example
 }{exm}
+
+\newtcbtheorem{problem}{Problem}{
+  trymtex/theorem/study=math-property,
+}{prob}
+
+\newtcbtheorem{exercise}{Exercise}{
+  trymtex/theorem/study=math-example,
+}{exer}
+
+\newtcbtheorem{solution}{Solution}{
+  trymtex/theorem/study=math-remark,
+}{sol}
 
 \newtcbtheorem{remark}{Remark}{
   trymtex/theorem/ruled=math-remark

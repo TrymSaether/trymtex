@@ -12,6 +12,18 @@
 A test definition.
 \end{definition}
 
+\begin{problem}{Test problem}{test-problem}
+A test problem.
+\end{problem}
+
+\begin{exercise}{Test exercise}{test-exercise}
+A test exercise.
+\end{exercise}
+
+\begin{solution}{Test solution}{test-solution}
+A test solution.
+\end{solution}
+
 \begin{proof}
 A test proof.
 \end{proof}
