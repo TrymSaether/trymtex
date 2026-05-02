@@ -1,101 +1,89 @@
 \ProvidesFile{trymtex-colors.tex}[2026/04/09 Color module]
 
-% Base palette
+% Parent package/class must load xcolor.
+
+% --------------------------------------------------------------------------
+% Core palette
+% --------------------------------------------------------------------------
+
 \definecolor{base-black}{HTML}{0D0E15}
 \definecolor{base-white}{HTML}{FDFDFE}
 \definecolor{base-ivory}{HTML}{FFFCF4}
 \definecolor{base-gray}{HTML}{F5F5F7}
-\definecolor{base-navy}{RGB}{22,34,86}
-\definecolor{base-gold}{RGB}{212,175,55}
-\definecolor{base-gold-dark}{RGB}{155,125,28}
+\definecolor{base-navy}{HTML}{162256}
+\definecolor{base-gold}{HTML}{D4AF37}
+\definecolor{base-gold-dark}{HTML}{9B7D1C}
 
+% --------------------------------------------------------------------------
 % Neutral palette
-\definecolor{neutral-steel-100}{HTML}{D1D5DB}
-\definecolor{neutral-steel-700}{HTML}{4B5563}
-\definecolor{neutral-slate-100}{HTML}{E2E8F0}
-\definecolor{neutral-slate-800}{HTML}{1E293B}
+% --------------------------------------------------------------------------
 
-% Math environment colors
-\definecolor{def-color}{HTML}{E40125}
-\definecolor{thm-color}{HTML}{1346E4}
-\definecolor{lem-color}{HTML}{05C4D9}
-\definecolor{exm-color}{HTML}{21340A}
-\definecolor{rem-color}{HTML}{18B640}
-\definecolor{prop-color}{HTML}{9C27B0}
-\definecolor{pitfall-color}{HTML}{FFEB3B}
-\definecolor{cor-color}{HTML}{FF5722}
-\definecolor{property-color}{RGB}{160,120,20}
+\definecolor{neutral-light}{HTML}{F5F5F7}
+\definecolor{neutral-mid}{HTML}{D1D5DB}
+\definecolor{neutral-dark}{HTML}{4B5563}
+\definecolor{neutral-ink}{HTML}{1E293B}
 
-\definecolor{royalnavy}{RGB}{22,34,86}
-\definecolor{royalgold}{RGB}{212,175,55}
-\definecolor{deepgold}{RGB}{155,125,28}
-\definecolor{royalivory}{RGB}{255,252,244}
-\colorlet{math-definition}{def-color}
-\colorlet{math-theorem}{thm-color}
-\colorlet{math-lemma}{lem-color}
-\colorlet{math-example}{exm-color}
-\colorlet{math-remark}{rem-color}
-\colorlet{math-proposition}{prop-color}
-\colorlet{math-corollary}{cor-color}
-\colorlet{math-property}{property-color}
-\colorlet{math-pitfall}{pitfall-color}
+% --------------------------------------------------------------------------
+% Mathematical structure
+% --------------------------------------------------------------------------
 
-% Algorithm environment colors
-\definecolor{alg-color}{HTML}{3E5F8A}
-\colorlet{alg-line-color}{alg-color!55!black}
-\colorlet{alg-comment-color}{black!50}
-\colorlet{algorithm-primary}{alg-color}
+\definecolor{math-definition}{HTML}{E40125}
+\definecolor{math-theorem}{HTML}{1346E4}
+\definecolor{math-lemma}{HTML}{05C4D9}
+\definecolor{math-example}{HTML}{21340A}
+\definecolor{math-remark}{HTML}{18B640}
+\definecolor{math-proposition}{HTML}{9C27B0}
+\definecolor{math-corollary}{HTML}{FF5722}
+\definecolor{math-property}{HTML}{A07814}
+\definecolor{math-pitfall}{HTML}{FFEB3B}
+\definecolor{math-problem}{HTML}{D81B60}
+\definecolor{math-exercise}{HTML}{00897B}
+\definecolor{math-solution}{HTML}{2E7D32}
+
+% --------------------------------------------------------------------------
+% Algorithms
+% --------------------------------------------------------------------------
+
+\definecolor{algorithm-primary}{HTML}{3E5F8A}
 \colorlet{algorithm-line}{algorithm-primary!55!base-black}
 \colorlet{algorithm-comment}{base-black!50}
 
-% Apple steel and slate colors, for inspiration (https://developer.apple.com/design/resources/)
-\definecolor{steel-light}{HTML}{D1D5DB}
-\definecolor{steel-dark}{HTML}{4B5563}
-\definecolor{slate-light}{HTML}{E2E8F0}
-\definecolor{slate-dark}{HTML}{1E293B}
-\colorlet{steel-light}{neutral-steel-100}
-\colorlet{steel-dark}{neutral-steel-700}
-\colorlet{slate-light}{neutral-slate-100}
-\colorlet{slate-dark}{neutral-slate-800}
+% --------------------------------------------------------------------------
+% Surfaces
+% --------------------------------------------------------------------------
 
-% Box environment colors
-\definecolor{filing-color}{HTML}{607D8B}
-\definecolor{railing-color}{HTML}{795548}
-\definecolor{flag-color}{HTML}{009688}
-\colorlet{surface-filing}{filing-color}
-\colorlet{surface-railing}{railing-color}
-\colorlet{surface-flag}{flag-color}
+\definecolor{surface-filing}{HTML}{607D8B}
+\definecolor{surface-railing}{HTML}{795548}
+\definecolor{surface-flag}{HTML}{009688}
 
-% table cell colors
-\definecolor{yescolor}{RGB}{200,255,200}
-\definecolor{nocolor}{RGB}{255,200,200}
-\colorlet{semantic-success-bg}{yescolor}
-\colorlet{semantic-error-bg}{nocolor}
+% --------------------------------------------------------------------------
+% Semantic backgrounds
+% --------------------------------------------------------------------------
 
-% Plot colors
+\definecolor{success-bg}{HTML}{C8FFC8}
+\definecolor{error-bg}{HTML}{FFC8C8}
+
+% --------------------------------------------------------------------------
+% Plot palette
+% --------------------------------------------------------------------------
+
 \colorlet{plot-blue}{math-theorem}
 \colorlet{plot-red}{math-definition}
 \colorlet{plot-green}{math-remark}
 \colorlet{plot-orange}{math-corollary}
 \colorlet{plot-purple}{math-proposition}
-\colorlet{plot-gray}{neutral-steel-700}
+\colorlet{plot-gray}{neutral-dark}
 
-% NTNU colors
+% --------------------------------------------------------------------------
+% NTNU palette
+% --------------------------------------------------------------------------
+
 \definecolor{ntnu-blue}{HTML}{00509E}
 \definecolor{ntnu-green}{HTML}{BCD025}
-\definecolor{ntnu-lightblue}{HTML}{6096D0}
+\definecolor{ntnu-light-blue}{HTML}{6096D0}
 \definecolor{ntnu-orange}{HTML}{EF8114}
 \definecolor{ntnu-sand}{HTML}{CFB887}
 \definecolor{ntnu-magenta}{HTML}{B01B81}
 \definecolor{ntnu-yellow}{HTML}{F7D019}
 \definecolor{ntnu-purple}{HTML}{482776}
 \definecolor{ntnu-turquoise}{HTML}{3CBFBE}
-\colorlet{brand-ntnu-blue}{ntnu-blue}
-\colorlet{brand-ntnu-green}{ntnu-green}
-\colorlet{brand-ntnu-light-blue}{ntnu-lightblue}
-\colorlet{brand-ntnu-orange}{ntnu-orange}
-\colorlet{brand-ntnu-sand}{ntnu-sand}
-\colorlet{brand-ntnu-magenta}{ntnu-magenta}
-\colorlet{brand-ntnu-yellow}{ntnu-yellow}
-\colorlet{brand-ntnu-purple}{ntnu-purple}
-\colorlet{brand-ntnu-turquoise}{ntnu-turquoise}
