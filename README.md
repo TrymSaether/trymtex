@@ -10,19 +10,40 @@ Simply load the package in your preamble:
 
 ```latex
 \usepackage[
-  fontset=lmodern, % Or pagella, ibmplex, fira, none
-  minted=true,     % Enable code listings via minted
-  theorems=true,   % Enable pre-styled theorem environments
-  plots=true       % Enable TikZ/pgfplots helpers
+  fontset=lmodern,             % Or pagella, ibmplex, fira, none
+  palette=vibrant-proof-engine,% Color palette (see options below)
+  minted=true,                 % Enable code listings via minted
+  theorems=true,               % Enable pre-styled theorem environments
+  plots=true                   % Enable TikZ/pgfplots helpers
 ]{trymtex}
 ```
 
 ### Key Options
 
 - **`fontset`**: Choose between `lmodern` (default), `pagella`, `ibmplex`, `fira`, or `none`.
+- **`palette`**: Choose the active color palette. Available options: `vibrant-proof-engine` (default), `trym-current-vibrant`, `electric-blackboard`, `ntnu-vivid-academic`, `candy-formalism`, `scholarly-editorial`, `nordic-minimal`, `high-contrast-academic`, and `warm-manuscript`.
 - **Feature toggles**: `minted`, `glossaries`, `theorems`, `plots`, `pagegeometry`, `fancyhdr`, and `toc` are enabled by default; `biblatex`, `babel`, and `subfiles` are disabled by default.
 - **Language support**: Pass `babel=true` along with `mainlanguage` and `languages`.
 - **Bibliographies**: Pass `biblatex=true` to load `biblatex`; the default backend is `biber`.
+
+### Theorems
+
+When `theorems=true` is enabled, the following pre-styled environments are available:
+
+- `definition`
+- `theorem`
+- `lemma`
+- `example`
+- `problem`
+- `exercise`
+- `solution`
+- `remark`
+- `checkpoint`
+- `proposition`
+- `corollary`
+- `pitfall`
+- `proof`
+- `property`
 
 See the provided manual for extensive examples of the environments and features available.
 
