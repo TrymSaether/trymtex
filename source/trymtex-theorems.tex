@@ -23,8 +23,7 @@
   trymtex/theorem/ruled/.style={
       trymtex/theorem/common,
       enhanced jigsaw,
-      % colback=base-gray,
-      % colframe=base-gray,
+      colback=white,
       frame hidden,
       boxrule=0pt,
       fonttitle=\bfseries,
@@ -44,8 +43,21 @@
     },
   trymtex/theorem/study/.style={
       trymtex/theorem/ruled,
-      colback=#1!4,
       borderline west={2pt}{0pt}{#1!70!base-black},
+    },
+  trymtex/theorem/hint/.style={
+      trymtex/theorem/ruled/solid=#1,
+      overlay={
+          \node[
+            circle,
+            draw=#1,
+            fill=white,
+            text=#1,
+            font=\ttfamily\bfseries\scriptsize,
+            inner sep=1pt
+          ] at (frame.west) {?};
+        },
+      description delimiters={}{},
     },
   trymtex/theorem/property/.style={
       trymtex/theorem/common,
@@ -118,7 +130,19 @@
 \newtcbtheorem{remark}{Remark}{
   trymtex/theorem/ruled/solid=math-remark
 }{rem}
-
+\newtcbtheorem{hint}{Hint}{
+  trymtex/theorem/hint=math-exercise,
+  overlay={
+      \node[
+        circle,
+        draw=math-exercise,
+        fill=white,
+        text=math-exercise,
+        font=\ttfamily\bfseries\scriptsize,
+        inner sep=1pt
+      ] at (frame.west) {?};
+    },
+}{hint}
 \newtcbtheorem{checkpoint}{Checkpoint}{
   trymtex/theorem/ruled/solid=math-remark,
   overlay={
