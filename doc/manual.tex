@@ -5,7 +5,7 @@
   plots=true,
   minted=true,
   glossaries=true,
-  fontset=lmodern
+  fontset=fira
 ]{trymtex}
 
 \title{\texttt{trymtex} Package Manual}
@@ -67,9 +67,16 @@ When the \texttt{theorems} option is \texttt{true}, \texttt{trymtex} introduces 
   Split into cases according to the signs of \( x \), \( y \), and \( x+y \), or use the order properties of squares.
 \end{solution}
 
-\begin{proof}
+\begin{proof}{Sketch of Triangle Inequality}{triangle-inequality-proof}
   This follows directly from the axioms of ordered fields.
 \end{proof}
+
+\begin{example}{Norms in \(\RR^n\)}{norms-example}
+  The Euclidean norm of a vector \( x = (x_1, \ldots, x_n) \) is given by
+  \[
+    \norm{x} = \sqrt{x_1^2 + \cdots + x_n^2}.
+  \]
+\end{example}
 
 \section{Custom Boxes}
 The \texttt{boxes} module defines visually distinct semantic boxes for asides and warnings using customized \texttt{tcolorbox} environments.

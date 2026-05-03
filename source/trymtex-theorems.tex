@@ -27,17 +27,20 @@
       colframe=base-gray,
       frame hidden,
       boxrule=0pt,
-      borderline west={2pt}{0pt}{#1},
-      top=2mm,
-      bottom=2mm,
-      left=4mm,
-      right=4mm,
       fonttitle=\bfseries,
       coltitle=base-black,
       attach title to upper,
       after title={.\ },
       description font=\normalfont,
       description delimiters={(}{)}
+    },
+  trymtex/theorem/ruled/solid/.style={
+      trymtex/theorem/ruled,
+      borderline west={2pt}{0pt}{#1},
+    },
+  trymtex/theorem/ruled/dashed/.style={
+      trymtex/theorem/ruled,
+      borderline west={2pt}{0pt}{#1,dashed},
     },
   trymtex/theorem/study/.style={
       trymtex/theorem/common,
@@ -46,9 +49,9 @@
       colframe=base-gray,
       frame hidden,
       boxrule=0pt,
-      borderline west={1.6pt}{0pt}{#1!70!base-black},
+      borderline west={2pt}{0pt}{#1!70!base-black},
       fonttitle=\bfseries,
-      coltitle=#1!75!base-black,
+      coltitle=base-black,
       attach title to upper,
       after title={.\ },
       description font=\normalfont,
@@ -99,39 +102,39 @@
 }{lem}
 
 \newtcbtheorem{example}{Example}{
-  trymtex/theorem/ruled=math-example,
+  trymtex/theorem/ruled/dashed=math-example,
   coltitle=math-example
 }{exm}
 
 \newtcbtheorem{problem}{Problem}{
-  trymtex/theorem/study=math-property,
+  trymtex/theorem/study=math-problem,
 }{prob}
 
 \newtcbtheorem{exercise}{Exercise}{
-  trymtex/theorem/study=math-example,
+  trymtex/theorem/study=math-exercise,
 }{exer}
 
 \newtcbtheorem{solution}{Solution}{
-  trymtex/theorem/study=math-remark,
+  trymtex/theorem/study=math-solution,
 }{sol}
 
 \newtcbtheorem{remark}{Remark}{
-  trymtex/theorem/ruled=math-remark
+  trymtex/theorem/ruled/solid=math-remark
 }{rem}
 
 \newtcolorbox{checkpoint}{
-  trymtex/theorem/ruled=math-remark,
+  trymtex/theorem/ruled/solid=math-remark,
   left=7mm,
   overlay={
-    \node[
-      circle,
-      draw=math-remark,
-      fill=white,
-      text=math-remark,
-      font=\ttfamily\bfseries\scriptsize,
-      inner sep=1pt
-    ] at (frame.west) {!};
-  }
+      \node[
+        circle,
+        draw=math-remark,
+        fill=white,
+        text=math-remark,
+        font=\ttfamily\bfseries\scriptsize,
+        inner sep=1pt
+      ] at (frame.west) {!};
+    }
 }
 
 \newtcbtheorem{proposition}{Proposition}{
@@ -148,29 +151,19 @@
 }{prop}
 
 \newtcbtheorem{corollary}{Corollary}{
-  trymtex/theorem/ruled=math-corollary
+  trymtex/theorem/ruled/solid=math-corollary
 }{cor}
 
 \newtcbtheorem{pitfall}{Pitfall}{
-  trymtex/theorem/ruled=math-pitfall
+  trymtex/theorem/ruled/solid=math-pitfall
 }{pit}
 
-\RenewDocumentEnvironment{proof}{O{\proofname}}{%
-  \begin{tcolorbox}[
-    blanker,
-    breakable,
-    borderline west={2pt}{0pt}{math-theorem},
-    before skip=10pt,
-    after skip=10pt,
-    top=2mm,
-    bottom=2mm,
-    left=4mm,
-    right=4mm,
-  ]
-  \textbf{#1}.\enspace
-}{%
-  \end{tcolorbox}
-}
+\newtcbtheorem{proof}{Proof}{
+  trymtex/theorem/ruled/solid=math-theorem,
+  after title={\newline},
+  fonttitle=\bfseries,
+  description font=\normalfont,
+}{prf}
 
 
 \newtcbtheorem[number within=section]{property}{Property}%
@@ -180,7 +173,7 @@
   colback=base-ivory,
   colframe=base-gold!70!base-black,
   coltitle=base-black,
-  fonttitle=\bfseries\scshape,
+  fonttitle=\bfseries,
   colbacktitle=base-gold!18,
   arc=2mm,
   boxrule=0.6pt,
