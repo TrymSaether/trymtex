@@ -30,7 +30,8 @@
       fonttitle=\bfseries,
       coltitle=base-black,
       attach title to upper,
-      after title={.\ },
+      after title={\newline},
+      fonttitle=\bfseries,
       description font=\normalfont,
       description delimiters={(}{)}
     },
@@ -53,9 +54,9 @@
       fonttitle=\bfseries,
       coltitle=base-black,
       attach title to upper,
-      after title={.\ },
       description font=\normalfont,
-      description delimiters={(}{)}
+      description delimiters={(}{)},
+      after title={\newline},
     }
 }
 
@@ -159,7 +160,7 @@
 }{pit}
 
 \newtcbtheorem{proof}{Proof}{
-  trymtex/theorem/ruled/solid=math-theorem,
+  trymtex/theorem/ruled/solid=math-proof,
   after title={\newline},
   fonttitle=\bfseries,
   description font=\normalfont,
