@@ -22,6 +22,7 @@
 % --- typography ---------------------------------------------------------------
 \DeclareStringOption[lmodern]{fontset}
 \DeclareBoolOption[true]{microtype}
+\DeclareStringOption[vibrant-proof-engine]{palette}
 
 % --- feature modules ----------------------------------------------------------
 \DeclareBoolOption[false]{biblatex}
@@ -161,6 +162,8 @@
 \fi
 
 \trymtex@loadmodule{trymtex-colors.tex}
+\trymtexUsePalette{\trymtex@palette}
+
 \trymtex@loadmodule{trymtex-math.tex}
 \trymtex@loadmodule{trymtex-layout.tex}
 \trymtex@loadmodule{trymtex-boxes.tex}
@@ -181,5 +184,6 @@
 \iftrymtex@theorems
   \trymtex@loadmodule{trymtex-theorems.tex}
 \fi
+
 
 \endinput
