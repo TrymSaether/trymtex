@@ -22,6 +22,7 @@
 \definecolor{trym-current-vibrant-base-paper}{HTML}{F5F5F7}
 \definecolor{trym-current-vibrant-base-navy}{HTML}{162256}
 \definecolor{trym-current-vibrant-base-gold}{HTML}{D4AF37}
+\definecolor{trym-current-vibrant-base-gold-dark}{HTML}{9B7D1C}
 \definecolor{trym-current-vibrant-neutral-ink}{HTML}{1E293B}
 \definecolor{trym-current-vibrant-neutral-mid}{HTML}{D1D5DB}
 \definecolor{trym-current-vibrant-math-definition}{HTML}{FF1700}
@@ -83,6 +84,7 @@
 \definecolor{vibrant-proof-engine-base-paper}{HTML}{F4F7FB}
 \definecolor{vibrant-proof-engine-base-navy}{HTML}{121E4A}
 \definecolor{vibrant-proof-engine-base-gold}{HTML}{D6A21F}
+\definecolor{vibrant-proof-engine-base-gold-dark}{HTML}{9C7412}
 \definecolor{vibrant-proof-engine-neutral-ink}{HTML}{162033}
 \definecolor{vibrant-proof-engine-neutral-mid}{HTML}{C8D0DC}
 \definecolor{vibrant-proof-engine-math-definition}{HTML}{E63946}
@@ -144,6 +146,7 @@
 \definecolor{electric-blackboard-base-paper}{HTML}{EEF2F7}
 \definecolor{electric-blackboard-base-navy}{HTML}{101633}
 \definecolor{electric-blackboard-base-gold}{HTML}{FFC857}
+\definecolor{electric-blackboard-base-gold-dark}{HTML}{B88F3E}
 \definecolor{electric-blackboard-neutral-ink}{HTML}{111827}
 \definecolor{electric-blackboard-neutral-mid}{HTML}{B7C0CC}
 \definecolor{electric-blackboard-math-definition}{HTML}{FF3B30}
@@ -205,6 +208,7 @@
 \definecolor{ntnu-vivid-academic-base-paper}{HTML}{F5F5F7}
 \definecolor{ntnu-vivid-academic-base-navy}{HTML}{162256}
 \definecolor{ntnu-vivid-academic-base-gold}{HTML}{CFB887}
+\definecolor{ntnu-vivid-academic-base-gold-dark}{HTML}{968461}
 \definecolor{ntnu-vivid-academic-neutral-ink}{HTML}{1E293B}
 \definecolor{ntnu-vivid-academic-neutral-mid}{HTML}{D1D5DB}
 \definecolor{ntnu-vivid-academic-math-definition}{HTML}{D71920}
@@ -266,6 +270,7 @@
 \definecolor{candy-formalism-base-paper}{HTML}{F8FAFC}
 \definecolor{candy-formalism-base-navy}{HTML}{172554}
 \definecolor{candy-formalism-base-gold}{HTML}{F59E0B}
+\definecolor{candy-formalism-base-gold-dark}{HTML}{B07208}
 \definecolor{candy-formalism-neutral-ink}{HTML}{1F2937}
 \definecolor{candy-formalism-neutral-mid}{HTML}{CBD5E1}
 \definecolor{candy-formalism-math-definition}{HTML}{F43F5E}
@@ -327,6 +332,7 @@
 \definecolor{scholarly-editorial-base-paper}{HTML}{F8F4EA}
 \definecolor{scholarly-editorial-base-navy}{HTML}{17213F}
 \definecolor{scholarly-editorial-base-gold}{HTML}{C49A35}
+\definecolor{scholarly-editorial-base-gold-dark}{HTML}{8D6F26}
 \definecolor{scholarly-editorial-neutral-ink}{HTML}{171B22}
 \definecolor{scholarly-editorial-neutral-mid}{HTML}{C0C5CE}
 \definecolor{scholarly-editorial-math-definition}{HTML}{B4233C}
@@ -388,6 +394,7 @@
 \definecolor{nordic-minimal-base-paper}{HTML}{F1F3F4}
 \definecolor{nordic-minimal-base-navy}{HTML}{1C2C3A}
 \definecolor{nordic-minimal-base-gold}{HTML}{B89C5A}
+\definecolor{nordic-minimal-base-gold-dark}{HTML}{857041}
 \definecolor{nordic-minimal-neutral-ink}{HTML}{1B232B}
 \definecolor{nordic-minimal-neutral-mid}{HTML}{B8C1C9}
 \definecolor{nordic-minimal-math-definition}{HTML}{A94A55}
@@ -449,6 +456,7 @@
 \definecolor{high-contrast-academic-base-paper}{HTML}{F6F7F9}
 \definecolor{high-contrast-academic-base-navy}{HTML}{101A44}
 \definecolor{high-contrast-academic-base-gold}{HTML}{D2A72D}
+\definecolor{high-contrast-academic-base-gold-dark}{HTML}{977821}
 \definecolor{high-contrast-academic-neutral-ink}{HTML}{111827}
 \definecolor{high-contrast-academic-neutral-mid}{HTML}{9CA3AF}
 \definecolor{high-contrast-academic-math-definition}{HTML}{C51636}
@@ -510,6 +518,7 @@
 \definecolor{warm-manuscript-base-paper}{HTML}{F4EBD9}
 \definecolor{warm-manuscript-base-navy}{HTML}{26324E}
 \definecolor{warm-manuscript-base-gold}{HTML}{B88A2E}
+\definecolor{warm-manuscript-base-gold-dark}{HTML}{856421}
 \definecolor{warm-manuscript-neutral-ink}{HTML}{241F1A}
 \definecolor{warm-manuscript-neutral-mid}{HTML}{C9BCA8}
 \definecolor{warm-manuscript-math-definition}{HTML}{A63D40}
@@ -559,534 +568,102 @@
 \colorlet{warm-manuscript-plot-purple}{warm-manuscript-math-proposition}
 \colorlet{warm-manuscript-plot-gray}{warm-manuscript-math-remark}
 
+
 % --------------------------------------------------------------------------
-% Palette activation macro
+% Palette activation
 % --------------------------------------------------------------------------
 
-\makeatletter
+\newcommand{\trymtex@activate@palette}[1]{%
+  \colorlet{base-black}{#1-base-black}%
+  \colorlet{base-white}{#1-base-white}%
+  \colorlet{base-ivory}{#1-base-ivory}%
+  \colorlet{base-paper}{#1-base-paper}%
+  \colorlet{base-gray}{#1-base-paper}%
+  \colorlet{base-navy}{#1-base-navy}%
+  \colorlet{base-gold}{#1-base-gold}%
+  \colorlet{base-gold-dark}{#1-base-gold-dark}%
+  \colorlet{neutral-ink}{#1-neutral-ink}%
+  \colorlet{neutral-mid}{#1-neutral-mid}%
+  \colorlet{neutral-light}{#1-base-paper}%
+  \colorlet{neutral-dark}{#1-neutral-ink}%
+  \colorlet{math-definition}{#1-math-definition}%
+  \colorlet{math-theorem}{#1-math-theorem}%
+  \colorlet{math-lemma}{#1-math-lemma}%
+  \colorlet{math-example}{#1-math-example}%
+  \colorlet{math-remark}{#1-math-remark}%
+  \colorlet{math-proposition}{#1-math-proposition}%
+  \colorlet{math-corollary}{#1-math-corollary}%
+  \colorlet{math-property}{#1-math-property}%
+  \colorlet{math-pitfall}{#1-math-pitfall}%
+  \colorlet{math-exercise}{#1-math-exercise}%
+  \colorlet{math-problem}{#1-math-problem}%
+  \colorlet{math-solution}{#1-math-solution}%
+  \colorlet{math-definition-bg}{#1-math-definition-bg}%
+  \colorlet{math-definition-dark}{#1-math-definition-dark}%
+  \colorlet{math-theorem-bg}{#1-math-theorem-bg}%
+  \colorlet{math-theorem-dark}{#1-math-theorem-dark}%
+  \colorlet{math-lemma-bg}{#1-math-lemma-bg}%
+  \colorlet{math-lemma-dark}{#1-math-lemma-dark}%
+  \colorlet{math-example-bg}{#1-math-example-bg}%
+  \colorlet{math-example-dark}{#1-math-example-dark}%
+  \colorlet{math-remark-bg}{#1-math-remark-bg}%
+  \colorlet{math-remark-dark}{#1-math-remark-dark}%
+  \colorlet{math-proposition-bg}{#1-math-proposition-bg}%
+  \colorlet{math-proposition-dark}{#1-math-proposition-dark}%
+  \colorlet{math-corollary-bg}{#1-math-corollary-bg}%
+  \colorlet{math-corollary-dark}{#1-math-corollary-dark}%
+  \colorlet{math-property-bg}{#1-math-property-bg}%
+  \colorlet{math-property-dark}{#1-math-property-dark}%
+  \colorlet{math-pitfall-bg}{#1-math-pitfall-bg}%
+  \colorlet{math-pitfall-dark}{#1-math-pitfall-dark}%
+  \colorlet{math-exercise-bg}{#1-math-exercise-bg}%
+  \colorlet{math-exercise-dark}{#1-math-exercise-dark}%
+  \colorlet{math-problem-bg}{#1-math-problem-bg}%
+  \colorlet{math-problem-dark}{#1-math-problem-dark}%
+  \colorlet{math-solution-bg}{#1-math-solution-bg}%
+  \colorlet{math-solution-dark}{#1-math-solution-dark}%
+  \colorlet{plot-blue}{#1-plot-blue}%
+  \colorlet{plot-red}{#1-plot-red}%
+  \colorlet{plot-green}{#1-plot-green}%
+  \colorlet{plot-orange}{#1-plot-orange}%
+  \colorlet{plot-purple}{#1-plot-purple}%
+  \colorlet{plot-gray}{#1-plot-gray}%
+  \trymtex@activate@semanticcolors
+}
+
+\newcommand{\trymtex@activate@semanticcolors}{%
+  \colorlet{math-proof}{math-remark}%
+  \colorlet{surface-filing}{math-theorem}%
+  \colorlet{surface-railing}{math-pitfall}%
+  \colorlet{surface-flag}{math-solution}%
+  \colorlet{success-bg}{math-solution-bg}%
+  \colorlet{error-bg}{math-definition-bg}%
+}
+
+\newcommand{\trymtex@define@palette}[1]{%
+  \expandafter\newcommand\csname trymtex@palette@#1\endcsname{%
+    \trymtex@activate@palette{#1}%
+  }%
+}
+\trymtex@define@palette{trym-current-vibrant}
+\trymtex@define@palette{vibrant-proof-engine}
+\trymtex@define@palette{electric-blackboard}
+\trymtex@define@palette{ntnu-vivid-academic}
+\trymtex@define@palette{candy-formalism}
+\trymtex@define@palette{scholarly-editorial}
+\trymtex@define@palette{nordic-minimal}
+\trymtex@define@palette{high-contrast-academic}
+\trymtex@define@palette{warm-manuscript}
+
+
 \newcommand{\trymtexUsePalette}[1]{%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \@ifundefined{trymtex@palette@#1}{}{}%
-    \csname trymtex@palette@#1\endcsname
+  \@ifundefined{trymtex@palette@#1}
+    {%
+      \PackageWarningNoLine{trymtex}{Unknown palette '#1'. Falling back to 'vibrant-proof-engine'}%
+      \trymtex@palette@vibrant-proof-engine
+    }
+    {\csname trymtex@palette@#1\endcsname}%
 }
 
-\expandafter\newcommand\csname trymtex@palette@trym-current-vibrant\endcsname{%
-    \colorlet{base-black}{trym-current-vibrant-base-black}%
-    \colorlet{base-white}{trym-current-vibrant-base-white}%
-    \colorlet{base-ivory}{trym-current-vibrant-base-ivory}%
-    \colorlet{base-gray}{trym-current-vibrant-base-paper}%
-    \colorlet{base-paper}{trym-current-vibrant-base-paper}%
-    \colorlet{base-navy}{trym-current-vibrant-base-navy}%
-    \colorlet{base-gold}{trym-current-vibrant-base-gold}%
-    \colorlet{neutral-ink}{trym-current-vibrant-neutral-ink}%
-    \colorlet{neutral-mid}{trym-current-vibrant-neutral-mid}%
-    \colorlet{neutral-light}{trym-current-vibrant-base-paper}%
-    \colorlet{neutral-dark}{trym-current-vibrant-neutral-ink}%
-    \colorlet{math-definition}{trym-current-vibrant-math-definition}%
-    \colorlet{math-theorem}{trym-current-vibrant-math-theorem}%
-    \colorlet{math-lemma}{trym-current-vibrant-math-lemma}%
-    \colorlet{math-example}{trym-current-vibrant-math-example}%
-    \colorlet{math-remark}{trym-current-vibrant-math-remark}%
-    \colorlet{math-proposition}{trym-current-vibrant-math-proposition}%
-    \colorlet{math-corollary}{trym-current-vibrant-math-corollary}%
-    \colorlet{math-property}{trym-current-vibrant-math-property}%
-    \colorlet{math-pitfall}{trym-current-vibrant-math-pitfall}%
-    \colorlet{math-exercise}{trym-current-vibrant-math-exercise}%
-    \colorlet{math-problem}{trym-current-vibrant-math-problem}%
-    \colorlet{math-solution}{trym-current-vibrant-math-solution}%
-    \colorlet{math-definition-bg}{trym-current-vibrant-math-definition-bg}%
-    \colorlet{math-definition-dark}{trym-current-vibrant-math-definition-dark}%
-    \colorlet{math-theorem-bg}{trym-current-vibrant-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{trym-current-vibrant-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{trym-current-vibrant-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{trym-current-vibrant-math-lemma-dark}%
-    \colorlet{math-example-bg}{trym-current-vibrant-math-example-bg}%
-    \colorlet{math-example-dark}{trym-current-vibrant-math-example-dark}%
-    \colorlet{math-remark-bg}{trym-current-vibrant-math-remark-bg}%
-    \colorlet{math-remark-dark}{trym-current-vibrant-math-remark-dark}%
-    \colorlet{math-proposition-bg}{trym-current-vibrant-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{trym-current-vibrant-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{trym-current-vibrant-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{trym-current-vibrant-math-corollary-dark}%
-    \colorlet{math-property-bg}{trym-current-vibrant-math-property-bg}%
-    \colorlet{math-property-dark}{trym-current-vibrant-math-property-dark}%
-    \colorlet{math-pitfall-bg}{trym-current-vibrant-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{trym-current-vibrant-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{trym-current-vibrant-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{trym-current-vibrant-math-exercise-dark}%
-    \colorlet{math-problem-bg}{trym-current-vibrant-math-problem-bg}%
-    \colorlet{math-problem-dark}{trym-current-vibrant-math-problem-dark}%
-    \colorlet{math-solution-bg}{trym-current-vibrant-math-solution-bg}%
-    \colorlet{math-solution-dark}{trym-current-vibrant-math-solution-dark}%
-    \colorlet{plot-blue}{trym-current-vibrant-math-theorem}%
-    \colorlet{plot-red}{trym-current-vibrant-math-definition}%
-    \colorlet{plot-green}{trym-current-vibrant-math-example}%
-    \colorlet{plot-orange}{trym-current-vibrant-math-corollary}%
-    \colorlet{plot-purple}{trym-current-vibrant-math-proposition}%
-    \colorlet{plot-gray}{trym-current-vibrant-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@vibrant-proof-engine\endcsname{%
-    \colorlet{base-black}{vibrant-proof-engine-base-black}%
-    \colorlet{base-white}{vibrant-proof-engine-base-white}%
-    \colorlet{base-ivory}{vibrant-proof-engine-base-ivory}%
-    \colorlet{base-gray}{vibrant-proof-engine-base-paper}%
-    \colorlet{base-paper}{vibrant-proof-engine-base-paper}%
-    \colorlet{base-navy}{vibrant-proof-engine-base-navy}%
-    \colorlet{base-gold}{vibrant-proof-engine-base-gold}%
-    \colorlet{neutral-ink}{vibrant-proof-engine-neutral-ink}%
-    \colorlet{neutral-mid}{vibrant-proof-engine-neutral-mid}%
-    \colorlet{neutral-light}{vibrant-proof-engine-base-paper}%
-    \colorlet{neutral-dark}{vibrant-proof-engine-neutral-ink}%
-    \colorlet{math-definition}{vibrant-proof-engine-math-definition}%
-    \colorlet{math-theorem}{vibrant-proof-engine-math-theorem}%
-    \colorlet{math-lemma}{vibrant-proof-engine-math-lemma}%
-    \colorlet{math-example}{vibrant-proof-engine-math-example}%
-    \colorlet{math-remark}{vibrant-proof-engine-math-remark}%
-    \colorlet{math-proposition}{vibrant-proof-engine-math-proposition}%
-    \colorlet{math-corollary}{vibrant-proof-engine-math-corollary}%
-    \colorlet{math-property}{vibrant-proof-engine-math-property}%
-    \colorlet{math-pitfall}{vibrant-proof-engine-math-pitfall}%
-    \colorlet{math-exercise}{vibrant-proof-engine-math-exercise}%
-    \colorlet{math-problem}{vibrant-proof-engine-math-problem}%
-    \colorlet{math-solution}{vibrant-proof-engine-math-solution}%
-    \colorlet{math-definition-bg}{vibrant-proof-engine-math-definition-bg}%
-    \colorlet{math-definition-dark}{vibrant-proof-engine-math-definition-dark}%
-    \colorlet{math-theorem-bg}{vibrant-proof-engine-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{vibrant-proof-engine-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{vibrant-proof-engine-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{vibrant-proof-engine-math-lemma-dark}%
-    \colorlet{math-example-bg}{vibrant-proof-engine-math-example-bg}%
-    \colorlet{math-example-dark}{vibrant-proof-engine-math-example-dark}%
-    \colorlet{math-remark-bg}{vibrant-proof-engine-math-remark-bg}%
-    \colorlet{math-remark-dark}{vibrant-proof-engine-math-remark-dark}%
-    \colorlet{math-proposition-bg}{vibrant-proof-engine-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{vibrant-proof-engine-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{vibrant-proof-engine-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{vibrant-proof-engine-math-corollary-dark}%
-    \colorlet{math-property-bg}{vibrant-proof-engine-math-property-bg}%
-    \colorlet{math-property-dark}{vibrant-proof-engine-math-property-dark}%
-    \colorlet{math-pitfall-bg}{vibrant-proof-engine-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{vibrant-proof-engine-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{vibrant-proof-engine-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{vibrant-proof-engine-math-exercise-dark}%
-    \colorlet{math-problem-bg}{vibrant-proof-engine-math-problem-bg}%
-    \colorlet{math-problem-dark}{vibrant-proof-engine-math-problem-dark}%
-    \colorlet{math-solution-bg}{vibrant-proof-engine-math-solution-bg}%
-    \colorlet{math-solution-dark}{vibrant-proof-engine-math-solution-dark}%
-    \colorlet{plot-blue}{vibrant-proof-engine-math-theorem}%
-    \colorlet{plot-red}{vibrant-proof-engine-math-definition}%
-    \colorlet{plot-green}{vibrant-proof-engine-math-example}%
-    \colorlet{plot-orange}{vibrant-proof-engine-math-corollary}%
-    \colorlet{plot-purple}{vibrant-proof-engine-math-proposition}%
-    \colorlet{plot-gray}{vibrant-proof-engine-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@electric-blackboard\endcsname{%
-    \colorlet{base-black}{electric-blackboard-base-black}%
-    \colorlet{base-white}{electric-blackboard-base-white}%
-    \colorlet{base-ivory}{electric-blackboard-base-ivory}%
-    \colorlet{base-gray}{electric-blackboard-base-paper}%
-    \colorlet{base-paper}{electric-blackboard-base-paper}%
-    \colorlet{base-navy}{electric-blackboard-base-navy}%
-    \colorlet{base-gold}{electric-blackboard-base-gold}%
-    \colorlet{neutral-ink}{electric-blackboard-neutral-ink}%
-    \colorlet{neutral-mid}{electric-blackboard-neutral-mid}%
-    \colorlet{neutral-light}{electric-blackboard-base-paper}%
-    \colorlet{neutral-dark}{electric-blackboard-neutral-ink}%
-    \colorlet{math-definition}{electric-blackboard-math-definition}%
-    \colorlet{math-theorem}{electric-blackboard-math-theorem}%
-    \colorlet{math-lemma}{electric-blackboard-math-lemma}%
-    \colorlet{math-example}{electric-blackboard-math-example}%
-    \colorlet{math-remark}{electric-blackboard-math-remark}%
-    \colorlet{math-proposition}{electric-blackboard-math-proposition}%
-    \colorlet{math-corollary}{electric-blackboard-math-corollary}%
-    \colorlet{math-property}{electric-blackboard-math-property}%
-    \colorlet{math-pitfall}{electric-blackboard-math-pitfall}%
-    \colorlet{math-exercise}{electric-blackboard-math-exercise}%
-    \colorlet{math-problem}{electric-blackboard-math-problem}%
-    \colorlet{math-solution}{electric-blackboard-math-solution}%
-    \colorlet{math-definition-bg}{electric-blackboard-math-definition-bg}%
-    \colorlet{math-definition-dark}{electric-blackboard-math-definition-dark}%
-    \colorlet{math-theorem-bg}{electric-blackboard-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{electric-blackboard-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{electric-blackboard-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{electric-blackboard-math-lemma-dark}%
-    \colorlet{math-example-bg}{electric-blackboard-math-example-bg}%
-    \colorlet{math-example-dark}{electric-blackboard-math-example-dark}%
-    \colorlet{math-remark-bg}{electric-blackboard-math-remark-bg}%
-    \colorlet{math-remark-dark}{electric-blackboard-math-remark-dark}%
-    \colorlet{math-proposition-bg}{electric-blackboard-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{electric-blackboard-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{electric-blackboard-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{electric-blackboard-math-corollary-dark}%
-    \colorlet{math-property-bg}{electric-blackboard-math-property-bg}%
-    \colorlet{math-property-dark}{electric-blackboard-math-property-dark}%
-    \colorlet{math-pitfall-bg}{electric-blackboard-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{electric-blackboard-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{electric-blackboard-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{electric-blackboard-math-exercise-dark}%
-    \colorlet{math-problem-bg}{electric-blackboard-math-problem-bg}%
-    \colorlet{math-problem-dark}{electric-blackboard-math-problem-dark}%
-    \colorlet{math-solution-bg}{electric-blackboard-math-solution-bg}%
-    \colorlet{math-solution-dark}{electric-blackboard-math-solution-dark}%
-    \colorlet{plot-blue}{electric-blackboard-math-theorem}%
-    \colorlet{plot-red}{electric-blackboard-math-definition}%
-    \colorlet{plot-green}{electric-blackboard-math-example}%
-    \colorlet{plot-orange}{electric-blackboard-math-corollary}%
-    \colorlet{plot-purple}{electric-blackboard-math-proposition}%
-    \colorlet{plot-gray}{electric-blackboard-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@ntnu-vivid-academic\endcsname{%
-    \colorlet{base-black}{ntnu-vivid-academic-base-black}%
-    \colorlet{base-white}{ntnu-vivid-academic-base-white}%
-    \colorlet{base-ivory}{ntnu-vivid-academic-base-ivory}%
-    \colorlet{base-gray}{ntnu-vivid-academic-base-paper}%
-    \colorlet{base-paper}{ntnu-vivid-academic-base-paper}%
-    \colorlet{base-navy}{ntnu-vivid-academic-base-navy}%
-    \colorlet{base-gold}{ntnu-vivid-academic-base-gold}%
-    \colorlet{neutral-ink}{ntnu-vivid-academic-neutral-ink}%
-    \colorlet{neutral-mid}{ntnu-vivid-academic-neutral-mid}%
-    \colorlet{neutral-light}{ntnu-vivid-academic-base-paper}%
-    \colorlet{neutral-dark}{ntnu-vivid-academic-neutral-ink}%
-    \colorlet{math-definition}{ntnu-vivid-academic-math-definition}%
-    \colorlet{math-theorem}{ntnu-vivid-academic-math-theorem}%
-    \colorlet{math-lemma}{ntnu-vivid-academic-math-lemma}%
-    \colorlet{math-example}{ntnu-vivid-academic-math-example}%
-    \colorlet{math-remark}{ntnu-vivid-academic-math-remark}%
-    \colorlet{math-proposition}{ntnu-vivid-academic-math-proposition}%
-    \colorlet{math-corollary}{ntnu-vivid-academic-math-corollary}%
-    \colorlet{math-property}{ntnu-vivid-academic-math-property}%
-    \colorlet{math-pitfall}{ntnu-vivid-academic-math-pitfall}%
-    \colorlet{math-exercise}{ntnu-vivid-academic-math-exercise}%
-    \colorlet{math-problem}{ntnu-vivid-academic-math-problem}%
-    \colorlet{math-solution}{ntnu-vivid-academic-math-solution}%
-    \colorlet{math-definition-bg}{ntnu-vivid-academic-math-definition-bg}%
-    \colorlet{math-definition-dark}{ntnu-vivid-academic-math-definition-dark}%
-    \colorlet{math-theorem-bg}{ntnu-vivid-academic-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{ntnu-vivid-academic-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{ntnu-vivid-academic-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{ntnu-vivid-academic-math-lemma-dark}%
-    \colorlet{math-example-bg}{ntnu-vivid-academic-math-example-bg}%
-    \colorlet{math-example-dark}{ntnu-vivid-academic-math-example-dark}%
-    \colorlet{math-remark-bg}{ntnu-vivid-academic-math-remark-bg}%
-    \colorlet{math-remark-dark}{ntnu-vivid-academic-math-remark-dark}%
-    \colorlet{math-proposition-bg}{ntnu-vivid-academic-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{ntnu-vivid-academic-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{ntnu-vivid-academic-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{ntnu-vivid-academic-math-corollary-dark}%
-    \colorlet{math-property-bg}{ntnu-vivid-academic-math-property-bg}%
-    \colorlet{math-property-dark}{ntnu-vivid-academic-math-property-dark}%
-    \colorlet{math-pitfall-bg}{ntnu-vivid-academic-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{ntnu-vivid-academic-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{ntnu-vivid-academic-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{ntnu-vivid-academic-math-exercise-dark}%
-    \colorlet{math-problem-bg}{ntnu-vivid-academic-math-problem-bg}%
-    \colorlet{math-problem-dark}{ntnu-vivid-academic-math-problem-dark}%
-    \colorlet{math-solution-bg}{ntnu-vivid-academic-math-solution-bg}%
-    \colorlet{math-solution-dark}{ntnu-vivid-academic-math-solution-dark}%
-    \colorlet{plot-blue}{ntnu-vivid-academic-math-theorem}%
-    \colorlet{plot-red}{ntnu-vivid-academic-math-definition}%
-    \colorlet{plot-green}{ntnu-vivid-academic-math-example}%
-    \colorlet{plot-orange}{ntnu-vivid-academic-math-corollary}%
-    \colorlet{plot-purple}{ntnu-vivid-academic-math-proposition}%
-    \colorlet{plot-gray}{ntnu-vivid-academic-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@candy-formalism\endcsname{%
-    \colorlet{base-black}{candy-formalism-base-black}%
-    \colorlet{base-white}{candy-formalism-base-white}%
-    \colorlet{base-ivory}{candy-formalism-base-ivory}%
-    \colorlet{base-gray}{candy-formalism-base-paper}%
-    \colorlet{base-paper}{candy-formalism-base-paper}%
-    \colorlet{base-navy}{candy-formalism-base-navy}%
-    \colorlet{base-gold}{candy-formalism-base-gold}%
-    \colorlet{neutral-ink}{candy-formalism-neutral-ink}%
-    \colorlet{neutral-mid}{candy-formalism-neutral-mid}%
-    \colorlet{neutral-light}{candy-formalism-base-paper}%
-    \colorlet{neutral-dark}{candy-formalism-neutral-ink}%
-    \colorlet{math-definition}{candy-formalism-math-definition}%
-    \colorlet{math-theorem}{candy-formalism-math-theorem}%
-    \colorlet{math-lemma}{candy-formalism-math-lemma}%
-    \colorlet{math-example}{candy-formalism-math-example}%
-    \colorlet{math-remark}{candy-formalism-math-remark}%
-    \colorlet{math-proposition}{candy-formalism-math-proposition}%
-    \colorlet{math-corollary}{candy-formalism-math-corollary}%
-    \colorlet{math-property}{candy-formalism-math-property}%
-    \colorlet{math-pitfall}{candy-formalism-math-pitfall}%
-    \colorlet{math-exercise}{candy-formalism-math-exercise}%
-    \colorlet{math-problem}{candy-formalism-math-problem}%
-    \colorlet{math-solution}{candy-formalism-math-solution}%
-    \colorlet{math-definition-bg}{candy-formalism-math-definition-bg}%
-    \colorlet{math-definition-dark}{candy-formalism-math-definition-dark}%
-    \colorlet{math-theorem-bg}{candy-formalism-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{candy-formalism-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{candy-formalism-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{candy-formalism-math-lemma-dark}%
-    \colorlet{math-example-bg}{candy-formalism-math-example-bg}%
-    \colorlet{math-example-dark}{candy-formalism-math-example-dark}%
-    \colorlet{math-remark-bg}{candy-formalism-math-remark-bg}%
-    \colorlet{math-remark-dark}{candy-formalism-math-remark-dark}%
-    \colorlet{math-proposition-bg}{candy-formalism-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{candy-formalism-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{candy-formalism-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{candy-formalism-math-corollary-dark}%
-    \colorlet{math-property-bg}{candy-formalism-math-property-bg}%
-    \colorlet{math-property-dark}{candy-formalism-math-property-dark}%
-    \colorlet{math-pitfall-bg}{candy-formalism-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{candy-formalism-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{candy-formalism-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{candy-formalism-math-exercise-dark}%
-    \colorlet{math-problem-bg}{candy-formalism-math-problem-bg}%
-    \colorlet{math-problem-dark}{candy-formalism-math-problem-dark}%
-    \colorlet{math-solution-bg}{candy-formalism-math-solution-bg}%
-    \colorlet{math-solution-dark}{candy-formalism-math-solution-dark}%
-    \colorlet{plot-blue}{candy-formalism-math-theorem}%
-    \colorlet{plot-red}{candy-formalism-math-definition}%
-    \colorlet{plot-green}{candy-formalism-math-example}%
-    \colorlet{plot-orange}{candy-formalism-math-corollary}%
-    \colorlet{plot-purple}{candy-formalism-math-proposition}%
-    \colorlet{plot-gray}{candy-formalism-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@scholarly-editorial\endcsname{%
-    \colorlet{base-black}{scholarly-editorial-base-black}%
-    \colorlet{base-white}{scholarly-editorial-base-white}%
-    \colorlet{base-ivory}{scholarly-editorial-base-ivory}%
-    \colorlet{base-gray}{scholarly-editorial-base-paper}%
-    \colorlet{base-paper}{scholarly-editorial-base-paper}%
-    \colorlet{base-navy}{scholarly-editorial-base-navy}%
-    \colorlet{base-gold}{scholarly-editorial-base-gold}%
-    \colorlet{neutral-ink}{scholarly-editorial-neutral-ink}%
-    \colorlet{neutral-mid}{scholarly-editorial-neutral-mid}%
-    \colorlet{neutral-light}{scholarly-editorial-base-paper}%
-    \colorlet{neutral-dark}{scholarly-editorial-neutral-ink}%
-    \colorlet{math-definition}{scholarly-editorial-math-definition}%
-    \colorlet{math-theorem}{scholarly-editorial-math-theorem}%
-    \colorlet{math-lemma}{scholarly-editorial-math-lemma}%
-    \colorlet{math-example}{scholarly-editorial-math-example}%
-    \colorlet{math-remark}{scholarly-editorial-math-remark}%
-    \colorlet{math-proposition}{scholarly-editorial-math-proposition}%
-    \colorlet{math-corollary}{scholarly-editorial-math-corollary}%
-    \colorlet{math-property}{scholarly-editorial-math-property}%
-    \colorlet{math-pitfall}{scholarly-editorial-math-pitfall}%
-    \colorlet{math-exercise}{scholarly-editorial-math-exercise}%
-    \colorlet{math-problem}{scholarly-editorial-math-problem}%
-    \colorlet{math-solution}{scholarly-editorial-math-solution}%
-    \colorlet{math-definition-bg}{scholarly-editorial-math-definition-bg}%
-    \colorlet{math-definition-dark}{scholarly-editorial-math-definition-dark}%
-    \colorlet{math-theorem-bg}{scholarly-editorial-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{scholarly-editorial-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{scholarly-editorial-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{scholarly-editorial-math-lemma-dark}%
-    \colorlet{math-example-bg}{scholarly-editorial-math-example-bg}%
-    \colorlet{math-example-dark}{scholarly-editorial-math-example-dark}%
-    \colorlet{math-remark-bg}{scholarly-editorial-math-remark-bg}%
-    \colorlet{math-remark-dark}{scholarly-editorial-math-remark-dark}%
-    \colorlet{math-proposition-bg}{scholarly-editorial-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{scholarly-editorial-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{scholarly-editorial-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{scholarly-editorial-math-corollary-dark}%
-    \colorlet{math-property-bg}{scholarly-editorial-math-property-bg}%
-    \colorlet{math-property-dark}{scholarly-editorial-math-property-dark}%
-    \colorlet{math-pitfall-bg}{scholarly-editorial-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{scholarly-editorial-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{scholarly-editorial-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{scholarly-editorial-math-exercise-dark}%
-    \colorlet{math-problem-bg}{scholarly-editorial-math-problem-bg}%
-    \colorlet{math-problem-dark}{scholarly-editorial-math-problem-dark}%
-    \colorlet{math-solution-bg}{scholarly-editorial-math-solution-bg}%
-    \colorlet{math-solution-dark}{scholarly-editorial-math-solution-dark}%
-    \colorlet{plot-blue}{scholarly-editorial-math-theorem}%
-    \colorlet{plot-red}{scholarly-editorial-math-definition}%
-    \colorlet{plot-green}{scholarly-editorial-math-example}%
-    \colorlet{plot-orange}{scholarly-editorial-math-corollary}%
-    \colorlet{plot-purple}{scholarly-editorial-math-proposition}%
-    \colorlet{plot-gray}{scholarly-editorial-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@nordic-minimal\endcsname{%
-    \colorlet{base-black}{nordic-minimal-base-black}%
-    \colorlet{base-white}{nordic-minimal-base-white}%
-    \colorlet{base-ivory}{nordic-minimal-base-ivory}%
-    \colorlet{base-gray}{nordic-minimal-base-paper}%
-    \colorlet{base-paper}{nordic-minimal-base-paper}%
-    \colorlet{base-navy}{nordic-minimal-base-navy}%
-    \colorlet{base-gold}{nordic-minimal-base-gold}%
-    \colorlet{neutral-ink}{nordic-minimal-neutral-ink}%
-    \colorlet{neutral-mid}{nordic-minimal-neutral-mid}%
-    \colorlet{neutral-light}{nordic-minimal-base-paper}%
-    \colorlet{neutral-dark}{nordic-minimal-neutral-ink}%
-    \colorlet{math-definition}{nordic-minimal-math-definition}%
-    \colorlet{math-theorem}{nordic-minimal-math-theorem}%
-    \colorlet{math-lemma}{nordic-minimal-math-lemma}%
-    \colorlet{math-example}{nordic-minimal-math-example}%
-    \colorlet{math-remark}{nordic-minimal-math-remark}%
-    \colorlet{math-proposition}{nordic-minimal-math-proposition}%
-    \colorlet{math-corollary}{nordic-minimal-math-corollary}%
-    \colorlet{math-property}{nordic-minimal-math-property}%
-    \colorlet{math-pitfall}{nordic-minimal-math-pitfall}%
-    \colorlet{math-exercise}{nordic-minimal-math-exercise}%
-    \colorlet{math-problem}{nordic-minimal-math-problem}%
-    \colorlet{math-solution}{nordic-minimal-math-solution}%
-    \colorlet{math-definition-bg}{nordic-minimal-math-definition-bg}%
-    \colorlet{math-definition-dark}{nordic-minimal-math-definition-dark}%
-    \colorlet{math-theorem-bg}{nordic-minimal-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{nordic-minimal-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{nordic-minimal-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{nordic-minimal-math-lemma-dark}%
-    \colorlet{math-example-bg}{nordic-minimal-math-example-bg}%
-    \colorlet{math-example-dark}{nordic-minimal-math-example-dark}%
-    \colorlet{math-remark-bg}{nordic-minimal-math-remark-bg}%
-    \colorlet{math-remark-dark}{nordic-minimal-math-remark-dark}%
-    \colorlet{math-proposition-bg}{nordic-minimal-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{nordic-minimal-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{nordic-minimal-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{nordic-minimal-math-corollary-dark}%
-    \colorlet{math-property-bg}{nordic-minimal-math-property-bg}%
-    \colorlet{math-property-dark}{nordic-minimal-math-property-dark}%
-    \colorlet{math-pitfall-bg}{nordic-minimal-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{nordic-minimal-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{nordic-minimal-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{nordic-minimal-math-exercise-dark}%
-    \colorlet{math-problem-bg}{nordic-minimal-math-problem-bg}%
-    \colorlet{math-problem-dark}{nordic-minimal-math-problem-dark}%
-    \colorlet{math-solution-bg}{nordic-minimal-math-solution-bg}%
-    \colorlet{math-solution-dark}{nordic-minimal-math-solution-dark}%
-    \colorlet{plot-blue}{nordic-minimal-math-theorem}%
-    \colorlet{plot-red}{nordic-minimal-math-definition}%
-    \colorlet{plot-green}{nordic-minimal-math-example}%
-    \colorlet{plot-orange}{nordic-minimal-math-corollary}%
-    \colorlet{plot-purple}{nordic-minimal-math-proposition}%
-    \colorlet{plot-gray}{nordic-minimal-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@high-contrast-academic\endcsname{%
-    \colorlet{base-black}{high-contrast-academic-base-black}%
-    \colorlet{base-white}{high-contrast-academic-base-white}%
-    \colorlet{base-ivory}{high-contrast-academic-base-ivory}%
-    \colorlet{base-gray}{high-contrast-academic-base-paper}%
-    \colorlet{base-paper}{high-contrast-academic-base-paper}%
-    \colorlet{base-navy}{high-contrast-academic-base-navy}%
-    \colorlet{base-gold}{high-contrast-academic-base-gold}%
-    \colorlet{neutral-ink}{high-contrast-academic-neutral-ink}%
-    \colorlet{neutral-mid}{high-contrast-academic-neutral-mid}%
-    \colorlet{neutral-light}{high-contrast-academic-base-paper}%
-    \colorlet{neutral-dark}{high-contrast-academic-neutral-ink}%
-    \colorlet{math-definition}{high-contrast-academic-math-definition}%
-    \colorlet{math-theorem}{high-contrast-academic-math-theorem}%
-    \colorlet{math-lemma}{high-contrast-academic-math-lemma}%
-    \colorlet{math-example}{high-contrast-academic-math-example}%
-    \colorlet{math-remark}{high-contrast-academic-math-remark}%
-    \colorlet{math-proposition}{high-contrast-academic-math-proposition}%
-    \colorlet{math-corollary}{high-contrast-academic-math-corollary}%
-    \colorlet{math-property}{high-contrast-academic-math-property}%
-    \colorlet{math-pitfall}{high-contrast-academic-math-pitfall}%
-    \colorlet{math-exercise}{high-contrast-academic-math-exercise}%
-    \colorlet{math-problem}{high-contrast-academic-math-problem}%
-    \colorlet{math-solution}{high-contrast-academic-math-solution}%
-    \colorlet{math-definition-bg}{high-contrast-academic-math-definition-bg}%
-    \colorlet{math-definition-dark}{high-contrast-academic-math-definition-dark}%
-    \colorlet{math-theorem-bg}{high-contrast-academic-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{high-contrast-academic-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{high-contrast-academic-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{high-contrast-academic-math-lemma-dark}%
-    \colorlet{math-example-bg}{high-contrast-academic-math-example-bg}%
-    \colorlet{math-example-dark}{high-contrast-academic-math-example-dark}%
-    \colorlet{math-remark-bg}{high-contrast-academic-math-remark-bg}%
-    \colorlet{math-remark-dark}{high-contrast-academic-math-remark-dark}%
-    \colorlet{math-proposition-bg}{high-contrast-academic-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{high-contrast-academic-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{high-contrast-academic-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{high-contrast-academic-math-corollary-dark}%
-    \colorlet{math-property-bg}{high-contrast-academic-math-property-bg}%
-    \colorlet{math-property-dark}{high-contrast-academic-math-property-dark}%
-    \colorlet{math-pitfall-bg}{high-contrast-academic-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{high-contrast-academic-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{high-contrast-academic-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{high-contrast-academic-math-exercise-dark}%
-    \colorlet{math-problem-bg}{high-contrast-academic-math-problem-bg}%
-    \colorlet{math-problem-dark}{high-contrast-academic-math-problem-dark}%
-    \colorlet{math-solution-bg}{high-contrast-academic-math-solution-bg}%
-    \colorlet{math-solution-dark}{high-contrast-academic-math-solution-dark}%
-    \colorlet{plot-blue}{high-contrast-academic-math-theorem}%
-    \colorlet{plot-red}{high-contrast-academic-math-definition}%
-    \colorlet{plot-green}{high-contrast-academic-math-example}%
-    \colorlet{plot-orange}{high-contrast-academic-math-corollary}%
-    \colorlet{plot-purple}{high-contrast-academic-math-proposition}%
-    \colorlet{plot-gray}{high-contrast-academic-math-remark}%
-}
-
-\expandafter\newcommand\csname trymtex@palette@warm-manuscript\endcsname{%
-    \colorlet{base-black}{warm-manuscript-base-black}%
-    \colorlet{base-white}{warm-manuscript-base-white}%
-    \colorlet{base-ivory}{warm-manuscript-base-ivory}%
-    \colorlet{base-gray}{warm-manuscript-base-paper}%
-    \colorlet{base-paper}{warm-manuscript-base-paper}%
-    \colorlet{base-navy}{warm-manuscript-base-navy}%
-    \colorlet{base-gold}{warm-manuscript-base-gold}%
-    \colorlet{neutral-ink}{warm-manuscript-neutral-ink}%
-    \colorlet{neutral-mid}{warm-manuscript-neutral-mid}%
-    \colorlet{neutral-light}{warm-manuscript-base-paper}%
-    \colorlet{neutral-dark}{warm-manuscript-neutral-ink}%
-    \colorlet{math-definition}{warm-manuscript-math-definition}%
-    \colorlet{math-theorem}{warm-manuscript-math-theorem}%
-    \colorlet{math-lemma}{warm-manuscript-math-lemma}%
-    \colorlet{math-example}{warm-manuscript-math-example}%
-    \colorlet{math-remark}{warm-manuscript-math-remark}%
-    \colorlet{math-proposition}{warm-manuscript-math-proposition}%
-    \colorlet{math-corollary}{warm-manuscript-math-corollary}%
-    \colorlet{math-property}{warm-manuscript-math-property}%
-    \colorlet{math-pitfall}{warm-manuscript-math-pitfall}%
-    \colorlet{math-exercise}{warm-manuscript-math-exercise}%
-    \colorlet{math-problem}{warm-manuscript-math-problem}%
-    \colorlet{math-solution}{warm-manuscript-math-solution}%
-    \colorlet{math-definition-bg}{warm-manuscript-math-definition-bg}%
-    \colorlet{math-definition-dark}{warm-manuscript-math-definition-dark}%
-    \colorlet{math-theorem-bg}{warm-manuscript-math-theorem-bg}%
-    \colorlet{math-theorem-dark}{warm-manuscript-math-theorem-dark}%
-    \colorlet{math-lemma-bg}{warm-manuscript-math-lemma-bg}%
-    \colorlet{math-lemma-dark}{warm-manuscript-math-lemma-dark}%
-    \colorlet{math-example-bg}{warm-manuscript-math-example-bg}%
-    \colorlet{math-example-dark}{warm-manuscript-math-example-dark}%
-    \colorlet{math-remark-bg}{warm-manuscript-math-remark-bg}%
-    \colorlet{math-remark-dark}{warm-manuscript-math-remark-dark}%
-    \colorlet{math-proposition-bg}{warm-manuscript-math-proposition-bg}%
-    \colorlet{math-proposition-dark}{warm-manuscript-math-proposition-dark}%
-    \colorlet{math-corollary-bg}{warm-manuscript-math-corollary-bg}%
-    \colorlet{math-corollary-dark}{warm-manuscript-math-corollary-dark}%
-    \colorlet{math-property-bg}{warm-manuscript-math-property-bg}%
-    \colorlet{math-property-dark}{warm-manuscript-math-property-dark}%
-    \colorlet{math-pitfall-bg}{warm-manuscript-math-pitfall-bg}%
-    \colorlet{math-pitfall-dark}{warm-manuscript-math-pitfall-dark}%
-    \colorlet{math-exercise-bg}{warm-manuscript-math-exercise-bg}%
-    \colorlet{math-exercise-dark}{warm-manuscript-math-exercise-dark}%
-    \colorlet{math-problem-bg}{warm-manuscript-math-problem-bg}%
-    \colorlet{math-problem-dark}{warm-manuscript-math-problem-dark}%
-    \colorlet{math-solution-bg}{warm-manuscript-math-solution-bg}%
-    \colorlet{math-solution-dark}{warm-manuscript-math-solution-dark}%
-    \colorlet{plot-blue}{warm-manuscript-math-theorem}%
-    \colorlet{plot-red}{warm-manuscript-math-definition}%
-    \colorlet{plot-green}{warm-manuscript-math-example}%
-    \colorlet{plot-orange}{warm-manuscript-math-corollary}%
-    \colorlet{plot-purple}{warm-manuscript-math-proposition}%
-    \colorlet{plot-gray}{warm-manuscript-math-remark}%
-}
-
-\makeatother
-
-% --------------------------------------------------------------------------
-% Default activated palette
-% --------------------------------------------------------------------------
-
-\trymtexUsePalette{vibrant-proof-engine}
 
 \endinput

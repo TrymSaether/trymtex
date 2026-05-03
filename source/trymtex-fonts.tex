@@ -21,51 +21,41 @@
 
 \newcommand{\trymtex@setup@pdftex@none}{}
 
-\newcommand{\trymtex@setup@unicode@lmodern}{%
+\newcommand{\trymtex@setup@unicode@base}{%
   \RequirePackage{fontspec}
   \RequirePackage[
     math-style=ISO,
     warnings-off={mathtools-colon,mathtools-overbracket}
   ]{unicode-math}
+  \providecommand{\bm}[1]{\symbf{##1}}%
+}
+
+\newcommand{\trymtex@setup@unicode@lmodern}{%
+  \trymtex@setup@unicode@base
   \setmainfont{Latin Modern Roman}
   \setsansfont{Latin Modern Sans}
   \setmonofont{Latin Modern Mono}
   \setmathfont{Latin Modern Math}
-  \providecommand{\bm}[1]{\symbf{##1}}%
 }
 
 \newcommand{\trymtex@setup@unicode@pagella}{%
-  \RequirePackage{fontspec}
-  \RequirePackage[
-    math-style=ISO,
-    warnings-off={mathtools-colon,mathtools-overbracket}
-  ]{unicode-math}
+  \trymtex@setup@unicode@base
   \setmainfont{TeX Gyre Pagella}
   \setsansfont{TeX Gyre Heros}
   \setmonofont{Inconsolata}
   \setmathfont{TeX Gyre Pagella Math}
-  \providecommand{\bm}[1]{\symbf{##1}}%
 }
 
 \newcommand{\trymtex@setup@unicode@ibmplex}{%
-  \RequirePackage{fontspec}
-  \RequirePackage[
-    math-style=ISO,
-    warnings-off={mathtools-colon,mathtools-overbracket}
-  ]{unicode-math}
+  \trymtex@setup@unicode@base
   \setmainfont{IBM Plex Serif}
   \setsansfont{IBM Plex Sans}
   \setmonofont{IBM Plex Mono}
   \setmathfont{STIX Two Math}
-  \providecommand{\bm}[1]{\symbf{##1}}%
 }
 
 \newcommand{\trymtex@setup@unicode@fira}{%
-  \RequirePackage{fontspec}
-  \RequirePackage[
-    math-style=ISO,
-    warnings-off={mathtools-colon,mathtools-overbracket}
-  ]{unicode-math}
+  \trymtex@setup@unicode@base
   \setmainfont{Fira Sans}[
     BoldFont   = {Fira Sans Bold},
     ItalicFont = {Fira Sans Italic}
@@ -81,19 +71,13 @@
         \mathscr,\mathbb,\mathfrak,\mathcal,
         \setminus,\Re,\Im,\triangleright,\top,
         \ddots,\vdots,\star,\bigcup,\succeq
-      },
+    },
     Scale=MatchUppercase
   ]
-  \providecommand{\bm}[1]{\symbf{##1}}%
 }
 
 \newcommand{\trymtex@setup@unicode@none}{%
-  \RequirePackage{fontspec}
-  \RequirePackage[
-    math-style=ISO,
-    warnings-off={mathtools-colon,mathtools-overbracket}
-  ]{unicode-math}
-  \providecommand{\bm}[1]{\symbf{##1}}%
+  \trymtex@setup@unicode@base
 }
 
 \newcommand{\trymtex@setupfonts}{%

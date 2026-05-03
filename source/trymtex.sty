@@ -137,15 +137,18 @@
   \RequirePackage[colorlinks]{hyperref}
   \RequirePackage{bookmark}
 
-  \hypersetup{
-    colorlinks = true,
-    linkcolor  = blue,
-    filecolor  = magenta,
-    urlcolor   = cyan
-  }
-
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{0.5em}
+}
+
+\newcommand{\trymtex@setup@hyperref}{%
+  \hypersetup{
+    colorlinks = true,
+    linkcolor  = math-theorem-dark,
+    citecolor  = math-proposition-dark,
+    filecolor  = math-definition-dark,
+    urlcolor   = math-lemma-dark
+  }%
 }
 
 \newcommand{\trymtex@load@biblatex}{%
@@ -163,6 +166,7 @@
 
 \trymtex@loadmodule{trymtex-colors.tex}
 \trymtexUsePalette{\trymtex@palette}
+\trymtex@setup@hyperref
 
 \trymtex@loadmodule{trymtex-math.tex}
 \trymtex@loadmodule{trymtex-layout.tex}
