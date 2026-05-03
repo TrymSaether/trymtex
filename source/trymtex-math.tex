@@ -1,5 +1,9 @@
 \ProvidesFile{trymtex-math.tex}[2026/04/09 Math helpers module]
 
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+\RequirePackage{siunitx}
+
 \newcommand{\trymtexeps}{\varepsilon}
 \newcommand{\trymtexphi}{\varphi}
 
@@ -50,10 +54,3 @@
 \providecommand{\bmat}{\trymtexbmat}
 \providecommand{\dd}{\diff}
 \providecommand{\ddn}{\diffn}
-
-\newcommand{\yes}{\cellcolor{success-bg} Yes}
-\newcommand{\no}{\cellcolor{error-bg} No}
-\newcommand{\algo}[1]{\parbox[t]{3cm}{\footnotesize\RaggedRight #1}}
-
-\newcolumntype{Y}{>{\footnotesize}c}
-\newcolumntype{Z}{>{\footnotesize\RaggedRight\arraybackslash}X}

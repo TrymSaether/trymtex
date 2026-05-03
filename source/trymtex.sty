@@ -110,30 +110,22 @@
     \RequirePackage{fvextra}
   \fi
   \iftrymtex@babel
-    \RequirePackage[autostyle]{csquotes}
-  \else
-    \RequirePackage{csquotes}
+    \PassOptionsToPackage{autostyle}{csquotes}
   \fi
+  \RequirePackage{csquotes}
   \iftrymtex@subfiles
     \RequirePackage{subfiles}
   \fi
 
-  \RequirePackage{amsmath}
-  \RequirePackage{mathtools}
-
+  \trymtex@loadmodule{trymtex-math.tex}
   \trymtex@loadmodule{trymtex-fonts.tex}
   \trymtex@setupfonts
 
-  \RequirePackage{booktabs}
-  \RequirePackage{tabularx}
-  \RequirePackage{array}
-  \RequirePackage{colortbl}
-  \RequirePackage{multirow}
-  \RequirePackage{siunitx}
-  \RequirePackage{float}
-  \RequirePackage{subcaption}
   \RequirePackage{tcolorbox}
-  \tcbuselibrary{skins,breakable,theorems}
+  \tcbuselibrary{skins,breakable}
+  \iftrymtex@theorems
+    \tcbuselibrary{theorems}
+  \fi
   \RequirePackage[colorlinks]{hyperref}
   \RequirePackage{bookmark}
 
@@ -168,7 +160,6 @@
 \trymtexUsePalette{\trymtex@palette}
 \trymtex@setup@hyperref
 
-\trymtex@loadmodule{trymtex-math.tex}
 \trymtex@loadmodule{trymtex-layout.tex}
 \trymtex@loadmodule{trymtex-boxes.tex}
 \trymtex@loadmodule{trymtex-graphics.tex}

@@ -1,5 +1,13 @@
 \ProvidesFile{trymtex-layout.tex}[2026/04/09 Layout module]
 
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{colortbl}
+\RequirePackage{multirow}
+\RequirePackage{float}
+\RequirePackage{subcaption}
+
 \iftrymtex@pagegeometry
   \RequirePackage[
     margin=2.5cm,
@@ -27,3 +35,10 @@
 \fi
 
 \newcommand{\intuition}{\paragraph{Intuition.}}
+
+\newcommand{\yes}{\cellcolor{success-bg} Yes}
+\newcommand{\no}{\cellcolor{error-bg} No}
+\newcommand{\algo}[1]{\parbox[t]{3cm}{\footnotesize\RaggedRight #1}}
+
+\newcolumntype{Y}{>{\footnotesize}c}
+\newcolumntype{Z}{>{\footnotesize\RaggedRight\arraybackslash}X}

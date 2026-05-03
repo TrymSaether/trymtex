@@ -43,19 +43,9 @@
       borderline west={2pt}{0pt}{#1,dashed},
     },
   trymtex/theorem/study/.style={
-      trymtex/theorem/common,
-      enhanced jigsaw,
+      trymtex/theorem/ruled,
       colback=#1!4,
-      colframe=base-gray,
-      frame hidden,
-      boxrule=0pt,
       borderline west={2pt}{0pt}{#1!70!base-black},
-      fonttitle=\bfseries,
-      coltitle=base-black,
-      attach title to upper,
-      description font=\normalfont,
-      description delimiters={(}{)},
-      after title={\newline},
     },
   trymtex/theorem/property/.style={
       trymtex/theorem/common,
@@ -88,12 +78,8 @@
 }{thm}
 
 \newtcbtheorem{lemma}{Lemma}{
-  trymtex/theorem/common,
-  enhanced jigsaw,
-  colback=math-lemma!10,
-  colframe=math-lemma!80!base-black,
+  trymtex/theorem/framed=math-lemma,
   boxrule=0pt,
-  fonttitle=\bfseries,
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
   boxed title style={
       boxrule=0pt,
@@ -134,9 +120,8 @@
   trymtex/theorem/ruled/solid=math-remark
 }{rem}
 
-\newtcolorbox{checkpoint}{
+\newtcbtheorem{checkpoint}{Checkpoint}{
   trymtex/theorem/ruled/solid=math-remark,
-  left=7mm,
   overlay={
       \node[
         circle,
@@ -146,8 +131,9 @@
         font=\ttfamily\bfseries\scriptsize,
         inner sep=1pt
       ] at (frame.west) {!};
-    }
-}
+    },
+  before upper={\hspace{1.5em}},
+}{chk}
 
 \newtcbtheorem{proposition}{Proposition}{
   trymtex/theorem/framed=math-proposition,
