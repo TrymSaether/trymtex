@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "trymtex"
+version = "0.1.0"
+description = "A polished CLI for LaTeX formatting, linting, and safe autofixing."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "trymtex contributors" }]
+dependencies = [
+  "rich>=13.7",
+]
+
+[project.scripts]
+trymtex = "trymtex.cli:main"
