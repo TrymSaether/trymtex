@@ -5,14 +5,16 @@ import sys
 from pathlib import Path
 
 from .chktex import run_chktex
+from .cleanup import cleanup_latex_artifacts
 from .compiler import compile_check
 from .config import TrymtexConfig, load_config
 from .console import UI
 from .fixers import apply_fixes
 from .formatter import diff_for_change, format_files, write_formatted_change
 from .models import EXIT_COMPILE, EXIT_RUNTIME, EXIT_SUCCESS, EXIT_WARNINGS, RunReport
-from .report import print_diffs, print_fix_notes, print_header, print_summary, print_warnings
+from .report import print_diffs, print_fix_notes, print_header, print_semantic_issues, print_summary, print_warnings
 from .scanner import scan_files
+from .semantic import apply_semantic_fixes, run_semantic
 from .tools import missing_tools
 
 
@@ -28,13 +30,24 @@ def main(argv: list[str] | None = None) -> int:
         ui.print(f"[red]ERROR[/] {exc}")
         return EXIT_RUNTIME
 
+    explicit_quality_mode = args.format or args.lint or args.semantic or args.all
     run_format = args.format or args.all
-    run_lint = args.lint or args.fix or args.all or args.check
+    run_lint = args.lint or args.all or (args.fix and not args.semantic) or (args.check and not args.semantic)
+    run_semantic_check = args.semantic or args.fix or args.all or args.check
     run_fix = args.fix or args.all
     check_mode = args.check
     dry_run = args.dry_run or check_mode
-    if not any([run_format, run_lint, run_fix, args.compile_check]):
+    cleanup_only = args.cleanup_only
+    if cleanup_only:
+        run_format = False
+        run_lint = False
+        run_semantic_check = False
+        run_fix = False
+        check_mode = False
+        dry_run = args.dry_run
+    if not explicit_quality_mode and not any([run_format, run_lint, run_semantic_check, run_fix, args.compile_check, args.cleanup, cleanup_only]):
         run_lint = True
+        run_semantic_check = True
         check_mode = True
         dry_run = True
 
@@ -45,11 +58,25 @@ def main(argv: list[str] | None = None) -> int:
         return EXIT_RUNTIME
 
     report = RunReport()
+    report.lint_ran = run_lint
+    report.semantic_ran = run_semantic_check
     paths = [Path(item) for item in args.paths]
     report.files_scanned = scan_files(paths, config, args.include, args.exclude)
     ui.verbose_print(f"Scanning {len(report.files_scanned)} file(s)")
 
-    total_steps = sum(1 for enabled in (run_format, run_lint, run_fix, args.compile_check and not dry_run) if enabled)
+    total_steps = sum(
+        1
+        for enabled in (
+            run_format,
+            run_lint,
+            run_fix and run_lint,
+            run_semantic_check,
+            run_fix and run_semantic_check,
+            args.compile_check and not dry_run,
+            args.cleanup or cleanup_only,
+        )
+        if enabled
+    )
     with ui.progress("Running trymtex", max(total_steps, 1)) as progress:
         if run_format:
             changes, errors = format_files(report.files_scanned, config, dry_run=dry_run, backup=args.backup)
@@ -89,6 +116,25 @@ def main(argv: list[str] | None = None) -> int:
             if run_fix:
                 progress.advance()
 
+        if run_semantic_check:
+            report.semantic_before = run_semantic(report.files_scanned, config)
+            progress.advance()
+
+        if run_fix and report.semantic_before:
+            semantic_fixes, semantic_changed, semantic_changes = apply_semantic_fixes(report.semantic_before, config, dry_run=dry_run, backup=args.backup)
+            report.semantic_fixes.extend(semantic_fixes)
+            report.files_changed.update(semantic_changed)
+            report.format_changes.extend(semantic_changes)
+            if args.diff:
+                for change in semantic_changes:
+                    ui.print(diff_for_change(change))
+            report.semantic_after = run_semantic(report.files_scanned, config)
+            progress.advance()
+        elif run_semantic_check:
+            report.semantic_after = report.semantic_before
+            if run_fix:
+                progress.advance()
+
         if args.compile_check and not dry_run:
             try:
                 compile_result = compile_check(config.compile, report.files_scanned)
@@ -99,7 +145,14 @@ def main(argv: list[str] | None = None) -> int:
                     report.compile_error = compile_result.stderr.strip() or compile_result.stdout.strip() or "compile command failed"
             progress.advance()
 
+        if args.cleanup or cleanup_only:
+            cleanup = cleanup_latex_artifacts(report.files_scanned, dry_run=dry_run)
+            report.cleanup_removed.extend(cleanup.removed)
+            report.tool_errors.extend(cleanup.errors)
+            progress.advance()
+
     print_warnings(ui, report)
+    print_semantic_issues(ui, report)
     print_fix_notes(ui, report)
     print_summary(ui, report)
 
@@ -107,11 +160,13 @@ def main(argv: list[str] | None = None) -> int:
         return EXIT_COMPILE
     if report.tool_errors:
         return EXIT_RUNTIME
-    if check_mode and (report.format_changes or report.warnings_before or report.fixes_applied):
+    if check_mode and (report.format_changes or report.warnings_before or report.semantic_before or report.fixes_applied):
         return EXIT_WARNINGS
-    if (args.fail_on_warnings or config.fail_on_warnings) and report.remaining_warnings:
+    if (args.fail_on_warnings or config.fail_on_warnings) and (report.remaining_warnings or report.remaining_semantic):
         return EXIT_WARNINGS
     if report.remaining_warnings and run_lint and not run_fix:
+        return EXIT_WARNINGS
+    if report.remaining_semantic and run_semantic_check and not run_fix:
         return EXIT_WARNINGS
     return EXIT_SUCCESS
 
@@ -123,6 +178,7 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--fix", action="store_true", help="Apply safe autofixes.")
     parser.add_argument("--format", action="store_true", help="Run latexindent.")
     parser.add_argument("--lint", action="store_true", help="Run chktex.")
+    parser.add_argument("--semantic", action="store_true", help="Run built-in semantic LaTeX checks.")
     parser.add_argument("--all", action="store_true", help="Format, lint, autofix, then lint again.")
     parser.add_argument("--dry-run", action="store_true", help="Show proposed changes without writing.")
     parser.add_argument("--diff", action="store_true", help="Print unified diffs.")
@@ -132,6 +188,8 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--exclude", action="append", default=[], help="Exclude glob; may be repeated.")
     parser.add_argument("--fail-on-warnings", action="store_true", help="Exit nonzero if warnings remain.")
     parser.add_argument("--compile-check", action="store_true", help="Compile after fixes.")
+    parser.add_argument("--cleanup", action="store_true", help="Remove common LaTeX auxiliary files after the run.")
+    parser.add_argument("--cleanup-only", action="store_true", help="Only remove common LaTeX auxiliary files for scanned TeX files.")
     parser.add_argument("--plain", action="store_true", help="Use plain output without Rich styling.")
     parser.add_argument("--no-color", action="store_true", help="Disable color.")
     parser.add_argument("--quiet", "-q", action="store_true", help="Only print essential output.")

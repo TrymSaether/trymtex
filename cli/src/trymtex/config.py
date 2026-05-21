@@ -48,6 +48,53 @@ class FixerConfig:
 
 
 @dataclass
+class SemanticConfig:
+    enabled: list[str] = field(
+        default_factory=lambda: [
+            "duplicate-label",
+            "undefined-reference",
+            "unused-label",
+            "duplicate-usepackage",
+            "duplicate-macro-definition",
+            "repeated-word",
+            "bare-url",
+            "math-operator",
+            "math-spacing-punctuation",
+            "inline-math-delimiter",
+            "display-math-delimiter",
+            "eqnarray-environment",
+            "deprecated-font-command",
+            "centerline-command",
+            "dash-range",
+            "spaced-em-dash",
+            "tex-quotes",
+            "ellipsis",
+            "prose-spacing",
+        ]
+    )
+    autofix: list[str] = field(
+        default_factory=lambda: [
+            "duplicate-usepackage",
+            "duplicate-macro-definition",
+            "repeated-word",
+            "bare-url",
+            "math-operator",
+            "math-spacing-punctuation",
+            "inline-math-delimiter",
+            "display-math-delimiter",
+            "eqnarray-environment",
+            "deprecated-font-command",
+            "centerline-command",
+            "dash-range",
+            "spaced-em-dash",
+            "tex-quotes",
+            "ellipsis",
+            "prose-spacing",
+        ]
+    )
+
+
+@dataclass
 class TrymtexConfig:
     include: list[str] = field(default_factory=lambda: ["**/*.tex"])
     exclude: list[str] = field(default_factory=lambda: list(DEFAULT_EXCLUDES))
@@ -55,6 +102,7 @@ class TrymtexConfig:
     fail_on_warnings: bool = False
     formatter: FormatterConfig = field(default_factory=FormatterConfig)
     fixers: FixerConfig = field(default_factory=FixerConfig)
+    semantic: SemanticConfig = field(default_factory=SemanticConfig)
     compile: CompileConfig = field(default_factory=CompileConfig)
 
 
@@ -113,6 +161,14 @@ def _from_mapping(data: dict[str, Any]) -> TrymtexConfig:
         raise ValueError("[fixers] must be a table")
     config.fixers = FixerConfig(enabled=_list(fixers.get("enabled"), config.fixers.enabled))
 
+    semantic = data.get("semantic", {})
+    if not isinstance(semantic, dict):
+        raise ValueError("[semantic] must be a table")
+    config.semantic = SemanticConfig(
+        enabled=_list(semantic.get("enabled"), config.semantic.enabled),
+        autofix=_list(semantic.get("autofix"), config.semantic.autofix),
+    )
+
     compile_data = data.get("compile", {})
     if not isinstance(compile_data, dict):
         raise ValueError("[compile] must be a table")
@@ -122,4 +178,3 @@ def _from_mapping(data: dict[str, Any]) -> TrymtexConfig:
         args=_list(compile_data.get("args"), config.compile.args),
     )
     return config
-

@@ -24,6 +24,19 @@ class ChktexWarning:
 
 
 @dataclass(frozen=True)
+class SemanticIssue:
+    file: Path
+    line: int
+    column: int
+    rule: str
+    message: str
+    context: str = ""
+
+    def display(self) -> str:
+        return f"{self.file}:{self.line}:{self.column} Semantic {self.rule} {self.message}"
+
+
+@dataclass(frozen=True)
 class ToolResult:
     command: list[str]
     returncode: int
@@ -33,7 +46,7 @@ class ToolResult:
 
 @dataclass
 class FixResult:
-    warning: ChktexWarning
+    warning: ChktexWarning | SemanticIssue
     fixer: str
     changed: bool
     reason: str = ""
@@ -53,19 +66,25 @@ class FileChange:
 
 @dataclass
 class RunReport:
+    lint_ran: bool = False
+    semantic_ran: bool = False
     files_scanned: list[Path] = field(default_factory=list)
     files_formatted: set[Path] = field(default_factory=set)
     files_changed: set[Path] = field(default_factory=set)
     warnings_before: list[ChktexWarning] = field(default_factory=list)
     warnings_after: list[ChktexWarning] = field(default_factory=list)
+    semantic_before: list[SemanticIssue] = field(default_factory=list)
+    semantic_after: list[SemanticIssue] = field(default_factory=list)
     fixes: list[FixResult] = field(default_factory=list)
+    semantic_fixes: list[FixResult] = field(default_factory=list)
     format_changes: list[FileChange] = field(default_factory=list)
+    cleanup_removed: list[Path] = field(default_factory=list)
     tool_errors: list[str] = field(default_factory=list)
     compile_error: str | None = None
 
     @property
     def fixes_applied(self) -> int:
-        return sum(1 for fix in self.fixes if fix.changed)
+        return sum(1 for fix in [*self.fixes, *self.semantic_fixes] if fix.changed)
 
     @property
     def warnings_resolved(self) -> int:
@@ -78,3 +97,9 @@ class RunReport:
         if self.fixes or self.warnings_after:
             return self.warnings_after
         return self.warnings_before
+
+    @property
+    def remaining_semantic(self) -> list[SemanticIssue]:
+        if self.semantic_fixes or self.semantic_after:
+            return self.semantic_after
+        return self.semantic_before

@@ -30,6 +30,19 @@ class CliTests(unittest.TestCase):
 
             self.assertEqual(code, EXIT_SUCCESS)
 
+    def test_cleanup_only_removes_aux_files(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            tex = tmp_path / "paper.tex"
+            aux = tmp_path / "paper.aux"
+            tex.write_text("Text.\n", encoding="utf-8")
+            aux.write_text("aux", encoding="utf-8")
+
+            code = cli.main(["--cleanup-only", "--quiet", str(tex)])
+
+            self.assertEqual(code, EXIT_SUCCESS)
+            self.assertFalse(aux.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

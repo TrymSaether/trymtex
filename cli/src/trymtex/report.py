@@ -18,6 +18,8 @@ def print_diffs(ui: UI, report: RunReport) -> None:
 
 
 def print_warnings(ui: UI, report: RunReport) -> None:
+    if not report.lint_ran:
+        return
     warnings = report.remaining_warnings
     if not warnings:
         ui.print("[green]OK[/] No ChkTeX warnings remain.")
@@ -29,8 +31,25 @@ def print_warnings(ui: UI, report: RunReport) -> None:
             ui.print(f"  {warning.display()}")
 
 
+def print_semantic_issues(ui: UI, report: RunReport) -> None:
+    if not report.semantic_ran:
+        return
+    issues = report.remaining_semantic
+    if not issues:
+        ui.print("[green]OK[/] No semantic issues remain.")
+        return
+    ui.print("[yellow]Semantic issues remaining[/]")
+    grouped = defaultdict(list)
+    for issue in issues:
+        grouped[issue.file].append(issue)
+    for file, items in grouped.items():
+        ui.print(f"[bold]{file}[/]")
+        for issue in items:
+            ui.print(f"  {issue.display()}")
+
+
 def print_fix_notes(ui: UI, report: RunReport) -> None:
-    skipped = [fix for fix in report.fixes if not fix.changed]
+    skipped = [fix for fix in [*report.fixes, *report.semantic_fixes] if not fix.changed]
     if not skipped or ui.quiet:
         return
     reasons: dict[str, int] = defaultdict(int)
@@ -46,15 +65,17 @@ def print_summary(ui: UI, report: RunReport) -> None:
         ("Files scanned", str(len(report.files_scanned))),
         ("Files formatted", str(len(report.files_formatted))),
         ("Warnings before", str(len(report.warnings_before))),
+        ("Semantic issues before", str(len(report.semantic_before))),
         ("Autofixes applied", str(report.fixes_applied)),
         ("Warnings resolved", str(report.warnings_resolved)),
         ("Warnings remaining", str(len(report.remaining_warnings))),
+        ("Semantic issues remaining", str(len(report.remaining_semantic))),
         ("Files changed", str(len(report.files_changed))),
+        ("Cleanup files removed", str(len(report.cleanup_removed))),
     ]
-    style = "green" if not report.remaining_warnings and not report.tool_errors and not report.compile_error else "yellow"
+    style = "green" if not report.remaining_warnings and not report.remaining_semantic and not report.tool_errors and not report.compile_error else "yellow"
     ui.table("Run report", rows, style=style)
     for error in report.tool_errors:
         ui.print(f"[red]ERROR[/] {error}")
     if report.compile_error:
         ui.print(f"[red]COMPILE FAILED[/] {report.compile_error}")
-

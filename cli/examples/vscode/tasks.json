@@ -1,0 +1,168 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TrymTeX: check project",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--check",
+        "--format",
+        "--lint",
+        "--semantic",
+        "--diff",
+        "--fail-on-warnings",
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: dry-run autofix project",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--all",
+        "--dry-run",
+        "--diff",
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: apply autofix project",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--all",
+        "--diff",
+        "--backup",
+        "--cleanup",
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: compile-validated autofix project",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--all",
+        "--diff",
+        "--backup",
+        "--compile-check",
+        "--cleanup",
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: check current file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--check",
+        "--lint",
+        "--semantic",
+        "--diff",
+        "${file}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: dry-run autofix current file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--fix",
+        "--semantic",
+        "--dry-run",
+        "--diff",
+        "${file}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: apply autofix current file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--fix",
+        "--semantic",
+        "--diff",
+        "--backup",
+        "--cleanup",
+        "${file}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: cleanup project",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--cleanup-only",
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "TrymTeX: cleanup current file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--cleanup-only",
+        "${file}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}

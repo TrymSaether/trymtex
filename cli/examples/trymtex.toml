@@ -19,8 +19,48 @@ enabled = [
   "space-before-punctuation",
 ]
 
+[semantic]
+enabled = [
+  "duplicate-label",
+  "undefined-reference",
+  "unused-label",
+  "duplicate-usepackage",
+  "duplicate-macro-definition",
+  "repeated-word",
+  "bare-url",
+  "math-operator",
+  "math-spacing-punctuation",
+  "inline-math-delimiter",
+  "display-math-delimiter",
+  "eqnarray-environment",
+  "deprecated-font-command",
+  "centerline-command",
+  "dash-range",
+  "spaced-em-dash",
+  "tex-quotes",
+  "ellipsis",
+  "prose-spacing",
+]
+autofix = [
+  "duplicate-usepackage",
+  "duplicate-macro-definition",
+  "repeated-word",
+  "bare-url",
+  "math-operator",
+  "math-spacing-punctuation",
+  "inline-math-delimiter",
+  "display-math-delimiter",
+  "eqnarray-environment",
+  "deprecated-font-command",
+  "centerline-command",
+  "dash-range",
+  "spaced-em-dash",
+  "tex-quotes",
+  "ellipsis",
+  "prose-spacing",
+]
+
 [compile]
 engine = "latexmk"
 main = "main.tex"
 args = ["-pdf"]
-

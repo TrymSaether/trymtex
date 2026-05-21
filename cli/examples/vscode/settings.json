@@ -1,0 +1,9 @@
+{
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.recipe.default": "latexmk",
+  "latex-workshop.message.warning.show": true,
+  "files.associations": {
+    "*.tex": "latex"
+  }
+}
+

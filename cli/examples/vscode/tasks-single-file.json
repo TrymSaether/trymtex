@@ -1,0 +1,63 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TrymTeX: check selected TeX file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--check",
+        "--lint",
+        "--semantic",
+        "--diff",
+        "${input:texFile}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "TrymTeX: dry-run autofix selected TeX file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--fix",
+        "--semantic",
+        "--dry-run",
+        "--diff",
+        "${input:texFile}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "TrymTeX: apply autofix selected TeX file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--fix",
+        "--semantic",
+        "--diff",
+        "--backup",
+        "--cleanup",
+        "${input:texFile}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "TrymTeX: cleanup selected TeX file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": [
+        "--cleanup-only",
+        "${input:texFile}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "texFile",
+      "type": "promptString",
+      "description": "Path to the .tex file to check or fix",
+      "default": "${workspaceFolder}/main.tex"
+    }
+  ]
+}
