@@ -1,0 +1,365 @@
+% MODERN MINIMALISTIC BEAMER TEMPLATE
+% Beamer-compatible version of trymtex.sty
+% Author: Trym Sæther
+% Date: June 2025
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{trymbeam}[2025/06/01 v1.0 Modern Minimalistic Beamer Template]
+
+
+% Core packages compatible with beamer
+\RequirePackage{fontspec}         % Font selection for LuaLaTeX
+\RequirePackage[final]{microtype} % Micro-typographic refinements
+\RequirePackage[english, norsk]{babel} % Language support
+\RequirePackage{xcolor}           % Color support
+
+% Text & Typography (beamer compatible)
+\RequirePackage{ragged2e}        % Better text alignment
+\RequirePackage{enumitem}        % Customize lists
+\RequirePackage[autostyle, english=american]{csquotes}  % Smart quotes
+
+% Math packages
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+\RequirePackage[math-style=ISO, warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
+\RequirePackage{amsfonts}
+\RequirePackage{amsthm}
+
+% Graphics & TikZ
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=newest}
+\RequirePackage{float}           % Float control
+\RequirePackage{subcaption}      % Sub-figures support
+
+% Load TikZ libraries
+\usetikzlibrary{
+    arrows.meta,
+    backgrounds,
+    positioning,
+    calc,
+    shapes.geometric,
+    decorations.pathreplacing,
+    3d
+}
+
+% Table packages (beamer compatible)
+\RequirePackage{booktabs}        % Professional tables
+\RequirePackage{tabularx}        % Flexible tables
+\RequirePackage{array}           % Extended array features
+\RequirePackage{multirow}        % Multiple row cells
+\RequirePackage{siunitx}         % Units and number formatting
+
+
+% FONT CONFIGURATION
+
+
+% Font configuration with small caps handling
+\setmainfont{IBM Plex Serif}[
+  SmallCapsFont = {IBM Plex Serif},
+  SmallCapsFeatures = {Letters=SmallCaps}
+]
+\setsansfont{IBM Plex Sans}
+\setmonofont{IBM Plex Mono}
+\setmathfont{STIX Two Math}
+
+% Suppress font warnings for missing small caps
+\RequirePackage{silence}
+\WarningFilter{latexfont}{Font shape}
+
+
+% MATHEMATICAL COMMANDS
+
+
+% Custom math commands
+\newcommand{\ep}{\varepsilon}
+\newcommand{\vp}{\varphi}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\argmin}{\operatorname{argmin}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\bm}[1]{\symbf{#1}}
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dd}[2][]{\frac{d#1}{d{#2}}}
+\newcommand{\ddn}[3][]{\frac{d^{#2}#1}{d{#3}^{#2}}}
+\newcommand{\spann}{\operatorname{span}}
+\newcommand{\diag}{\operatorname{diag}}
+
+% Statistical symbols
+\newcommand{\To}{\nearrow}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Poisson}{\operatorname{Poisson}}
+\newcommand{\Pois}{\operatorname{\mathcal{Pois}}}
+\newcommand{\Exp}{\operatorname{Exp}}
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\setbox0\hbox{\( #1#2 \)}\copy0\kern-\wd0\mkern4mu\box0}}
+
+% Paired delimiters
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+
+% COLOR DEFINITIONS
+
+
+% Theorem environment colors (from trymtex.sty)
+\definecolor{def-color}{HTML}{E40125}    % Bright red
+\definecolor{thm-color}{HTML}{1346E4}    % Royal blue
+\definecolor{lem-color}{HTML}{05C4D9}    % Light blue/cyan
+\definecolor{exm-color}{HTML}{21340A}    % Very dark green
+\definecolor{rem-color}{HTML}{18B640}    % Medium green
+\definecolor{prop-color}{HTML}{9C27B0}   % Purple
+\definecolor{cor-color}{HTML}{FF5722}    % Deep Orange
+\definecolor{alg-color}{HTML}{37474F}    % Dark blue-gray
+
+% Template colors
+\definecolor{primary}{HTML}{1346E4}      % Royal blue (same as thm-color)
+\definecolor{secondary}{HTML}{37474F}    % Dark blue-gray
+\definecolor{accent}{HTML}{05C4D9}       % Light blue/cyan
+\definecolor{background}{HTML}{FAFAFA}   % Very light gray
+\definecolor{surface}{HTML}{FFFFFF}      % White
+\definecolor{text}{HTML}{212121}         % Dark gray
+\definecolor{textlight}{HTML}{757575}    % Medium gray
+
+
+% BEAMER THEME CONFIGURATION
+
+
+% Remove default navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Set color theme
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{normal text}{fg=text, bg=surface}
+\setbeamercolor{frametitle}{fg=surface, bg=primary}
+\setbeamercolor{title}{fg=primary}
+\setbeamercolor{subtitle}{fg=textlight}
+\setbeamercolor{author}{fg=text}
+\setbeamercolor{date}{fg=textlight}
+\setbeamercolor{institute}{fg=textlight}
+
+% Configure beamer blocks
+\setbeamercolor{block title}{fg=surface, bg=primary}
+\setbeamercolor{block body}{fg=text, bg=background}
+\setbeamercolor{block title alerted}{fg=surface, bg=def-color}
+\setbeamercolor{block body alerted}{fg=text, bg=def-color!10}
+\setbeamercolor{block title example}{fg=surface, bg=rem-color}
+\setbeamercolor{block body example}{fg=text, bg=rem-color!10}
+
+% Item colors
+\setbeamercolor{item}{fg=primary}
+\setbeamercolor{subitem}{fg=accent}
+\setbeamercolor{subsubitem}{fg=textlight}
+
+% Table of Contents
+\setbeamertemplate{section in toc}{%
+    \leavevmode\leftskip=2em%
+    \llap{%
+        \usebeamercolor[fg]{structure}%
+        \tikz[baseline=(char.base)]{%
+            \node[circle, fill=def-color, draw=def-color, minimum size=0.3cm, inner sep=1pt, text=white, font=\footnotesize\bfseries] (char) {\inserttocsectionnumber.};%
+        }%
+        \kern1.25em%
+    }%
+    \inserttocsection\par%
+}
+
+% Frame title
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5em,dp=0.5em]{frametitle}%
+        \hspace{1em}%
+        \usebeamerfont{frametitle}\insertframetitle%
+        \ifx\insertframesubtitle\@empty%
+        \else%
+            \par\hspace{1em}%
+            {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}%
+        \fi%
+    \end{beamercolorbox}%
+}
+
+
+% CUSTOM TITLE PAGE
+
+
+\setbeamertemplate{title page}{%
+    \vbox{}
+    \vfill
+    \begingroup
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center]{title}
+            \usebeamerfont{title}\inserttitle\par%
+            \ifx\insertsubtitle\@empty%
+            \else%
+                \vskip0.25em%
+                {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+            \fi%     
+        \end{beamercolorbox}%
+        \vskip1em\par
+        \begin{beamercolorbox}[sep=8pt,center]{author}
+            \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=8pt,center]{institute}
+            \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=8pt,center]{date}
+            \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}
+    \endgroup
+    \vfill
+}
+
+
+% FOOTER CONFIGURATION
+
+
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+            \usebeamerfont{author in head/foot}\insertshortauthor
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+}
+
+
+% FONTS CONFIGURATION
+
+
+% Title fonts
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+
+% Frame title fonts
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize}
+
+% Block fonts
+\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
+
+
+% BEAMER-COMPATIBLE THEOREM ENVIRONMENTS
+
+
+% Language-dependent theorem names
+\addto\captionsenglish{%
+  \def\definitionname{Definition}%
+  \def\theoremname{Theorem}%
+  \def\lemmaname{Lemma}%
+  \def\examplename{Example}%
+  \def\remarkname{Remark}%
+  \def\propositionname{Proposition}%
+  \def\corollaryname{Corollary}%
+  \def\solutionname{Solution}%
+}
+
+\addto\captionsnorsk{%
+  \def\definitionname{Definisjon}%
+  \def\theoremname{Teorem}%
+  \def\lemmaname{Lemma}%
+  \def\examplename{Eksempel}%
+  \def\remarkname{Bemerkning}%
+  \def\propositionname{Proposisjon}%
+  \def\corollaryname{Korollar}%
+  \def\solutionname{Løsning}%
+}
+
+% Custom theorem-like environments for beamer
+\newenvironment<>{definition}[1][]{%
+  \begin{actionenv}#2%
+    \def\insertblocktitle{\definitionname\ifx\relax#1\relax\else\ (#1)\fi}%
+    \par%
+    \setbeamercolor{block title}{fg=surface, bg=def-color}%
+    \setbeamercolor{block body}{fg=text, bg=def-color!10}%
+    \usebeamertemplate{block begin}%
+    \setbeamercolor{local structure}{fg=def-color}%
+}{\par\usebeamertemplate{block end}\end{actionenv}}
+
+\newenvironment<>{theorem}[1][]{%
+  \begin{actionenv}#2%
+    \def\insertblocktitle{\theoremname\ifx\relax#1\relax\else\ (#1)\fi}%
+    \par%
+    \setbeamercolor{block title}{fg=surface, bg=thm-color}%
+    \setbeamercolor{block body}{fg=text, bg=thm-color!10}%
+    \usebeamertemplate{block begin}%
+    \setbeamercolor{local structure}{fg=thm-color}%
+}{\par\usebeamertemplate{block end}\end{actionenv}}
+
+\newenvironment<>{lemma}[1][]{%
+  \begin{actionenv}#2%
+    \def\insertblocktitle{\lemmaname\ifx\relax#1\relax\else\ (#1)\fi}%
+    \par%
+    \setbeamercolor{block title}{fg=surface, bg=lem-color}%
+    \setbeamercolor{block body}{fg=text, bg=lem-color!10}%
+    \usebeamertemplate{block begin}%
+    \setbeamercolor{local structure}{fg=lem-color}%
+}{\par\usebeamertemplate{block end}\end{actionenv}}
+
+\newenvironment<>{remark}[1][]{%
+  \begin{actionenv}#2%
+    \def\insertblocktitle{\remarkname\ifx\relax#1\relax\else\ (#1)\fi}%
+    \par%
+    \setbeamercolor{block title}{fg=surface, bg=rem-color}%
+    \setbeamercolor{block body}{fg=text, bg=rem-color!10}%
+    \usebeamertemplate{block begin}%
+    \setbeamercolor{local structure}{fg=rem-color}%
+}{\par\usebeamertemplate{block end}\end{actionenv}}
+
+\newenvironment<>{proposition}[1][]{%
+  \begin{actionenv}#2%
+    \def\insertblocktitle{\propositionname\ifx\relax#1\relax\else\ (#1)\fi}%
+    \par%
+    \setbeamercolor{block title}{fg=surface, bg=prop-color}%
+    \setbeamercolor{block body}{fg=text, bg=prop-color!10}%
+    \usebeamertemplate{block begin}%
+    \setbeamercolor{local structure}{fg=prop-color}%
+}{\par\usebeamertemplate{block end}\end{actionenv}}
+
+\newenvironment<>{corollary}[1][]{%
+  \begin{actionenv}#2%
+    \def\insertblocktitle{\corollaryname\ifx\relax#1\relax\else\ (#1)\fi}%
+    \par%
+    \setbeamercolor{block title}{fg=surface, bg=cor-color}%
+    \setbeamercolor{block body}{fg=text, bg=cor-color!10}%
+    \usebeamertemplate{block begin}%
+    \setbeamercolor{local structure}{fg=cor-color}%
+}{\par\usebeamertemplate{block end}\end{actionenv}}
+
+
+% CUSTOM BLOCK ENVIRONMENTS
+
+
+% Custom alert block using colors from trymtex.sty
+\newenvironment{importantblock}[1]{%
+    \setbeamercolor{block title}{fg=surface, bg=def-color}%
+    \setbeamercolor{block body}{fg=text, bg=def-color!10}%
+    \begin{block}{#1}%
+}{%
+    \end{block}%
+}
+
+% Custom example block
+\newenvironment{tipblock}[1]{%
+    \setbeamercolor{block title}{fg=surface, bg=rem-color}%
+    \setbeamercolor{block body}{fg=text, bg=rem-color!10}%
+    \begin{block}{#1}%
+}{%
+    \end{block}%
+}
+
+
+\endinput

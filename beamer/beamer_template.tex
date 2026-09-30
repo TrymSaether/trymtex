@@ -1,0 +1,202 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{trymbeam}
+
+
+\title{TrymBeam Template}
+\subtitle{A Modern LaTeX Beamer Template}
+\author{Author Name}
+\date{\today}
+\institute{Fancy University}
+
+% Logo in corner (optional)
+\logo{\includegraphics[height=0.8cm]{figures/ntnu_logo_liten.png}}
+
+\begin{document}
+
+% Title Frame
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Content
+\section{Introduction}
+
+\begin{frame}{Welcome}
+    \framesubtitle{Modern LaTeX Presentation Template}
+    
+    This is a \textbf{modern and minimalistic} beamer template featuring:
+    
+    \begin{itemize}
+        \item Clean, professional design
+        \item Modular preamble in \texttt{beamer\_template.sty}
+        \item Consistent color scheme throughout
+        \item Modern typography with IBM Plex fonts
+    \end{itemize}
+    
+    \vspace{1em}
+    
+    \begin{tipblock}{Pro Tip}
+        The template is now modular! Customize \texttt{beamer\_template.sty} to match your branding and reuse across multiple presentations.
+    \end{tipblock}
+\end{frame}
+
+\section{Features}
+
+\begin{frame}{Key Features}
+    \framesubtitle{What makes this template special}
+    
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{Design Elements:}
+            \begin{itemize}
+                \item Minimalistic layout
+                \item Professional color palette
+                \item Clean typography
+                \item Consistent spacing
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Technical Features:}
+            \begin{itemize}
+                \item 16:9 aspect ratio
+                \item Modular design
+                \item Integrated math support
+                \item Beamer-compatible environments
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Block Examples}
+    \framesubtitle{Different types of content blocks}
+    
+    \begin{block}{Standard Block}
+        This is a standard block for general information.
+    \end{block}
+    
+    \begin{importantblock}{Important Information}
+        This is an important block that draws attention to critical information.
+    \end{importantblock}
+    
+    \begin{tipblock}{Helpful Tip}
+        This is a tip block for providing useful advice or best practices.
+    \end{tipblock}
+\end{frame}
+
+\section{Mathematics}
+
+\begin{frame}{Mathematical Content}
+    \framesubtitle{Beautiful equations and theorem environments}
+    
+    The template supports all mathematical content with beamer-compatible theorem environments:
+    
+    \begin{align}
+        \E[X] &= \sum_{i=1}^n x_i P(X = x_i) \\
+        \Var(X) &= \E[X^2] - (\E[X])^2 \\
+        \norm{\bm{x}}_2 &= \sqrt{\sum_{i=1}^n x_i^2}
+    \end{align}
+    
+    \begin{definition}[Conditional Expectation]
+        The conditional expectation of $X$ given $Y$ is:
+        \[ \E[X \mid Y] = \sum_x x \cdot P(X = x \mid Y) \]
+    \end{definition}
+\end{frame}
+
+\begin{frame}{More Mathematical Examples}
+    \framesubtitle{Theorem environments in action}
+    
+    \begin{theorem}[Central Limit Theorem]
+        Let $X_1, X_2, \ldots$ be i.i.d. random variables with $\E[X_i] = \mu$ and $\Var(X_i) = \sigma^2$. Then:
+        \[ \frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{d} N(0,1) \]
+    \end{theorem}
+    
+    \begin{lemma}
+        For any matrix $\bm{A} \in \R^{m \times n}$, we have $\norm{\bm{A}}_2 \leq \sqrt{mn} \norm{\bm{A}}_{\infty}$.
+    \end{lemma}
+    
+    \begin{remark}
+        These theorem environments maintain the color scheme from your trymtex.sty package while being fully beamer-compatible.
+    \end{remark}
+\end{frame}
+
+\section{Graphics and Tables}
+
+\begin{frame}{Visual Content}
+    \framesubtitle{Including figures and tables}
+    
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{center}
+                \begin{tikzpicture}[scale=0.8]
+                    \draw[->] (0,0) -- (4,0) node[right] {$x$};
+                    \draw[->] (0,0) -- (0,3) node[above] {$y$};
+                    \draw[primary, thick] (0,0) to[out=30, in=180] (4,2.5);
+                    \node[primary] at (2,1.5) {$f(x)$};
+                \end{tikzpicture}
+            \end{center}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \small
+            \begin{tabular}{@{}lcc@{}}
+                \toprule
+                Method & Accuracy & Speed \\
+                \midrule
+                A & 95\% & Fast \\
+                B & 87\% & Medium \\
+                C & 99\% & Slow \\
+                \bottomrule
+            \end{tabular}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Summary}
+    \framesubtitle{Key takeaways}
+    
+    \begin{itemize}
+        \item Modern and professional design
+        \item Modular structure with \texttt{beamer\_template.sty}
+        \item Easy to customize and extend
+        \item Beamer-compatible theorem environments
+        \item Perfect for academic and professional presentations
+    \end{itemize}
+    
+    \vspace{2em}
+    
+    \begin{center}
+        \Large \textbf{Ready to create stunning presentations!}
+    \end{center}
+\end{frame}
+
+
+% THANK YOU FRAME
+
+
+\begin{frame}[plain]
+    \vfill
+    \centering
+    {\Huge \textcolor{primary}{\textbf{Thank You}}}
+    
+    \vspace{1.5em}
+    
+    {\Large Questions \& Discussion}
+    
+    \vspace{2em}
+    
+    {\normalsize 
+    \textcolor{textlight}{
+        Trym Sæther \\
+        Norwegian University of Science and Technology
+    }}
+    \vfill
+\end{frame}
+
+\end{document}
