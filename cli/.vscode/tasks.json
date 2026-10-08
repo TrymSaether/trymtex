@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LaTeX: format + lint + autofix",
+      "type": "shell",
+      "command": "trymtex",
+      "args": ["--all", "--diff", "--compile-check", "--cleanup"],
+      "problemMatcher": []
+    },
+    {
+      "label": "LaTeX: check only",
+      "type": "shell",
+      "command": "trymtex",
+      "args": ["--check", "--format", "--lint", "--semantic", "--diff", "--fail-on-warnings"],
+      "problemMatcher": []
+    },
+    {
+      "label": "LaTeX: autofix current file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": ["--fix", "--lint", "--diff", "--cleanup", "${file}"],
+      "problemMatcher": []
+    },
+    {
+      "label": "LaTeX: cleanup current file",
+      "type": "shell",
+      "command": "trymtex",
+      "args": ["--cleanup-only", "${file}"],
+      "problemMatcher": []
+    }
+  ]
+}

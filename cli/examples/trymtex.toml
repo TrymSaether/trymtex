@@ -1,0 +1,66 @@
+include = ["**/*.tex"]
+exclude = [
+  "build/**",
+  "_build/**",
+  "out/**",
+  "**/*.generated.tex",
+  "**/generated/**",
+]
+backup = false
+fail_on_warnings = false
+
+[formatter]
+format_bib = false
+# latexindent_config = ".latexindent.yaml"
+
+[fixers]
+enabled = [
+  "nbsp-before-ref",
+  "space-before-punctuation",
+]
+
+[semantic]
+enabled = [
+  "duplicate-label",
+  "undefined-reference",
+  "unused-label",
+  "duplicate-usepackage",
+  "duplicate-macro-definition",
+  "repeated-word",
+  "bare-url",
+  "math-operator",
+  "math-spacing-punctuation",
+  "inline-math-delimiter",
+  "display-math-delimiter",
+  "eqnarray-environment",
+  "deprecated-font-command",
+  "centerline-command",
+  "dash-range",
+  "spaced-em-dash",
+  "tex-quotes",
+  "ellipsis",
+  "prose-spacing",
+]
+autofix = [
+  "duplicate-usepackage",
+  "duplicate-macro-definition",
+  "repeated-word",
+  "bare-url",
+  "math-operator",
+  "math-spacing-punctuation",
+  "inline-math-delimiter",
+  "display-math-delimiter",
+  "eqnarray-environment",
+  "deprecated-font-command",
+  "centerline-command",
+  "dash-range",
+  "spaced-em-dash",
+  "tex-quotes",
+  "ellipsis",
+  "prose-spacing",
+]
+
+[compile]
+engine = "latexmk"
+main = "main.tex"
+args = ["-pdf"]

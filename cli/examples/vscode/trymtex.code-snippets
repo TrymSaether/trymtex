@@ -1,0 +1,41 @@
+{
+  "TrymTeX project tasks": {
+    "scope": "jsonc,json",
+    "prefix": "trymtex-tasks",
+    "description": "Insert a VS Code tasks.json template for TrymTeX project checks and autofixes.",
+    "body": [
+      "{",
+      "  \"version\": \"2.0.0\",",
+      "  \"tasks\": [",
+      "    {",
+      "      \"label\": \"TrymTeX: check project\",",
+      "      \"type\": \"shell\",",
+      "      \"command\": \"trymtex\",",
+      "      \"args\": [\"--check\", \"--format\", \"--lint\", \"--semantic\", \"--diff\", \"--fail-on-warnings\", \"\\\\${workspaceFolder}\"],",
+      "      \"problemMatcher\": [],",
+      "      \"group\": { \"kind\": \"test\", \"isDefault\": true }",
+      "    },",
+      "    {",
+      "      \"label\": \"TrymTeX: apply autofix current file\",",
+      "      \"type\": \"shell\",",
+      "      \"command\": \"trymtex\",",
+      "      \"args\": [\"--fix\", \"--semantic\", \"--diff\", \"--backup\", \"\\\\${file}\"],",
+      "      \"problemMatcher\": []",
+      "    }",
+      "  ]",
+      "}"
+    ]
+  },
+  "TrymTeX settings": {
+    "scope": "jsonc,json",
+    "prefix": "trymtex-settings",
+    "description": "Insert VS Code settings for manual TrymTeX task usage with LaTeX Workshop.",
+    "body": [
+      "{",
+      "  \"latex-workshop.latex.autoBuild.run\": \"never\",",
+      "  \"latex-workshop.latex.recipe.default\": \"latexmk\",",
+      "  \"latex-workshop.message.warning.show\": true",
+      "}"
+    ]
+  }
+}
