@@ -82,3 +82,8 @@ TEXINPUTS=source: latexmk -lualatex -shell-escape -outdir=build examples/showcas
 
 - The `minted=true` option requires Python/Pygments and a LaTeX setup that permits the needed external command execution. Pass `-shell-escape` only for documents that use minted code blocks.
 - The package is licensed under the MIT License; see `LICENSE`.
+
+## Command-line tool
+
+`cli/` holds `trymtex`, a Python CLI for formatting, linting (ChkTeX plus semantic checks),
+conservative autofixes and compile validation of LaTeX documents. See [`cli/README.md`](cli/README.md).
