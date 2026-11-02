@@ -139,8 +139,9 @@
         fill=white,
         text=math-exercise,
         font=\ttfamily\bfseries\scriptsize,
-        inner sep=1pt
-      ] at (frame.west) {?};
+        inner sep=1pt,
+        anchor=center
+      ] at (interior.west) {?};
     },
 }{hint}
 \newtcbtheorem{checkpoint}{Checkpoint}{
@@ -152,12 +153,12 @@
         fill=white,
         text=math-remark,
         font=\ttfamily\bfseries\scriptsize,
-        inner sep=1pt
-      ] at (frame.west) {!};
+        inner sep=1pt,
+        anchor=center
+      ] at (interior.west) {!};
     },
   before upper={\hspace{1.5em}},
 }{chk}
-
 \newtcbtheorem{proposition}{Proposition}{
   trymtex/theorem/framed=math-proposition,
   attach boxed title to top left={yshift=-\tcboxedtitleheight},
